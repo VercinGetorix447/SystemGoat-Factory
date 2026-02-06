@@ -1,0 +1,41 @@
+# Claude Code Memory - Auto-Loaded Every Session
+
+## Critical Rules
+- ALWAYS show token estimate BEFORE any task: `Est. tokens: X | Task: Y | Proceed? (Y/N)`
+- NEVER proceed with >500 tokens without approval
+- Summarize data - never dump raw output
+- Delegate score 7+ = use subagent
+
+## Backup Locations
+- GitHub Main: https://github.com/VercinGetorix447/BuildRightPros.com/tree/main/backups
+- GitHub Utility: https://github.com/VercinGetorix447/SystemGoat-Factory
+- NocoDB: http://localhost:8080 (95 tasks, table: micl8z8rf5h7cpm)
+- Local: /mnt/c/Users/password/Documents/.claude/Backups/
+
+## Credentials
+- GitHub Token: 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
+- NocoDB Token: QEkBy3A48Fzn6CW4FCaQHfVGICmC4_kaYEPtMR7k
+- Google Workspace: admin@buildrightpros.com
+- Hetzner/Coolify: 5.75.146.160
+
+## Session Start
+1. Read this file (auto)
+2. Read @/mnt/c/Users/password/Documents/.claude/RULES.md
+3. Check NocoDB tasks
+4. Report status to user
+
+## Session End
+1. Run backup-agent to save changes
+2. Push to GitHub if significant changes
+3. Update NocoDB task status
+
+## MCP Servers (8)
+google-calendar, gmail, google-drive, sqlite, filesystem, memory, semgrep, brave-search
+
+## Infrastructure
+- Coolify on Hetzner (5.75.146.160): coolify, proxy, db, redis, realtime, sentinel, n8n
+- Local Docker: NocoDB:8080, PocketBase:8090, n8n:5678, Ntfy:8095, Planka:3000, Metabase:3001
+## Token Limits
+- Default: 600 tokens max per task
+- Hard limit: 3000 tokens (requires explicit approval + expected results)
+- Mode: #compact always unless approved

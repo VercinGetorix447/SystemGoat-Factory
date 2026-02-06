@@ -1,0 +1,46 @@
+{"debug":"Initializing HTTP transport to https://api.ref.tools/mcp","timestamp":"2026-02-04T22:55:27.816Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Node version: v18.19.1, Platform: linux","timestamp":"2026-02-04T22:55:27.816Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Environment: {\"NODE_OPTIONS\":\"not set\",\"UV_THREADPOOL_SIZE\":\"default\",\"HTTP_PROXY\":\"not set\",\"HTTPS_PROXY\":\"not set\",\"NO_PROXY\":\"not set\"}","timestamp":"2026-02-04T22:55:27.816Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Proxy options: default","timestamp":"2026-02-04T22:55:27.849Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"HTTP transport options: {\"url\":\"https://api.ref.tools/mcp\",\"headers\":{\"User-Agent\":\"claude-code/2.1.23\",\"x-ref-api-key\":\"ref-2f38da86f582dd560f43\"},\"hasAuthProvider\":true,\"timeoutMs\":60000}","timestamp":"2026-02-04T22:55:27.850Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"HTTP transport created successfully","timestamp":"2026-02-04T22:55:27.850Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Client created, setting up request handler","timestamp":"2026-02-04T22:55:27.851Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-04T22:55:27.851Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Testing basic HTTP connectivity to https://api.ref.tools/mcp","timestamp":"2026-02-04T22:55:27.851Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Parsed URL: host=api.ref.tools, port=default, protocol=https:","timestamp":"2026-02-04T22:55:27.851Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-04T22:55:27.870Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-04T22:55:32.768Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-04T22:55:33.838Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Successfully connected to http server in 6026ms","timestamp":"2026-02-04T22:55:33.842Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":true,\"hasResources\":false,\"serverVersion\":{\"name\":\"Ref\",\"title\":\"Ref\",\"icons\":[{\"src\":\"https://ref.tools/images/logo.png\"}],\"version\":\"3.0.0\",\"websiteUrl\":\"https://ref.tools\"}}","timestamp":"2026-02-04T22:55:33.842Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-04T22:55:33.846Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-04T22:55:33.846Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"HTTP transport closed/disconnected, attempting automatic reconnection","timestamp":"2026-02-05T16:37:20.051Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Initializing HTTP transport to https://api.ref.tools/mcp","timestamp":"2026-02-05T16:37:20.088Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Node version: v18.19.1, Platform: linux","timestamp":"2026-02-05T16:37:20.088Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Environment: {\"NODE_OPTIONS\":\"not set\",\"UV_THREADPOOL_SIZE\":\"default\",\"HTTP_PROXY\":\"not set\",\"HTTPS_PROXY\":\"not set\",\"NO_PROXY\":\"not set\"}","timestamp":"2026-02-05T16:37:20.089Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Proxy options: default","timestamp":"2026-02-05T16:37:20.108Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"HTTP transport options: {\"url\":\"https://api.ref.tools/mcp\",\"headers\":{\"User-Agent\":\"claude-code/2.1.23\",\"x-ref-api-key\":\"ref-2f38da86f582dd560f43\"},\"hasAuthProvider\":true,\"timeoutMs\":60000}","timestamp":"2026-02-05T16:37:20.112Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"HTTP transport created successfully","timestamp":"2026-02-05T16:37:20.112Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Client created, setting up request handler","timestamp":"2026-02-05T16:37:20.131Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-05T16:37:20.131Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Testing basic HTTP connectivity to https://api.ref.tools/mcp","timestamp":"2026-02-05T16:37:20.131Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Parsed URL: host=api.ref.tools, port=default, protocol=https:","timestamp":"2026-02-05T16:37:20.131Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-05T16:37:20.143Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"HTTP Connection failed after 10136ms: fetch failed (code: none, errno: none)","timestamp":"2026-02-05T16:37:30.223Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"error":"TypeError: fetch failed\n    at Object.fetch (node:internal/deps/undici/undici:11360:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async file:///usr/local/lib/node_modules/@anthropic-ai/claude-code/cli.js:1671:29231\n    at async qX1.send (file:///usr/local/lib/node_modules/@anthropic-ai/claude-code/cli.js:1578:33925)","timestamp":"2026-02-05T16:37:30.224Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Connection failed after 10139ms: fetch failed","timestamp":"2026-02-05T16:37:30.227Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"error":"Connection failed: fetch failed","timestamp":"2026-02-05T16:37:30.227Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"HTTP reconnection attempt 1 completed with status: failed","timestamp":"2026-02-05T16:37:30.227Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Scheduling reconnection attempt 2 in 1000ms","timestamp":"2026-02-05T16:37:30.227Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Initializing HTTP transport to https://api.ref.tools/mcp","timestamp":"2026-02-05T16:37:31.228Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Node version: v18.19.1, Platform: linux","timestamp":"2026-02-05T16:37:31.228Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Environment: {\"NODE_OPTIONS\":\"not set\",\"UV_THREADPOOL_SIZE\":\"default\",\"HTTP_PROXY\":\"not set\",\"HTTPS_PROXY\":\"not set\",\"NO_PROXY\":\"not set\"}","timestamp":"2026-02-05T16:37:31.228Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Proxy options: default","timestamp":"2026-02-05T16:37:31.228Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"HTTP transport options: {\"url\":\"https://api.ref.tools/mcp\",\"headers\":{\"User-Agent\":\"claude-code/2.1.23\",\"x-ref-api-key\":\"ref-2f38da86f582dd560f43\"},\"hasAuthProvider\":true,\"timeoutMs\":60000}","timestamp":"2026-02-05T16:37:31.228Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"HTTP transport created successfully","timestamp":"2026-02-05T16:37:31.228Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Client created, setting up request handler","timestamp":"2026-02-05T16:37:31.229Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-05T16:37:31.229Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Testing basic HTTP connectivity to https://api.ref.tools/mcp","timestamp":"2026-02-05T16:37:31.229Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"Parsed URL: host=api.ref.tools, port=default, protocol=https:","timestamp":"2026-02-05T16:37:31.229Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-05T16:37:31.230Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}

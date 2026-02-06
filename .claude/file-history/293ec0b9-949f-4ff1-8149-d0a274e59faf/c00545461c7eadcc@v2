@@ -1,0 +1,61 @@
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.json
+**/secrets/
+**/.secrets/
+
+# API keys (never commit these)
+**/api-keys.json
+**/tokens.json
+
+# Cache and temporary files
+data/cache/
+**/*.cache
+**/*.tmp
+**/tmp/
+**/.temp/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node modules (if any projects use Node)
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+logs/
+
+# Build outputs
+dist/
+build/
+*.exe
+*.dll
+
+# Large data files (store in cloud instead)
+*.zip
+*.tar.gz
+*.sqlite
+*.db
+
+# Session-specific (regenerated each session)
+.claude/context/session-state.md

@@ -1,0 +1,11 @@
+{
+  "id": "5",
+  "subject": "Create session-recorder subagent",
+  "description": "Build agent that: logs all tasks/progress every 10 min, generates summaries, updates database, syncs with MCP memory. Prevents data loss between sessions.",
+  "activeForm": "Creating session-recorder agent",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": [
+    "1"
+  ]
+}

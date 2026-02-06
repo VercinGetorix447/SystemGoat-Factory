@@ -1,0 +1,25 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-01-31T05:11:29.101Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-01-31T05:11:31.147Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 2053ms","timestamp":"2026-01-31T05:11:31.147Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-01-31T05:11:31.147Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-01-31T05:12:23.172Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"error":"Unexpected token t in JSON at position 452","timestamp":"2026-01-31T05:12:23.249Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' failed after 0s: Unexpected token t in JSON at position 452","timestamp":"2026-01-31T05:12:23.250Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-01-31T05:12:30.804Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"error":"Unexpected token t in JSON at position 452","timestamp":"2026-01-31T05:12:30.838Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' failed after 0s: Unexpected token t in JSON at position 452","timestamp":"2026-01-31T05:12:30.838Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-01-31T05:13:00.463Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 43ms","timestamp":"2026-01-31T05:13:00.506Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-01-31T05:48:40.487Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 103ms","timestamp":"2026-01-31T05:48:40.590Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_relations","timestamp":"2026-01-31T05:49:40.679Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'create_relations' completed successfully in 82ms","timestamp":"2026-01-31T05:49:40.761Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T06:48:59.289Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in -2365ms","timestamp":"2026-01-31T06:48:56.924Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T07:50:24.197Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 146ms","timestamp":"2026-01-31T07:50:24.343Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T08:09:28.107Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 137ms","timestamp":"2026-01-31T08:09:28.244Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Sending SIGINT to MCP server process","timestamp":"2026-01-31T08:10:37.309Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"SIGINT failed, sending SIGTERM to MCP server process","timestamp":"2026-01-31T08:10:35.380Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}
+{"debug":"Cleanup timeout reached, stopping process monitoring","timestamp":"2026-01-31T08:10:35.523Z","sessionId":"d4a30476-f14c-4f88-9b56-dac31328109b","cwd":"/home/echo"}

@@ -1,0 +1,54 @@
+# Session Events - Token-Minimal Format
+# Rebuild from: GitHub diffs + Supabase state + this file
+
+- ts: 1738368000
+  date: 2026-01-31
+  t: session_end
+  summary: "v21: 8 Docker services, CRM arch done, 5 n8n workflows designed"
+  delta: "+backup-agent-v4, +research-agent-v2, +app-integration-agent-v2"
+  errors: ["docuseal:DATABASE_URL"]
+  tasks_done: 8
+  tasks_pending: 2
+- ts: 1769923792
+  t: backup
+  h: 6bf7b1
+  d: "daily v22"
+
+- ts: 1738391880
+  t: file
+  h: url001
+  d: "+url-checker.sh regex validator"
+
+- ts: 1738391940
+  h: uns001
+  t: file
+  d: "+unsplash.sh image library"
+- ts: 1769925214
+  t: backup
+  h: 1e8f28
+  d: "daily v23"
+
+- ts: 1738392600
+  t: task
+  h: key001
+  d: "+UNSPLASH, +MAPS to SystemGoat"
+
+- ts: 1738392700
+  t: decision
+  h: voice01
+  d: "OpenAI speech for testing before Retell"
+
+- ts: 1738454400
+  date: 2026-02-01
+  t: session_start
+  d: "Continued after context compaction"
+
+- ts: 1738454500
+  t: file
+  h: pplx01
+  d: "+perplexity-config.json, +13-perplexity-lead-enrichment.json"
+
+- ts: 1738454600
+  t: task
+  h: apify01
+  d: "Apify test run SUCCEEDED - W55CudgqQrf2m3nbB"

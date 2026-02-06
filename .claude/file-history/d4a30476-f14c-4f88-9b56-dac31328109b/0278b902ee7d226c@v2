@@ -1,0 +1,21 @@
+# Sensitive files
+*.env
+*credentials*
+*secret*
+*password*
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.bak
+*~
+
+# Timestamped auto-backups (keep repo clean, focus on session docs)
+settings_*.json
+workspace_*.db
+*.zip

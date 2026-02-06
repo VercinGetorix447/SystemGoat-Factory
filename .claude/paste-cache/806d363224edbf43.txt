@@ -1,0 +1,203 @@
+Self-Hosted n8n Stack on Hetzner CAX21
+
+Objective: Deploy a low-maintenance, self-hosted n8n Community Edition stack with Postgres, Redis, PocketBase, NocoDB, backups (Supabase + S3 + Google Drive), and web API access for DocuSeal & Brave, fully configured via Coolify. Minimize token usage in n8n workflows and enable autonomous operation with approval windows.
+
+Assumptions / Environment
+
+Ubuntu 22.04 ARM server on Hetzner CAX21
+
+Domain: <user-specified>
+
+n8n.<domain>
+
+nocodb.<domain>
+
+pocket.<domain>
+
+Docker & Docker Compose will be used for containers
+
+Coolify will handle routing, TLS, secrets, and environment variables
+
+User-provided Claude API password is available
+
+OAuth/Secret for Google Drive is in git repository
+Step 1 – System Preparation
+
+Install Docker, Docker Compose, and necessary dependencies.
+
+Install Coolify for container orchestration, routing, and secret management.
+
+Harden SSH & firewall for public exposure.
+Step 2 – Services Setup
+
+n8n Community Edition
+
+Create Docker container via Coolify
+
+Set environment variables:
+
+N8N_ENCRYPTION_KEY → randomly generated 32-byte hex
+
+N8N_BASIC_AUTH_USER → "user"
+
+N8N_BASIC_AUTH_PASSWORD → use provided password
+
+DATABASE_URL → Postgres connection
+
+REDIS_URL → optional, for queue mode
+
+Set domain: n8n.<domain>
+
+Enable TLS via Coolify
+
+REST API accessible at /rest/
+
+PostgreSQL
+
+Dedicated DB for n8n and NocoDB
+
+Persisted in Docker volumes
+
+Daily logical dumps for backups
+
+Redis
+
+Optional, for n8n stability / queue mode
+
+Persisted in Docker volume
+
+PocketBase
+
+Container with persistent volume /pb_data
+
+Daily backup to S3
+
+Optional partial backup to Google Drive
+
+NocoDB
+
+Containerized, separate DB/schema
+
+Exposed at nocodb.<domain>
+
+Backups included in S3/Google Drive partial backup
+Step 3 – Backups
+
+Supabase
+
+Weekly overwrite
+
+Daily backup of critical data only (n8n workflows, keys, etc.)
+
+Supabase REST API credentials stored in Coolify secrets
+
+Logical dumps only, no full DB overwrite except weekly
+
+S3 (Primary backup)
+
+Daily backup of:
+
+Postgres databases
+
+PocketBase volume
+
+n8n credentials/encryption keys
+
+Automatic retention & timestamped folders
+
+Google Drive (Partial backup)
+
+Daily backup of selected folders (user workflows, keys, config)
+
+OAuth & Secret from git repository
+
+Configured automatically by Claude
+Step 4 – Web Access / APIs
+
+Claude Code has access to DocuSeal and Brave APIs
+
+Generate API credentials placeholders if none exist
+
+Configure n8n to use API efficiently to minimize token usage
+Step 5 – Secrets & Coolify
+
+Store all environment variables & API credentials in Coolify secrets
+
+Automatically inject into respective containers
+
+Ensure encryption keys and passwords are never exposed in logs
+Step 6 – Cron Jobs / Autonomous Tasks
+
+Backups:
+
+S3 → daily
+
+Supabase → daily selective, weekly full
+
+PocketBase → daily
+
+Google Drive → daily partial
+
+Containers monitored via Coolify health checks
+
+Auto-restart on failure
+Step 7 – Output / First-Boot Checklist
+
+Text diagram of service architecture
+
+URLs to n8n, NocoDB, PocketBase
+
+Backup locations & retention policy
+
+Restore instructions (Postgres, PocketBase, Supabase)
+
+Notes on adding Claude workflows
+
+“What not to touch” section for safe operation
+Step 8 – Safety / Approval Windows
+
+Prompt user for approval at:
+
+Installing Docker/Coolify
+
+Creating containers & volumes
+
+Setting up backups
+
+Injecting secrets (passwords, API keys)
+
+Generate a summary report after each step
+Step 9 – Minimizing Token Usage in n8n
+
+Use REST API efficiently: bulk workflow operations rather than per-node calls
+
+Avoid unnecessary polling; leverage webhooks where possible
+
+Only trigger Claude API when essential
+Step 10 – Notes / Best Practices
+
+Community Edition does not require a license key
+
+n8n encryption key is critical; keep backup in S3/Google Drive
+
+Supabase backup is a secondary mirror; S3 is authoritative
+
+PocketBase backup is minimal but ensures workflow data safety
+
+Google Drive partial backup is supplemental
+
+This prompt is ready to paste into Claude Code, and with your approval windows, Claude can:
+
+Install & configure the server
+
+Deploy all services
+
+Generate & manage secrets
+
+Configure backups (Supabase, S3, Google Drive)
+
+Set up web APIs (Brave, DocuSeal)
+
+Produce a restore checklist
+
+Ensure low token usage in n8n workflows

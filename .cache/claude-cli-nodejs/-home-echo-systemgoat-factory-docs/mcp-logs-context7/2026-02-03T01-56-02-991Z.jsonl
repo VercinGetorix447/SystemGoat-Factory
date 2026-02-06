@@ -1,0 +1,10 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-03T01:56:12.886Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"error":"Server stderr: WARNING: Using default CLIENT_IP_ENCRYPTION_KEY.\nContext7 Documentation MCP Server v2.1.1 running on stdio\n","timestamp":"2026-02-03T01:56:14.339Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Successfully connected to stdio server in 1461ms","timestamp":"2026-02-03T01:56:14.339Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"Context7\",\"version\":\"2.1.1\"}}","timestamp":"2026-02-03T01:56:14.340Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Calling MCP tool: resolve-library-id","timestamp":"2026-02-03T01:56:17.538Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Tool 'resolve-library-id' completed successfully in 1s","timestamp":"2026-02-03T01:56:18.671Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Calling MCP tool: query-docs","timestamp":"2026-02-03T01:56:25.802Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Tool 'query-docs' completed successfully in 710ms","timestamp":"2026-02-03T01:56:26.512Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Calling MCP tool: query-docs","timestamp":"2026-02-03T01:56:41.842Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}
+{"debug":"Tool 'query-docs' completed successfully in 1s","timestamp":"2026-02-03T01:56:43.002Z","sessionId":"fa9a26bd-662e-4864-bb5a-2885ba39bd09","cwd":"/home/echo/systemgoat-factory/docs"}

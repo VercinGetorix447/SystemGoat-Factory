@@ -1,0 +1,13 @@
+{
+  "id": "2",
+  "subject": "Set up NocoDB for visual kanban/CRM",
+  "description": "Install NocoDB (self-hosted, free). Connect to workspace.db or create dedicated database. Provides visual kanban boards and CRM interface.",
+  "activeForm": "Setting up NocoDB",
+  "status": "completed",
+  "blocks": [
+    "6"
+  ],
+  "blockedBy": [
+    "1"
+  ]
+}

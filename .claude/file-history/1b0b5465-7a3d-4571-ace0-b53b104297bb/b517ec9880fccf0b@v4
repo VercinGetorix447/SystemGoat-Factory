@@ -1,0 +1,48 @@
+{
+  "autoUpdaterEnabled": false,
+  "mcpServers": {
+    "google-calendar": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@cocal/google-calendar-mcp"
+      ],
+      "env": {
+        "GOOGLE_CLIENT_CREDENTIALS_PATH": "/mnt/c/Users/Password/OneDrive/Documents/Business/Claude Code Projects/Google OAuth Client - cal + email to claude/client_secret_29733447782-t7r5h9j0h3qbn2p0jjrqvobvu67te232.apps.googleusercontent.com.json"
+      }
+    },
+    "gmail": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mcp-z/mcp-gmail"
+      ],
+      "env": {
+        "GOOGLE_CLIENT_CREDENTIALS_PATH": "/mnt/c/Users/Password/OneDrive/Documents/Business/Claude Code Projects/Google OAuth Client - cal + email to claude/client_secret_29733447782-t7r5h9j0h3qbn2p0jjrqvobvu67te232.apps.googleusercontent.com.json"
+      }
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-sqlite-npx",
+        "/mnt/c/Users/password/Documents/ClaudeCodeProjects/data/workspace.db"
+      ]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/mnt/c/Users/password/Documents/ClaudeCodeProjects"
+      ]
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    }
+  }
+}

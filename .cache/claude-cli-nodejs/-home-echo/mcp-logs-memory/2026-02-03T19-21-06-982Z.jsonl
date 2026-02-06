@@ -1,0 +1,12 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-03T19:21:13.065Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-03T19:21:16.188Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 3129ms","timestamp":"2026-02-03T19:21:16.188Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-03T19:21:16.188Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-03T19:25:54.989Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 31ms","timestamp":"2026-02-03T19:25:55.019Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T19:35:52.345Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 87ms","timestamp":"2026-02-03T19:35:52.432Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T19:41:09.646Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 52ms","timestamp":"2026-02-03T19:41:09.698Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T19:41:44.182Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 69ms","timestamp":"2026-02-03T19:41:44.251Z","sessionId":"5b1e9ac4-21c3-4295-b8cf-f528b569ffa7","cwd":"/home/echo"}

@@ -1,0 +1,9 @@
+{
+  "id": "18",
+  "subject": "Astro template + Coolify deploy pipeline",
+  "description": "Create base Astro template for trade businesses. Connect to Coolify for auto-deploy. Wildcard subdomain routing for client sites (client.buildrightpros.com).",
+  "activeForm": "Building Astro deploy pipeline",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

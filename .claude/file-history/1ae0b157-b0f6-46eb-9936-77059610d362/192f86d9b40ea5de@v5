@@ -1,0 +1,75 @@
+# CLAUDE SESSION STARTUP - PASTE THIS AT START OF EVERY SESSION
+
+## STEP 1: IMMEDIATELY DO ONE OF THESE
+**Option A:** Type `/resume` or press `Ctrl+R` to load previous session
+**Option B:** If session lost, tell Claude: "Read /mnt/c/Users/password/Documents/.claude/STARTUP.md"
+
+---
+
+## STEP 2: Claude reads these files and reports:
+
+1. `/mnt/c/Users/password/Documents/.claude/databases/memory.jsonl` - persistent memory
+2. `/mnt/c/Users/password/Documents/.claude/Backups/memory-backup-2026-02-01.md` - today's backup (update date as needed)
+3. `/mnt/c/Users/password/Documents/.claude/Backups/task-import-2026-01-31.md` - master task list
+4. `~/.claude/projects/-home-echo/sessions-index.json` - list all sessions
+5. Read the MOST RECENT session .jsonl file (largest/newest) from `~/.claude/projects/-home-echo/`
+
+After reading, provide:
+- What we were working on
+- Pending tasks (use RULE format below)
+- Any blockers or issues
+- Docker container status
+- Next steps
+
+---
+
+## RULE: Task Prioritization Format
+
+ALL tasks must include these columns:
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| ID | Yes | Task number |
+| Task | Yes | Clear description |
+| Time | Yes | Estimated time to complete |
+| Tokens | Yes | Estimated Claude tokens needed |
+| Success % | Yes | Probability of successful completion |
+| ROI | Yes | Return on investment 1-100 |
+| Ease | Yes | Ease of completion 1-10 (10 = easiest) |
+| Status | Yes | Not started / In Progress % / Done / Blocked |
+| Blocked By | Optional | Dependency task IDs |
+
+**Daily Priority Table Format:**
+```
+| # | Task | Time | Tokens | Success% | ROI | Ease | Status | Blocked By |
+```
+
+**Scoring Rule:** Priority Score = (ROI × 0.3) + (Ease × 0.2) + (Success% × 0.3) + (1/Time × 0.1) + (1/Tokens × 0.1)
+
+---
+
+## CLOUD BACKUP STATUS (Check these if local lost)
+
+| Service | Status | URL/Action |
+|---------|--------|------------|
+| GitHub | ❌ NEEDS LOGIN | Run: `gh auth login` then check `github.com/VercinGetorix447/SystemGoat-Factory` |
+| Supabase | ❌ NOT SET UP | Need to configure |
+| Google Drive | ⚠️ PARTIAL | OAuth in `~/.claude/mcp/gdrive/` - sync not automated |
+| PocketBase | ✅ LOCAL | `http://localhost:8090` |
+| NocoDB | ✅ LOCAL | `http://localhost:8080` |
+
+**Local Backup Paths:**
+- Windows: `/mnt/c/Users/password/Documents/.claude/Backups/`
+- Linux: `~/.claude/projects/-home-echo/`
+- Memory: `/mnt/c/Users/password/Documents/.claude/databases/memory.jsonl`
+
+---
+
+## PRIORITY TASK: Set up cloud backup!
+1. `gh auth login` - restore GitHub
+2. Push backups to GitHub daily
+3. Configure Supabase or S3 for redundancy
+
+---
+
+DO NOT ask questions. Just read and report.

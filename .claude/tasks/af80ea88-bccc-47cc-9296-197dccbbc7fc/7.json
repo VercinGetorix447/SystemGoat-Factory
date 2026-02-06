@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Configure payment system (Lago/Stripe)",
+  "description": "Set up Lago (open-source billing) or Stripe for payment processing. Integrate with invoice aging workflow.",
+  "activeForm": "Configuring payment system",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

@@ -1,0 +1,63 @@
+#!/bin/bash
+# Auto-update daily .md report every 5 minutes
+# Captures session activity and maintains running log
+
+REPORTS_DIR="/mnt/c/Users/password/Documents/.claude/reports"
+DATE=$(date +%Y-%m-%d)
+TIME=$(date +%H:%M:%S)
+REPORT_FILE="$REPORTS_DIR/$DATE.md"
+
+# Create reports directory if needed
+mkdir -p "$REPORTS_DIR"
+
+# Initialize daily report if it doesn't exist
+if [ ! -f "$REPORT_FILE" ]; then
+    cat > "$REPORT_FILE" << 'HEADER'
+# Daily Report - DATE_PLACEHOLDER
+
+## Session Activity Log
+| Time | Event |
+|------|-------|
+HEADER
+    sed -i "s/DATE_PLACEHOLDER/$DATE/" "$REPORT_FILE"
+fi
+
+# Gather recent activity
+RECENT_FILES=$(find /mnt/c/Users/password/Documents/.claude -name "*.jsonl" -mmin -5 2>/dev/null | wc -l)
+MEMORY_UPDATED=$(find /mnt/c/Users/password/Documents/.claude/databases -name "memory.jsonl" -mmin -5 2>/dev/null | wc -l)
+
+# Build activity entry
+ACTIVITY=""
+if [ "$RECENT_FILES" -gt 0 ]; then
+    ACTIVITY="Active session ($RECENT_FILES files updated)"
+elif [ "$MEMORY_UPDATED" -gt 0 ]; then
+    ACTIVITY="Memory updated"
+else
+    ACTIVITY="Idle check"
+fi
+
+# Append to activity log (only if active)
+if [ "$RECENT_FILES" -gt 0 ] || [ "$MEMORY_UPDATED" -gt 0 ]; then
+    echo "| $TIME | $ACTIVITY |" >> "$REPORT_FILE"
+fi
+
+# Update summary section at end of day (after 6 PM)
+HOUR=$(date +%H)
+if [ "$HOUR" -ge 18 ]; then
+    # Check if summary already exists for today
+    if ! grep -q "## End of Day Summary" "$REPORT_FILE" 2>/dev/null; then
+        cat >> "$REPORT_FILE" << 'SUMMARY'
+
+## End of Day Summary
+_Auto-generated at end of day_
+
+### Files Modified Today
+SUMMARY
+        # List recently modified files
+        find /mnt/c/Users/password/Documents/.claude -type f -name "*.json" -o -name "*.jsonl" -o -name "*.md" 2>/dev/null | \
+            xargs -I {} stat --format='%Y %n' {} 2>/dev/null | \
+            awk -v today="$DATE" '$0 ~ today {print "- " $2}' | head -20 >> "$REPORT_FILE"
+    fi
+fi
+
+echo "[$TIME] Daily report updated: $REPORT_FILE"

@@ -1,0 +1,210 @@
+# Session: n8n Hetzner Stack Deployment
+**Date:** 2026-01-30 / 2026-01-31
+**Host:** Hetzner CAX21 (ARM Ubuntu 24.04)
+**Status:** Step 2 - Deploying Services (n8n deploying)
+
+---
+
+## Objective
+Deploy self-hosted n8n Community Edition stack with full client assessment pipeline for sales automation.
+
+---
+
+## COMPLETED STEPS
+
+### Step 1: System Preparation ✅
+- [x] Docker 27.0.3 installed
+- [x] Coolify 4.0.0-beta.462 installed
+- [x] Firewall configured (22, 80, 443, 8000)
+- [x] SSH key access configured
+- [x] Password changed from default
+
+### Step 2: Services Setup (IN PROGRESS)
+- [x] Coolify running at http://5.75.146.160:8000
+- [x] DNS configured: systemgoat.com → 5.75.146.160
+- [x] Wildcard DNS: *.systemgoat.com → 5.75.146.160
+- [x] Project "systemgoat" created in Coolify
+- [x] n8n docker compose configured
+- [ ] n8n deploying now...
+- [ ] PocketBase (pending)
+- [ ] NocoDB (pending)
+
+---
+
+## Server Info
+- **Hostname:** ubuntu-8gb-nbg1-1
+- **OS:** Ubuntu 24.04.3 LTS (ARM64)
+- **RAM:** 8GB
+- **Disk:** 75GB
+- **IPv4:** 5.75.146.160
+- **IPv6:** 2a01:4f8:1c1a:6efe::1
+
+---
+
+## Running Containers
+| Container | Status |
+|-----------|--------|
+| coolify | Healthy |
+| coolify-proxy (Traefik) | Healthy |
+| coolify-db (Postgres) | Healthy |
+| coolify-redis | Healthy |
+| coolify-realtime | Healthy |
+| coolify-sentinel | Healthy |
+
+---
+
+## Credentials
+
+### Hetzner Server
+- IP: 5.75.146.160
+- SSH User: root
+- SSH Password: SysG0at#2026!Htzn
+- SSH Key: Configured from WSL
+
+### Hetzner Account
+- Email: troy.allison@gmail.com
+- Password: Alley447$Alley447$
+- API Token: pNvFd5HhldICj8ZFjSphtCnpS3fuvqadsWUvF4X57aWNy1cRaojKWCDuYHm3oJvr
+
+### Hostinger Account
+- Email: troy.allison@gmail.com
+- Password: TAalley447.
+
+### n8n (being deployed)
+- URL: https://n8n.systemgoat.com
+- User: admin
+- Password: Alley447n8n
+
+### Coolify
+- URL: http://5.75.146.160:8000 (domain routing WIP)
+- User: (user's account)
+
+---
+
+## Domain Configuration
+
+### DNS Records (Hostinger → Hetzner)
+| Type | Name | Value |
+|------|------|-------|
+| A | @ | 5.75.146.160 |
+| A | * | 5.75.146.160 |
+
+### Planned Subdomains
+| Subdomain | Service |
+|-----------|---------|
+| n8n.systemgoat.com | n8n workflows |
+| pb.systemgoat.com | PocketBase |
+| noco.systemgoat.com | NocoDB |
+| coolify.systemgoat.com | Coolify (pending) |
+| api.systemgoat.com | Webhooks/API |
+
+---
+
+## Architecture
+
+### Services Stack
+```
+┌─────────────────────────────────────────────────────────────┐
+│                   Hetzner CAX21 (5.75.146.160)              │
+├─────────────────────────────────────────────────────────────┤
+│  Coolify + Traefik (reverse proxy, SSL, management)        │
+│  ├── n8n.systemgoat.com → n8n (deploying)                  │
+│  ├── pb.systemgoat.com → PocketBase (pending)              │
+│  ├── noco.systemgoat.com → NocoDB (pending)                │
+│  └── api.systemgoat.com → webhooks                         │
+├─────────────────────────────────────────────────────────────┤
+│  PostgreSQL (Coolify's + shared)                           │
+│  Redis (Coolify's)                                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Client Assessment Pipeline
+```
+1. Client → assess.buildrightpros.com (Astro + Supabase real-time)
+   - Questions with 1-10 sliders
+   - Live category calculations (8 categories)
+
+2. Proposal Summary
+   - Pain points from discussion
+   - Assessment results mapped to tech categories
+   - 3 pricing tiers (Basic/Pro/Elite)
+   - Consultant recommendation
+
+3. DocuSeal Contract
+   - JSON auto-populates fields
+   - E-signature capture
+
+4. Website Demo
+   - Templates with color/font/image pickers
+   - Live preview
+   - Publish in 1-2 minutes
+```
+
+---
+
+## Pending API Keys (to be provided)
+- [ ] Brave Search API
+- [ ] DocuSeal API + endpoint
+- [ ] Unsplash Access Key
+- [ ] Claude API key
+- [ ] S3 backup credentials
+- [ ] Supabase project credentials
+
+---
+
+## Session Timeline
+
+### 2026-01-30 ~21:00 PST
+- Session started
+- Memory loaded and fixed (corrupted JSONL)
+- Git repo created in Backups folder
+- Architecture discussed and confirmed
+
+### 2026-01-31 ~06:45 UTC
+- Connected to Hetzner server
+- Changed root password
+- Installed Docker & Coolify
+- Configured firewall
+
+### 2026-01-31 ~07:15 UTC
+- Configured DNS at Hostinger
+- Deleted old website blocking DNS
+- DNS propagated successfully
+
+### 2026-01-31 ~07:30 UTC
+- Configured Coolify instance domain
+- Refreshed Traefik proxy
+- Created project "systemgoat"
+- Started n8n deployment
+
+---
+
+## Issues Encountered & Resolved
+1. **Memory file corrupted** - Fixed by removing test-write garbage
+2. **SSH password expired** - Changed via expect script
+3. **sshpass not installed** - Installed via apt
+4. **DNS showing wrong IP** - Hostinger website builder was active, deleted it
+5. **Hostinger rejecting IPv4** - Had to delete old A record first
+6. **Coolify domain 503** - Refreshed Traefik proxy
+
+---
+
+## Next Steps
+1. Wait for n8n deployment to complete
+2. Verify n8n accessible at https://n8n.systemgoat.com
+3. Deploy PocketBase
+4. Deploy NocoDB
+5. Configure backups
+6. Set up API integrations
+
+---
+
+## Quick Resume Command
+For new sessions, paste:
+```
+Load memory: /mnt/c/Users/password/Documents/.claude/databases/memory.jsonl
+```
+
+---
+
+*Last updated: 2026-01-31 07:40 UTC*

@@ -1,0 +1,9 @@
+{
+  "id": "8",
+  "subject": "Add Ntfy to Docker stack",
+  "description": "Deploy Ntfy self-hosted notification server on port 8095. Replace Slack for all system alerts.",
+  "activeForm": "Adding Ntfy to Docker",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

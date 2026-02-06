@@ -1,0 +1,14 @@
+2026-01-31T00:56:17.086Z [DEBUG] Failed to check enabledPlatforms: TypeError: LK is not a function
+2026-01-31T00:56:17.148Z [DEBUG] Watching for changes in setting files /home/echo/.claude, /home/echo/.claude, /home/echo/.claude...
+2026-01-31T00:56:17.160Z [DEBUG] [init] configureGlobalMTLS starting
+2026-01-31T00:56:17.160Z [DEBUG] [init] configureGlobalMTLS complete
+2026-01-31T00:56:17.160Z [DEBUG] [init] configureGlobalAgents starting
+2026-01-31T00:56:17.160Z [DEBUG] [init] configureGlobalAgents complete
+2026-01-31T00:56:17.177Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-01-31T00:56:17.177Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-01-31T00:56:17.178Z [DEBUG] [claudeai-mcp] Gate returned: true
+2026-01-31T00:56:17.178Z [DEBUG] [claudeai-mcp] Fetching from https://api.anthropic.com/v1/mcp_servers?limit=1000
+2026-01-31T00:56:17.445Z [DEBUG] [claudeai-mcp] Fetched 0 servers
+2026-01-31T00:56:18.794Z [DEBUG] Getting matching hook commands for SessionEnd with query: other
+2026-01-31T00:56:18.794Z [DEBUG] Found 0 hook matchers in settings
+2026-01-31T00:56:18.794Z [DEBUG] Matched 0 unique hooks for query "other" (0 before deduplication)

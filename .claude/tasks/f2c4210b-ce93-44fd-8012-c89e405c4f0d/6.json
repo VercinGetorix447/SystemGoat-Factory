@@ -1,0 +1,13 @@
+{
+  "id": "6",
+  "subject": "Build n8n automation workflows",
+  "description": "Create expert automations: backup sync, notifications, CRM updates, report generation, cross-platform data flow. The fun part!",
+  "activeForm": "Building n8n workflows",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [
+    "2",
+    "3",
+    "4"
+  ]
+}

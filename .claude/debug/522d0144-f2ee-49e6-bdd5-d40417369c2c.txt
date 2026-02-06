@@ -1,0 +1,18 @@
+2026-01-29T23:33:08.098Z [DEBUG] Failed to check enabledPlatforms: TypeError: LK is not a function
+2026-01-29T23:33:08.157Z [DEBUG] Watching for changes in setting files /home/echo/.claude...
+2026-01-29T23:33:08.166Z [DEBUG] [init] configureGlobalMTLS starting
+2026-01-29T23:33:08.166Z [DEBUG] [init] configureGlobalMTLS complete
+2026-01-29T23:33:08.166Z [DEBUG] [init] configureGlobalAgents starting
+2026-01-29T23:33:08.166Z [DEBUG] [init] configureGlobalAgents complete
+2026-01-29T23:33:08.178Z [DEBUG] [render] initLayout starting
+2026-01-29T23:33:08.178Z [DEBUG] Layout engine: yoga
+2026-01-29T23:33:08.276Z [DEBUG] [render] initLayout complete
+2026-01-29T23:33:08.280Z [DEBUG] [render] first ink render: 1600ms since process start
+2026-01-29T23:33:08.286Z [DEBUG] [keybindings] KeybindingSetup initialized with 99 bindings, 0 warnings
+2026-01-29T23:33:08.353Z [DEBUG] High write ratio: blit=0, write=1148 (100.0% writes), screen=30x80
+2026-01-29T23:33:09.183Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-01-29T23:33:09.184Z [DEBUG] Total plugin commands loaded: 0
+2026-01-29T23:33:09.185Z [DEBUG] Total plugin agents loaded: 0
+2026-01-29T23:33:09.185Z [DEBUG] Registered 0 hooks from 0 plugins
+2026-01-29T23:33:09.185Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2026-01-29T23:33:09.189Z [DEBUG] [keybindings] Watching for changes to /home/echo/.claude/keybindings.json

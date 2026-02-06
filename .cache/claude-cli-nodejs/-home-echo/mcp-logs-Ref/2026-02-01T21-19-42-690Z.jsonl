@@ -1,0 +1,17 @@
+{"debug":"Initializing HTTP transport to https://api.ref.tools/mcp","timestamp":"2026-02-01T21:19:47.547Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Node version: v18.19.1, Platform: linux","timestamp":"2026-02-01T21:19:47.547Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Environment: {\"NODE_OPTIONS\":\"not set\",\"UV_THREADPOOL_SIZE\":\"default\",\"HTTP_PROXY\":\"not set\",\"HTTPS_PROXY\":\"not set\",\"NO_PROXY\":\"not set\"}","timestamp":"2026-02-01T21:19:47.547Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Proxy options: default","timestamp":"2026-02-01T21:19:47.582Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"HTTP transport options: {\"url\":\"https://api.ref.tools/mcp\",\"headers\":{\"User-Agent\":\"claude-code/2.1.23\",\"x-ref-api-key\":\"ref-2f38da86f582dd560f43\"},\"hasAuthProvider\":true,\"timeoutMs\":60000}","timestamp":"2026-02-01T21:19:47.582Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"HTTP transport created successfully","timestamp":"2026-02-01T21:19:47.583Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Client created, setting up request handler","timestamp":"2026-02-01T21:19:47.583Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-01T21:19:47.583Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Testing basic HTTP connectivity to https://api.ref.tools/mcp","timestamp":"2026-02-01T21:19:47.583Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Parsed URL: host=api.ref.tools, port=default, protocol=https:","timestamp":"2026-02-01T21:19:47.583Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-01T21:19:47.592Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-01T21:19:53.189Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-01T21:19:53.614Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Successfully connected to http server in 6069ms","timestamp":"2026-02-01T21:19:53.616Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":true,\"hasResources\":false,\"serverVersion\":{\"name\":\"Ref\",\"title\":\"Ref\",\"icons\":[{\"src\":\"https://ref.tools/images/logo.png\"}],\"version\":\"3.0.0\",\"websiteUrl\":\"https://ref.tools\"}}","timestamp":"2026-02-01T21:19:53.617Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-01T21:19:53.618Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"No token data found","timestamp":"2026-02-01T21:19:53.618Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}

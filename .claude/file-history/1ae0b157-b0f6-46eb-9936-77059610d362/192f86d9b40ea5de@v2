@@ -1,0 +1,17 @@
+# CLAUDE SESSION STARTUP - PASTE THIS AT START OF EVERY SESSION
+
+Read these files NOW and give me a status update:
+
+1. `/mnt/c/Users/password/Documents/.claude/databases/memory.jsonl` - persistent memory
+2. `/mnt/c/Users/password/Documents/.claude/Backups/memory-backup-2026-02-01.md` - today's backup (update date as needed)
+3. `~/.claude/projects/-home-echo/sessions-index.json` - list all sessions
+4. Read the MOST RECENT session .jsonl file (largest/newest) from `~/.claude/projects/-home-echo/`
+
+After reading, provide:
+- What we were working on
+- Pending tasks
+- Any blockers or issues
+- Docker container status
+- Next steps
+
+DO NOT ask questions. Just read and report.

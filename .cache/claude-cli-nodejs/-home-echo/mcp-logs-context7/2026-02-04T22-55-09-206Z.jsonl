@@ -1,0 +1,7 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-04T22:55:32.266Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"error":"Server stderr: WARNING: Using default CLIENT_IP_ENCRYPTION_KEY.\nContext7 Documentation MCP Server v2.1.1 running on stdio\n","timestamp":"2026-02-04T22:55:26.759Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in -5506ms","timestamp":"2026-02-04T22:55:26.759Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"Context7\",\"version\":\"2.1.1\"}}","timestamp":"2026-02-04T22:55:26.759Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Sending SIGINT to MCP server process","timestamp":"2026-02-05T16:37:20.061Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"SIGINT failed, sending SIGTERM to MCP server process","timestamp":"2026-02-05T16:37:20.426Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"MCP server process exited cleanly","timestamp":"2026-02-05T16:37:23.062Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}

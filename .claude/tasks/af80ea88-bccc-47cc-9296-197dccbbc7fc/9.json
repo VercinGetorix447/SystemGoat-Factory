@@ -1,0 +1,9 @@
+{
+  "id": "9",
+  "subject": "Import tasks from Google Sheet",
+  "description": "User's previous task list at https://docs.google.com/spreadsheets/d/1igIldisVSp-lpE3do-MGXL2pndJiEBoXkMism4K9Pxs - needs to be imported to current system.",
+  "activeForm": "Importing Google Sheet tasks",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

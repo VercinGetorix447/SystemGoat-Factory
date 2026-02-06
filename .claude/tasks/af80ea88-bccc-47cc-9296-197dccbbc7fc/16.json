@@ -1,0 +1,9 @@
+{
+  "id": "16",
+  "subject": "Enable Google Cloud STT API",
+  "description": "Enable Speech-to-Text API in Google Cloud project (systemgoat/job-search-453921). Test with phone audio sample. Cost: ~$0.006/min.",
+  "activeForm": "Enabling Google Cloud STT",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

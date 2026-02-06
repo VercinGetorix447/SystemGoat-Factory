@@ -1,0 +1,139 @@
+{
+  "name": "Apify Google Maps to NocoDB Prospects",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "apify-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "c5e8b5f0-8f3e-4a9f-9c5d-1e5f5c5e5c5e",
+      "name": "Webhook - Apify Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "apify-gmaps-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "condition1",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "SUCCEEDED",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "Check Run Status",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8080/api/v2/tables/mxusshyfrupjwtr/records",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xc-token",
+              "value": "QEkBy3A48Fzn6CW4FCaQHfVGICmC4_kaYEPtMR7k"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"CoName\": $json.title || 'N/A', \"Phone\": $json.phone || '', \"Email\": $json.email || '', \"Website\": $json.website || '', \"Address\": $json.address || '', \"Source\": 'Apify', \"ResponseStatus\": 'New', \"DateAdded\": $now.toISO() } }}",
+        "options": {}
+      },
+      "id": "d4e5f6a7-b8c9-0123-def1-234567890123",
+      "name": "Insert into NocoDB",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [690, 300],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"success\", \"inserted\": $json.Id } }}",
+        "options": {}
+      },
+      "id": "e5f6a7b8-c9d0-1234-ef12-345678901234",
+      "name": "Respond Success",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [910, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://ntfy:80/n8n-errors",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Title", "value": "Apify → NocoDB Error"},
+            {"name": "Priority", "value": "high"},
+            {"name": "Tags", "value": "warning,database"}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "string",
+        "body": "Failed to insert prospect: {{ $json.error }}",
+        "options": {}
+      },
+      "id": "a7b8c9d0-e1f2-3456-1234-567890123456",
+      "name": "Ntfy Error Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [910, 500]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"status\": \"skipped\", \"reason\": \"Run not succeeded\" } }}",
+        "options": {}
+      },
+      "id": "c9d0e1f2-a3b4-5678-3456-789012345678",
+      "name": "Respond Skipped",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [470, 500]
+    }
+  ],
+  "connections": {
+    "Webhook - Apify Trigger": {
+      "main": [[{"node": "Check Run Status", "type": "main", "index": 0}]]
+    },
+    "Check Run Status": {
+      "main": [
+        [{"node": "Insert into NocoDB", "type": "main", "index": 0}],
+        [{"node": "Respond Skipped", "type": "main", "index": 0}]
+      ]
+    },
+    "Insert into NocoDB": {
+      "main": [
+        [{"node": "Respond Success", "type": "main", "index": 0}],
+        [{"node": "Ntfy Error Alert", "type": "main", "index": 0}]
+      ]
+    }
+  },
+  "settings": {"executionOrder": "v1"},
+  "tags": ["apify", "nocodb", "prospects", "lead-gen"]
+}

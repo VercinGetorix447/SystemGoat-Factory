@@ -1,0 +1,185 @@
+# Agent Router Configuration
+
+> Defines routing rules for automated agent selection based on keywords, codes, and context.
+
+## Quick Reference
+
+| Trigger | Agent | Use When |
+|---------|-------|----------|
+| `/research`, `/r`, `R:` | research-agent | Need web search, best practices, comparisons |
+| `/integrate`, `/app`, `APP:` | app-integration-agent | Connecting apps, webhooks, APIs, features |
+| `/backup`, `/b` | session-backup-agent | Manual backup trigger |
+| `/orchestrate` | business-orchestrator-agent | Business workflow decisions |
+
+---
+
+## Keyword Detection Rules
+
+### Research Agent Activation
+```yaml
+keywords:
+  - research, best practice, industry standard
+  - compare, vs, versus, alternative, better
+  - evaluate, analyze, assess, review
+  - find out, look up, search for, what is
+  - should we use, is it good, pros and cons
+  - how do others, what do experts, recommended
+
+examples:
+  - "What's the best practice for task management?"
+  - "Compare Planka vs Trello"
+  - "Should we use Metabase or Grafana?"
+  - "Research notification systems"
+```
+
+### App Integration Agent Activation
+```yaml
+keywords:
+  - integrate, connect, hook up, link
+  - webhook, API, endpoint, REST
+  - sync, automate, workflow, trigger
+  - dashboard, report, metrics, chart
+  - kanban, board, cards, tasks
+  - notification, alert, remind, notify
+  - configure, setup, deploy, install
+
+app_names:
+  - planka, nocodb, n8n, pocketbase
+  - metabase, docuseal, lago, ntfy
+  - retell, bland, vapi, twilio
+  - supabase, postgres, redis
+
+examples:
+  - "Connect Planka to NocoDB"
+  - "Set up webhook for task updates"
+  - "Build a dashboard for sales metrics"
+  - "Configure Ntfy notifications from n8n"
+```
+
+### Session Backup Agent Activation
+```yaml
+keywords:
+  - backup, save, snapshot, archive
+  - end of day, EOD, wrap up
+  - export, sync to github
+
+codes:
+  - /backup, /b, /save
+
+examples:
+  - "Do a backup now"
+  - "Save our progress"
+  - "EOD backup please"
+```
+
+### Business Orchestrator Activation
+```yaml
+keywords:
+  - outreach, lead, prospect, sales
+  - funnel, pipeline, conversion
+  - cost optimize, budget, spend
+  - voice AI, call, SMS, text
+  - hire, invoice, contract, payment
+
+codes:
+  - /orchestrate, /business
+
+examples:
+  - "Optimize our outreach sequence"
+  - "Which voice AI tool for cold calls?"
+  - "Analyze the sales pipeline"
+```
+
+---
+
+## Routing Logic
+
+```python
+def route_to_agent(message):
+    message_lower = message.lower()
+
+    # Check for explicit codes first
+    if message.startswith('/research') or message.startswith('/r ') or message.startswith('R:'):
+        return 'research-agent'
+
+    if message.startswith('/integrate') or message.startswith('/app') or message.startswith('APP:'):
+        return 'app-integration-agent'
+
+    if message.startswith('/backup') or message.startswith('/b'):
+        return 'session-backup-agent'
+
+    if message.startswith('/orchestrate'):
+        return 'business-orchestrator-agent'
+
+    # Check for research keywords
+    research_keywords = ['research', 'best practice', 'compare', 'vs', 'evaluate',
+                         'should we', 'is it better', 'alternative', 'pros and cons']
+    if any(kw in message_lower for kw in research_keywords):
+        return 'research-agent'
+
+    # Check for app/integration keywords
+    app_keywords = ['integrate', 'connect', 'webhook', 'api', 'sync', 'automate',
+                    'dashboard', 'kanban', 'notification', 'configure']
+    app_names = ['planka', 'nocodb', 'n8n', 'pocketbase', 'metabase', 'ntfy',
+                 'docuseal', 'lago', 'retell', 'bland', 'vapi', 'twilio']
+
+    if any(kw in message_lower for kw in app_keywords):
+        return 'app-integration-agent'
+    if any(app in message_lower for app in app_names):
+        return 'app-integration-agent'
+
+    # Check for business keywords
+    business_keywords = ['outreach', 'lead', 'sales', 'funnel', 'pipeline',
+                         'voice ai', 'cost optim', 'invoice', 'contract']
+    if any(kw in message_lower for kw in business_keywords):
+        return 'business-orchestrator-agent'
+
+    # Default: handle directly or ask for clarification
+    return None
+```
+
+---
+
+## Multi-Agent Workflows
+
+### Research → Integration Flow
+```
+User: "What's the best way to sync Planka and NocoDB?"
+
+1. research-agent activates (keyword: "best way")
+   → Searches for integration patterns
+   → Returns best practices with sources
+
+2. app-integration-agent activates (apps mentioned)
+   → Implements the recommended approach
+   → Builds n8n workflow
+   → Tests connection
+```
+
+### Research → Orchestrator Flow
+```
+User: "Research which voice AI is cheapest for cold calls"
+
+1. research-agent activates (keyword: "research")
+   → Compares Retell, Bland, Vapi pricing
+   → Returns cost analysis
+
+2. business-orchestrator-agent activates (keyword: "voice AI", "cold calls")
+   → Updates cost matrix
+   → Recommends tool based on volume
+```
+
+---
+
+## Agent Capabilities Summary
+
+| Agent | Web Search | File Edit | Docker | API Calls | Memory |
+|-------|------------|-----------|--------|-----------|--------|
+| research-agent | ✅ | ❌ | ❌ | ✅ Read | ✅ |
+| app-integration-agent | ✅ Docs | ✅ | ✅ | ✅ Full | ✅ |
+| session-backup-agent | ❌ | ✅ | ❌ | ✅ | ✅ |
+| business-orchestrator-agent | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+---
+
+*Updated: 2026-01-31*

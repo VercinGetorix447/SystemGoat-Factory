@@ -1,0 +1,70 @@
+# MCP Server Integrations
+
+Model Context Protocol (MCP) servers extend Claude's capabilities with external tools.
+
+## What is MCP?
+
+MCP allows Claude to:
+- Query databases directly
+- Access external APIs with authentication
+- Read/write to cloud storage
+- Execute specialized tools
+
+## Configuration
+
+MCP servers are configured in Claude Code settings:
+
+**Location**: `~/.claude/settings.json` (user) or `.claude/settings.json` (project)
+
+```json
+{
+  "mcpServers": {
+    "server-name": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-name"],
+      "env": {
+        "API_KEY": "your-key"
+      }
+    }
+  }
+}
+```
+
+## Recommended MCP Servers
+
+See `MCP-SERVERS.md` for the full list with setup instructions.
+
+### Quick Reference
+
+| Server | Purpose | Install |
+|--------|---------|---------|
+| filesystem | File operations | `@anthropic/mcp-server-filesystem` |
+| postgres | PostgreSQL queries | `@anthropic/mcp-server-postgres` |
+| sqlite | SQLite database | `@anthropic/mcp-server-sqlite` |
+| github | GitHub API | `@anthropic/mcp-server-github` |
+| fetch | HTTP requests | `@anthropic/mcp-server-fetch` |
+| memory | Persistent memory | `@anthropic/mcp-server-memory` |
+
+## Setup Steps
+
+1. Install the MCP server package
+2. Add configuration to settings.json
+3. Restart Claude Code
+4. Server tools become available
+
+## Troubleshooting
+
+### Server not loading
+- Check `command` path is correct
+- Verify package is installed
+- Check env variables are set
+
+### Permission errors
+- Ensure credentials are valid
+- Check rate limits
+- Verify network access
+
+## Custom MCP Servers
+
+You can build custom MCP servers for specialized needs. See:
+https://modelcontextprotocol.io/docs/building-servers

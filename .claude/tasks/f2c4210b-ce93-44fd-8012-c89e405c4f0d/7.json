@@ -1,0 +1,9 @@
+{
+  "id": "7",
+  "subject": "Set up Cal.com API integration",
+  "description": "Install and configure Cal.com API for scheduling automation. Connect to n8n workflows for calendar management.",
+  "activeForm": "Setting up Cal.com API",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

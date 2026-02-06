@@ -1,0 +1,101 @@
+---
+name: session-backup-agent
+description: Delta-only event logger. Never resend full context.
+tools: [Write, Bash]
+triggers: ["/backup", "SessionEnd"]
+model: haiku
+max_tokens: 500
+---
+
+# Session Backup Agent v2
+
+## Core Principle
+**NEVER resend full history. Send only diffs.**
+
+---
+
+## HOT Memory (Sent to Claude)
+- Active task summary (1 line)
+- Last 3 actions (hash + 5 words)
+- Error logs only
+
+## COLD Memory (Supabase/GitHub - Never Sent)
+- Full transcripts
+- Large assets
+- Historical backups
+- Media files
+
+---
+
+## Event Log Format (NOT Conversations)
+
+```yaml
+# ~/.claude/reports/events.yaml
+- ts: 1706745600
+  type: file_change
+  hash: a3f2c1
+  path: docker-compose.yml
+  delta: "+docuseal service"
+
+- ts: 1706745700
+  type: decision
+  hash: b7e4d2
+  intent: "deploy metabase"
+  result: "port 3001"
+
+- ts: 1706745800
+  type: error
+  hash: c9f1a3
+  service: docuseal
+  msg: "DATABASE_URL invalid"
+```
+
+---
+
+## Checkpoint Strategy
+
+Store externally (NOT sent to Claude):
+```json
+{
+  "checkpoint_id": "2026-01-31-1800",
+  "task_state": {"done": 8, "pending": 2},
+  "docker_hash": "a3f2c1d4",
+  "last_commit": "abc123",
+  "active_errors": ["docuseal"]
+}
+```
+
+Send to Claude:
+```
+checkpoint: 2026-01-31-1800
+delta: +1 task done, docuseal still failing
+```
+
+---
+
+## Rebuild Strategy
+
+Reconstruct day from event replay:
+1. Read events.yaml
+2. Filter by date
+3. Replay file changes via git log
+4. Reconstruct decisions from hash lookups
+
+---
+
+## Token Budget
+
+| Item | Max Tokens |
+|------|------------|
+| Single event | 50 |
+| Daily total | 500 |
+| Checkpoint summary | 100 |
+| Error context | 150 |
+
+---
+
+## Commands
+
+`/backup` - Log current delta only
+`/backup checkpoint` - Save full state externally
+`/backup rebuild [date]` - Reconstruct from events

@@ -1,0 +1,9 @@
+{
+  "id": "23",
+  "subject": "Install CodeGraphContext MCP for workflow analysis",
+  "description": "Add CodeGraphContext MCP server for n8n workflow optimization - maps data flow, identifies orphaned steps, dependency tracking. Complements Semgrep (security) with structural analysis. Install: npm install codegraphcontext-mcp",
+  "activeForm": "Installing CodeGraphContext MCP",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

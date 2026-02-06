@@ -1,0 +1,165 @@
+---
+name: session-backup-agent
+description: Token-minimal backup. Summary+Delta only. 650 tokens/run max.
+tools: [Write, Bash]
+triggers: ["/backup", "SessionEnd"]
+model: haiku
+max_tokens: 400
+---
+
+# Session Backup Agent v4
+
+## Core Rule
+**Claude = Stateless. External = Truth.**
+
+---
+
+## Token Budget (HARD LIMIT)
+
+| Item | Max Tokens |
+|------|------------|
+| System Summary | 300 |
+| Task Delta | 200 |
+| Error Logs | 150 |
+| **Total** | **≤ 650** |
+
+**If over limit → auto-summarize before sending**
+
+---
+
+## Claude Receives ONLY
+
+```
+SYSTEM SUMMARY (compressed)
+TASK DELTA (diff only)
+ERRORS (if any)
+```
+
+## Claude NEVER Receives
+
+- ❌ Full chat history
+- ❌ Full repo snapshots
+- ❌ Large files
+- ❌ Old transcripts
+- ❌ Redundant context
+
+---
+
+## Canonical Memory Locations
+
+| System | Stores | Claude Reads? |
+|--------|--------|---------------|
+| GitHub | Code truth, diffs | Only diffs |
+| Supabase | Task state JSON, logs | Only active task |
+| Google Sheets | Human-readable daily summary | Yes (300 tokens) |
+| Claude | No long-term memory | ❌ |
+
+---
+
+## Example Input Payload
+
+```
+Summary v21: Lead pipeline stable, 3 automations live.
+Delta: Updated webhook handler + added retry logic.
+Errors: None.
+```
+
+**Total: ~45 tokens** ✅
+
+---
+
+## Failure Recovery Protocol
+
+If Claude crashes or context lost:
+
+```
+1. Reload Google Sheet Summary     → System state
+2. Pull Supabase task state        → Active work
+3. Pull GitHub diffs               → Recent changes
+4. Resume without replaying chat   → Zero token replay
+```
+
+---
+
+## External Storage Schema
+
+### Google Sheets (Daily Summary)
+```
+| Date | Version | Summary (300 char max) | Active Tasks | Errors |
+|------|---------|------------------------|--------------|--------|
+| 2026-01-31 | v21 | CRM pipeline, 8 services running | 2 | docuseal |
+```
+
+### Supabase (Task State)
+```json
+{
+  "checkpoint": "2026-01-31-1800",
+  "active": ["task_3", "task_7"],
+  "done": ["task_1", "task_2", "task_4", "task_5", "task_6", "task_8", "task_9", "task_10"],
+  "blocked": [],
+  "errors": {"docuseal": "DATABASE_URL invalid"}
+}
+```
+
+### GitHub (Code Diffs)
+```bash
+git log --oneline -5  # Last 5 commits only
+git diff HEAD~1       # Only latest diff
+```
+
+---
+
+## Backup Commands
+
+| Command | Action | Tokens Used |
+|---------|--------|-------------|
+| `/backup` | Save delta to external | 0 (external write) |
+| `/backup summary` | Update Google Sheet | 0 (external write) |
+| `/backup recover` | Reload from all sources | ~300 (read only) |
+| `/backup status` | Show token budget used | ~20 |
+
+---
+
+## Auto-Summarize Rule
+
+Before sending to Claude:
+```python
+if token_count(payload) > 650:
+    payload = summarize(payload, max_tokens=650)
+    log("Auto-summarized: {original} → 650")
+```
+
+---
+
+## Session Flow
+
+### Start
+```
+1. Read Google Sheet summary (300 tokens)
+2. Read Supabase active task (50 tokens)
+3. Ready to work
+```
+
+### During Work
+```
+1. Work happens (no backup tokens)
+2. Changes logged to external only
+3. Claude stays under 650/interaction
+```
+
+### End
+```
+1. /backup (writes externally, 0 tokens)
+2. Update Google Sheet summary
+3. Commit to GitHub
+4. Done
+```
+
+---
+
+## Distribute to Related Agents
+
+This pattern applies to:
+- `context-keeper` → Use checkpoint recovery
+- `research-agent` → Return summary only, store full in Supabase
+- `app-integration-agent` → Output configs to files, not context

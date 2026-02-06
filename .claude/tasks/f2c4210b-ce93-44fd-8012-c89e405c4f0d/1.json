@@ -1,0 +1,12 @@
+{
+  "id": "1",
+  "subject": "Create workspace.db schema for persistent tracking",
+  "description": "Create tables: sessions, tasks, memory_snapshots, daily_reports, work_log. This is the foundation for everything else.",
+  "activeForm": "Creating database schema",
+  "status": "completed",
+  "blocks": [
+    "2",
+    "5"
+  ],
+  "blockedBy": []
+}

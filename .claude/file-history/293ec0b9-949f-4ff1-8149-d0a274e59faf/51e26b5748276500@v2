@@ -1,0 +1,33 @@
+@echo off
+title Set Windows Password
+color 1F
+echo.
+echo ========================================
+echo    SET WINDOWS PASSWORD
+echo ========================================
+echo.
+echo Your username is: %USERNAME%
+echo.
+echo You will type your NEW password twice.
+echo (Characters will NOT appear as you type)
+echo.
+echo ----------------------------------------
+echo.
+net user %USERNAME% *
+echo.
+echo ----------------------------------------
+echo.
+echo Error code: %errorlevel%
+echo.
+if %errorlevel%==0 (
+    color 2F
+    echo SUCCESS! Password has been set.
+) else (
+    color 4F
+    echo FAILED. See error message above.
+)
+echo.
+echo ========================================
+echo Press any key to close this window...
+echo ========================================
+pause >nul

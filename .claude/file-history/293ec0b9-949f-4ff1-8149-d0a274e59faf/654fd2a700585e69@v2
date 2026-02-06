@@ -1,0 +1,76 @@
+# API Registry
+
+Central registry of all external APIs used across projects.
+
+## Active APIs
+
+| API | Purpose | Auth Type | Rate Limit | Docs |
+|-----|---------|-----------|------------|------|
+| GitHub | Code hosting, issues | OAuth/PAT | 5000/hr | [docs](https://docs.github.com/en/rest) |
+| - | - | - | - | - |
+
+## API Configuration
+
+### Adding a New API
+
+1. Add entry to this registry
+2. Store credentials in environment variables (NEVER in files)
+3. Create usage documentation in `knowledge/apis/{api-name}.md`
+4. Add n8n workflow if needed in `integrations/n8n/`
+
+### Credential Storage
+
+**DO NOT store credentials in this repository.**
+
+Use environment variables:
+```bash
+# Windows (PowerShell)
+$env:API_NAME_KEY = "your-key"
+
+# Linux/WSL
+export API_NAME_KEY="your-key"
+```
+
+Or use a secrets manager:
+- Windows: Credential Manager
+- Linux: pass, gnome-keyring
+- Cloud: AWS Secrets Manager, Azure Key Vault
+
+## API Documentation Files
+
+Create a file for each API at `knowledge/apis/{api-name}.md`:
+
+```markdown
+# {API Name}
+
+## Overview
+[What this API does and why we use it]
+
+## Authentication
+[How to authenticate - DO NOT include actual credentials]
+
+## Key Endpoints
+
+### Endpoint 1
+- **URL**: `GET /resource`
+- **Purpose**: [description]
+- **Example**:
+```bash
+curl -H "Authorization: Bearer $TOKEN" https://api.example.com/resource
+```
+
+## Rate Limits
+[Rate limit details and how to handle them]
+
+## Error Handling
+[Common errors and how to handle them]
+
+## n8n Integration
+[Link to n8n workflow if applicable]
+```
+
+## Status Monitoring
+
+| API | Status | Last Checked | Notes |
+|-----|--------|--------------|-------|
+| - | - | - | - |

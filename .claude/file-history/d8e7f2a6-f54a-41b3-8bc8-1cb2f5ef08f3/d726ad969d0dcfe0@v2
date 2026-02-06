@@ -1,0 +1,6 @@
+<form class="bg-white p-6 shadow rounded max-w-md mx-auto">
+  <input type="text" placeholder="Name" class="w-full p-2 mb-3 border rounded" />
+  <input type="email" placeholder="Email" class="w-full p-2 mb-3 border rounded" />
+  <textarea placeholder="Message" class="w-full p-2 mb-3 border rounded"></textarea>
+  <button class="bg-brand-accent text-white px-6 py-2 rounded w-full">Send</button>
+</form>

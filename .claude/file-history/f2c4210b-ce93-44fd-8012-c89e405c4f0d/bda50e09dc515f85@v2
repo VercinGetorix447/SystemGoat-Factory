@@ -1,0 +1,175 @@
+# Session Backup: 2026-01-30
+
+## Summary
+Full infrastructure setup completed: Docker stack, databases, n8n workflows, Cal.com API integration.
+
+---
+
+## Services Running
+
+| Service | URL | Credentials |
+|---------|-----|-------------|
+| NocoDB | http://localhost:8080 | (create on first visit) |
+| PocketBase | http://localhost:8090 | (create on first visit) |
+| n8n | http://localhost:5678 | admin / claude-n8n-password |
+
+---
+
+## Completed Tasks
+
+1. ✅ **workspace.db schema** - 7 tables created
+2. ✅ **NocoDB** - Visual kanban/CRM (Docker)
+3. ✅ **PocketBase** - Real-time backend (Docker)
+4. ✅ **n8n workflows** - 6 automation workflows
+5. ✅ **Cal.com API** - Configured and tested
+
+---
+
+## Database Schema (workspace.db)
+
+Location: `/mnt/c/Users/password/Documents/.claude/databases/workspace.db`
+
+Tables:
+- `sessions` - Track Claude sessions
+- `tasks` - Persistent task tracking
+- `work_log` - Detailed work records
+- `memory_snapshots` - Backup history
+- `daily_reports` - Daily summaries
+- `projects` - Project tracking
+- `credentials` - API keys storage
+
+---
+
+## Credentials Stored
+
+### Cal.com API
+- **API Key:** `cal_live_a3c54a97b88f475f36f2b0e5511545d1`
+- **Base URL:** `https://api.cal.com/v1`
+- **User:** troy.allison@gmail.com
+- **Timezone:** America/Los_Angeles
+
+### Google Cloud Project
+- **Project ID:** job-search-453921
+- **Calendar+Email OAuth:** 29733447782-t7r5h9j0h3qbn2p0jjrqvobvu67te232.apps.googleusercontent.com
+- **Drive OAuth:** 29733447782-gncg2u5lia7avkq5963snts1g7pttsa6.apps.googleusercontent.com
+
+---
+
+## Docker Setup
+
+### Location
+`/mnt/c/Users/password/Documents/.claude/docker/`
+
+### docker-compose.yml
+```yaml
+services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    ports: 8080:8080
+    volumes: ./nocodb:/usr/app/data
+
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    ports: 8090:8090
+    volumes: ./pocketbase:/pb_data
+
+  n8n:
+    image: n8nio/n8n:latest
+    ports: 5678:5678
+    volumes:
+      - ./n8n:/home/node/.n8n
+      - ./n8n-workflows:/workflows
+      - /mnt/c/Users/password/Documents/.claude:/claude-data
+```
+
+### Commands
+```bash
+# Start all services
+cd /mnt/c/Users/password/Documents/.claude/docker && sudo docker compose up -d
+
+# Check status
+sudo docker ps
+
+# View logs
+sudo docker logs n8n --tail 50
+```
+
+---
+
+## n8n Workflows Created
+
+Location: `/mnt/c/Users/password/Documents/.claude/docker/n8n-workflows/`
+
+1. **01-memory-backup.json** - Every 10 min backup
+2. **02-task-sync-nocodb.json** - SQLite → NocoDB sync
+3. **03-notification-system.json** - 30 min status alerts
+4. **04-daily-report.json** - 6 PM daily summary
+5. **05-session-recorder.json** - 10 min checkpoint logging
+6. **06-calcom-integration.json** - Cal.com booking manager
+
+### Import Instructions
+1. Go to http://localhost:5678
+2. Login: admin / claude-n8n-password
+3. Workflows → Import from file
+4. Select JSON files from `/workflows/` folder
+
+---
+
+## Cron Jobs Active
+
+```
+*/5 * * * * /mnt/c/Users/password/Documents/.claude/workflows/backup-script.sh
+*/5 * * * * /mnt/c/Users/password/Documents/.claude/scripts/backup-memory.sh
+*/5 * * * * /mnt/c/Users/password/Documents/.claude/workflows/update-daily-report.sh
+```
+
+---
+
+## Pending Tasks for Next Session
+
+1. **Supabase** - Cloud backup (free tier)
+2. **Session-recorder subagent** - Auto-logging agent
+3. **Import n8n workflows** - Activate automations
+4. **NocoDB kanban** - Create board, enter tasks
+5. **Reminder automation test** - First workflow test
+
+---
+
+## File Locations
+
+| Purpose | Path |
+|---------|------|
+| Main folder | `/mnt/c/Users/password/Documents/.claude/` |
+| Database | `/mnt/c/Users/password/Documents/.claude/databases/workspace.db` |
+| Docker | `/mnt/c/Users/password/Documents/.claude/docker/` |
+| n8n workflows | `/mnt/c/Users/password/Documents/.claude/docker/n8n-workflows/` |
+| Backups | `/mnt/c/Users/password/Documents/.claude/Backups/` |
+| Logs | `/mnt/c/Users/password/Documents/.claude/logs/` |
+| Reports | `/mnt/c/Users/password/Documents/.claude/reports/` |
+| Agents | `~/.claude/agents/` (21 subagents) |
+
+---
+
+## MCP Servers Configured
+
+- google-calendar: @cocal/google-calendar-mcp
+- gmail: @mcp-z/mcp-gmail
+- sqlite: mcp-server-sqlite-npx
+- filesystem: @modelcontextprotocol/server-filesystem
+- memory: @modelcontextprotocol/server-memory
+- google-drive: @piotr-agier/google-drive-mcp
+- ref-tools: https://api.ref.tools/mcp
+
+---
+
+## User Profile
+
+- **Name:** Troy
+- **Email:** troy.allison@gmail.com
+- **Platform:** WSL2 on Windows
+- **Node.js:** v18.19.1
+- **Theme:** dark-daltonized
+
+---
+
+*Generated: 2026-01-30 17:45 PST*

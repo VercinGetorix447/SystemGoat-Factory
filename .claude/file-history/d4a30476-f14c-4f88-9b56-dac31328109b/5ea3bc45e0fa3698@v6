@@ -1,0 +1,194 @@
+# Session: n8n Hetzner Stack Deployment
+**Date:** 2026-01-30 / 2026-01-31
+**Host:** Hetzner CAX21 (ARM Ubuntu 24.04)
+**Status:** n8n LIVE - PocketBase & NocoDB pending
+
+---
+
+## COMPLETED ✅
+
+### Step 1: System Preparation ✅
+- Docker 27.0.3 installed
+- Coolify 4.0.0-beta.462 installed
+- Firewall configured (22, 80, 443, 8000)
+- SSH key access configured
+
+### Step 2: n8n Deployed ✅
+- **n8n LIVE:** https://n8n.systemgoat.com
+- Owner: troy.allison@gmail.com
+- Login created and working
+
+---
+
+## PENDING (Resume Next Session)
+
+### Deploy PocketBase
+```bash
+ssh root@5.75.146.160
+
+mkdir -p /data/pocketbase && cat > /data/pocketbase/docker-compose.yml << 'EOF'
+services:
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    restart: always
+    volumes:
+      - pb_data:/pb_data
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.pocketbase.rule=Host(`pb.systemgoat.com`)
+      - traefik.http.routers.pocketbase.entrypoints=https
+      - traefik.http.routers.pocketbase.tls=true
+      - traefik.http.routers.pocketbase.tls.certresolver=letsencrypt
+      - traefik.http.services.pocketbase.loadbalancer.server.port=8080
+      - traefik.http.routers.pocketbase-http.rule=Host(`pb.systemgoat.com`)
+      - traefik.http.routers.pocketbase-http.entrypoints=http
+      - traefik.http.routers.pocketbase-http.middlewares=redirect-to-https
+      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
+    networks:
+      - coolify
+
+volumes:
+  pb_data:
+
+networks:
+  coolify:
+    external: true
+EOF
+
+cd /data/pocketbase && docker compose up -d
+```
+
+### Deploy NocoDB
+```bash
+mkdir -p /data/nocodb && cat > /data/nocodb/docker-compose.yml << 'EOF'
+services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    restart: always
+    volumes:
+      - nc_data:/usr/app/data
+    environment:
+      - NC_DB=sqlite:///usr/app/data/noco.db
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nocodb.rule=Host(`noco.systemgoat.com`)
+      - traefik.http.routers.nocodb.entrypoints=https
+      - traefik.http.routers.nocodb.tls=true
+      - traefik.http.routers.nocodb.tls.certresolver=letsencrypt
+      - traefik.http.services.nocodb.loadbalancer.server.port=8080
+      - traefik.http.routers.nocodb-http.rule=Host(`noco.systemgoat.com`)
+      - traefik.http.routers.nocodb-http.entrypoints=http
+      - traefik.http.routers.nocodb-http.middlewares=redirect-to-https
+      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
+    networks:
+      - coolify
+
+volumes:
+  nc_data:
+
+networks:
+  coolify:
+    external: true
+EOF
+
+cd /data/nocodb && docker compose up -d
+```
+
+---
+
+## Credentials
+
+### Hetzner Server
+- IP: 5.75.146.160
+- SSH: root / SysG0at#2026!Htzn
+- SSH Key: Configured
+
+### n8n
+- URL: https://n8n.systemgoat.com
+- Owner: troy.allison@gmail.com
+
+### Coolify
+- URL: http://5.75.146.160:8000
+
+### Hostinger
+- Email: troy.allison@gmail.com
+- Password: TAalley447.
+
+---
+
+## DNS (Working)
+| Type | Name | Value |
+|------|------|-------|
+| A | @ | 5.75.146.160 |
+| A | * | 5.75.146.160 |
+
+---
+
+## Architecture
+```
+Hetzner CAX21 (5.75.146.160)
+├── Coolify + Traefik (proxy/SSL)
+├── n8n.systemgoat.com ✅ LIVE
+├── pb.systemgoat.com (pending)
+└── noco.systemgoat.com (pending)
+```
+
+---
+
+## Quick Resume
+```
+Load memory: /mnt/c/Users/password/Documents/.claude/databases/memory.jsonl
+```
+
+---
+
+## Issues Solved
+1. Memory file corrupted - fixed
+2. SSH password expired - changed via expect
+3. DNS blocked by Hostinger website - deleted
+4. Coolify Traefik labels malformed - fixed manually
+
+---
+
+## FULL TO-DO LIST (From Original Prompt)
+
+### Infrastructure
+- [x] Install Docker & Docker Compose
+- [x] Install Coolify
+- [x] Harden SSH & firewall
+- [x] Configure DNS (systemgoat.com)
+
+### Services
+- [x] n8n Community Edition
+- [ ] PostgreSQL (dedicated for n8n/NocoDB)
+- [ ] Redis (optional queue mode)
+- [ ] PocketBase
+- [ ] NocoDB
+
+### Backups
+- [ ] S3 daily backup setup
+- [ ] Supabase weekly backup
+- [ ] Google Drive partial backup
+- [ ] PocketBase daily backup
+
+### APIs to Configure
+- [ ] Brave Search API
+- [ ] DocuSeal API
+- [ ] Unsplash API
+- [ ] Claude API
+
+### Documentation
+- [ ] Architecture diagram
+- [ ] Restore instructions
+- [ ] "What not to touch" guide
+
+---
+
+## RULES FOR CLAUDE
+1. Update backup every 10 minutes and after each task
+2. Start each day with to-do list review
+3. Load memory at session start
+
+---
+
+*Last updated: 2026-01-31 08:05 UTC*

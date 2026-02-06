@@ -1,0 +1,6 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-01-30T20:09:20.898Z","sessionId":"8a333dc1-21a3-48cb-8b02-5a8bc2fe5070","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-01-30T20:09:25.069Z","sessionId":"8a333dc1-21a3-48cb-8b02-5a8bc2fe5070","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 4181ms","timestamp":"2026-01-30T20:09:25.069Z","sessionId":"8a333dc1-21a3-48cb-8b02-5a8bc2fe5070","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-01-30T20:09:25.069Z","sessionId":"8a333dc1-21a3-48cb-8b02-5a8bc2fe5070","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-01-30T20:10:47.784Z","sessionId":"8a333dc1-21a3-48cb-8b02-5a8bc2fe5070","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 64ms","timestamp":"2026-01-30T20:10:47.848Z","sessionId":"8a333dc1-21a3-48cb-8b02-5a8bc2fe5070","cwd":"/home/echo"}

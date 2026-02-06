@@ -1,0 +1,43 @@
+import initSqlJs from 'sql.js';
+import { readFileSync, writeFileSync } from 'fs';
+
+const dbPath = '/mnt/c/Users/password/Documents/ClaudeCodeProjects/data/workspace.db';
+
+const SQL = await initSqlJs();
+const fileBuffer = readFileSync(dbPath);
+const db = new SQL.Database(fileBuffer);
+
+// Parse command line args
+const action = process.argv[2];
+const args = process.argv.slice(3);
+
+if (action === 'tables') {
+  const result = db.exec("SELECT name FROM sqlite_master WHERE type='table'");
+  console.log('Tables:', result[0]?.values.flat() || []);
+}
+else if (action === 'query') {
+  const sql = args.join(' ');
+  try {
+    const result = db.exec(sql);
+    console.log(JSON.stringify(result, null, 2));
+  } catch (e) {
+    console.error('Error:', e.message);
+  }
+}
+else if (action === 'run') {
+  const sql = args.join(' ');
+  try {
+    db.run(sql);
+    // Save changes
+    const data = db.export();
+    writeFileSync(dbPath, Buffer.from(data));
+    console.log('OK');
+  } catch (e) {
+    console.error('Error:', e.message);
+  }
+}
+else {
+  console.log('Usage: node query-db.mjs [tables|query|run] [SQL]');
+}
+
+db.close();

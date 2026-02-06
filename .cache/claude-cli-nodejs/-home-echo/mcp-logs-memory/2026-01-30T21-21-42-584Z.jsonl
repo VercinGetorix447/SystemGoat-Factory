@@ -1,0 +1,12 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-01-30T21:22:24.712Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-01-30T21:22:27.555Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 2851ms","timestamp":"2026-01-30T21:22:27.555Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-01-30T21:22:27.555Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-01-31T00:21:46.123Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 181ms","timestamp":"2026-01-31T00:21:46.291Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-01-31T00:22:43.419Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 47ms","timestamp":"2026-01-31T00:22:43.466Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T00:31:45.264Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 81ms","timestamp":"2026-01-31T00:31:45.346Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-01-31T00:32:41.665Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 49ms","timestamp":"2026-01-31T00:32:41.715Z","sessionId":"543f2add-4570-4a02-9ea8-1b36ff3f88f5","cwd":"/home/echo"}

@@ -1,0 +1,27 @@
+{
+  "perplexity_api": {
+    "endpoint": "https://api.perplexity.ai/chat/completions",
+    "model": "llama-3.1-sonar-small-128k-online",
+    "description": "Online search-enabled AI for lead enrichment and summaries",
+    "cost": "Free tier: 5 requests/minute, ~$0.20/1M tokens (paid)",
+
+    "use_cases": [
+      "Lead enrichment: Research prospect company details",
+      "Competitor analysis for presentation prep",
+      "Industry news aggregation",
+      "Business verification and due diligence"
+    ],
+
+    "n8n_integration": {
+      "method": "HTTP Request node",
+      "auth": "Bearer token in header",
+      "header": "Authorization: Bearer $PERPLEXITY_API_KEY"
+    },
+
+    "sample_prompts": {
+      "lead_enrichment": "Research this business: {company_name} in {city}. Find: company size, years in business, services offered, recent news, and any reviews or reputation info. Be concise.",
+      "competitor_check": "What are the top 5 competitors to {company_name} in the {industry} industry in {location}?",
+      "industry_trends": "What are the current trends in the {industry} industry that a small business owner should know about?"
+    }
+  }
+}

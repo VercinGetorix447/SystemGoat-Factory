@@ -1,0 +1,45 @@
+# CLAUDE SESSION STARTUP - PASTE THIS AT START OF EVERY SESSION
+
+Read these files NOW and give me a status update:
+
+1. `/mnt/c/Users/password/Documents/.claude/databases/memory.jsonl` - persistent memory
+2. `/mnt/c/Users/password/Documents/.claude/Backups/memory-backup-2026-02-01.md` - today's backup (update date as needed)
+3. `/mnt/c/Users/password/Documents/.claude/Backups/task-import-2026-01-31.md` - master task list
+4. `~/.claude/projects/-home-echo/sessions-index.json` - list all sessions
+5. Read the MOST RECENT session .jsonl file (largest/newest) from `~/.claude/projects/-home-echo/`
+
+After reading, provide:
+- What we were working on
+- Pending tasks (use RULE format below)
+- Any blockers or issues
+- Docker container status
+- Next steps
+
+---
+
+## RULE: Task Prioritization Format
+
+ALL tasks must include these columns:
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| ID | Yes | Task number |
+| Task | Yes | Clear description |
+| Pri | Yes | Priority 1-100 (higher = more important) |
+| Time | Yes | Estimated time to complete |
+| ROI | Yes | Return on investment 1-100 |
+| Ease | Yes | Ease of completion 1-10 (10 = easiest) |
+| Status | Yes | Not started / In Progress % / Done / Blocked |
+| Tokens | Optional | Estimated Claude tokens |
+| Blocked By | Optional | Dependency task IDs |
+
+**Daily Priority Table Format:**
+```
+| # | Task | Time | ROI | Ease | Status | Blocked By |
+```
+
+**Scoring Rule:** Priority Score = (ROI × 0.4) + (Ease × 0.3) + (1/Time × 0.3)
+
+---
+
+DO NOT ask questions. Just read and report.

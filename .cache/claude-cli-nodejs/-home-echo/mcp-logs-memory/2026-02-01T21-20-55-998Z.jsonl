@@ -1,0 +1,50 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-01T21:21:03.224Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-01T21:21:04.620Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 1402ms","timestamp":"2026-02-01T21:21:04.620Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-01T21:21:04.620Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-01T21:22:31.267Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 75ms","timestamp":"2026-02-01T21:22:31.342Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T21:29:23.858Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 71ms","timestamp":"2026-02-01T21:29:23.929Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T21:33:29.036Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 102ms","timestamp":"2026-02-01T21:33:29.138Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-01T21:35:58.838Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 65ms","timestamp":"2026-02-01T21:35:58.903Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T21:38:46.134Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 55ms","timestamp":"2026-02-01T21:38:46.189Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T21:40:40.993Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 71ms","timestamp":"2026-02-01T21:40:41.064Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-01T21:43:29.752Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 77ms","timestamp":"2026-02-01T21:43:29.829Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T21:52:25.484Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 214ms","timestamp":"2026-02-01T21:52:25.698Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T21:58:36.828Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 141ms","timestamp":"2026-02-01T21:58:36.969Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:03:14.118Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 114ms","timestamp":"2026-02-01T22:03:14.232Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-02-01T22:03:16.826Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 93ms","timestamp":"2026-02-01T22:03:16.919Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:15:02.165Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 135ms","timestamp":"2026-02-01T22:15:02.300Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-01T22:21:03.949Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 165ms","timestamp":"2026-02-01T22:21:04.115Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-01T22:23:55.974Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 125ms","timestamp":"2026-02-01T22:23:56.099Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:27:19.679Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 120ms","timestamp":"2026-02-01T22:27:19.799Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:41:23.437Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 192ms","timestamp":"2026-02-01T22:41:23.629Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:42:28.652Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 78ms","timestamp":"2026-02-01T22:42:28.730Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-01T22:48:38.487Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 496ms","timestamp":"2026-02-01T22:48:38.983Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:49:29.631Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 168ms","timestamp":"2026-02-01T22:49:29.799Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T22:54:50.481Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 135ms","timestamp":"2026-02-01T22:54:50.616Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T23:19:26.181Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 131ms","timestamp":"2026-02-01T23:19:26.312Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-02T02:24:32.070Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 195ms","timestamp":"2026-02-02T02:24:32.265Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-02T03:31:49.831Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 339ms","timestamp":"2026-02-02T03:31:50.170Z","sessionId":"1ae0b157-b0f6-46eb-9936-77059610d362","cwd":"/home/echo"}

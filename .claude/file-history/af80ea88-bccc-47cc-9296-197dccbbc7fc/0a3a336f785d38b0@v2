@@ -1,0 +1,153 @@
+# Task Import from Google Sheet - 2026-01-31
+
+## Summary
+- **Total Tasks**: 87
+- **Weeks Planned**: 12
+- **Completed**: 4 (from sheet) + our session work
+
+---
+
+## Status Sync (Sheet vs Today's Session)
+
+| Sheet ID | Task | Sheet Status | Actual Status |
+|----------|------|--------------|---------------|
+| 10 | PocketBase schema | Completed | ✅ Running |
+| 38 | Planka deploy | Completed | ✅ Just deployed |
+| 15 | Gemini Flash | Not started | ✅ API configured |
+| 3 | Contact form | Completed | ✅ Done |
+| 11 | n8n workflows | 25% | ✅ Running, needs workflows |
+
+---
+
+## Week 1 - Priority Tasks
+
+| ID | Task | Pri | Status | Est Hrs |
+|----|------|-----|--------|---------|
+| 1 | Infisical secrets | 1 | Abandoned | 2 |
+| 2 | roofrepairblog Vegas | 2 | 95% DNS | 2 |
+| 3 | Contact form | 3 | ✅ Done | 0.5 |
+| 4 | Google Workspace | 4 | Not started | 1 |
+| 5 | Domain email DNS | 5 | Blocked by #4 | 0.5 |
+| 6 | Cal.com setup | 6 | Not started | 0.25 |
+| 7 | Assessment 25Q | 7 | Not started | 2 |
+| 8 | Demo script | 8 | Not started | 1 |
+| 9 | Outreach list | 9 | Not started | 2 |
+| 10 | PocketBase schema | 10 | ✅ Done | 2 |
+| 11 | n8n workflows | 11 | 25% | 3 |
+
+---
+
+## Week 2 - Build Phase
+
+| ID | Task | Pri | Status | Est Hrs |
+|----|------|-----|--------|---------|
+| 12 | Trigger.dev | 12 | Not started | 4 |
+| 13 | Bland mystery calls | 13 | Not started | 2 |
+| 14 | Perplexity | 14 | Not started | 1 |
+| 15 | Gemini Flash | 15 | ✅ Done | 1 |
+| 16 | Competition analyzer | 16 | Not started | 6 |
+| 17 | ROI calculator | 17 | Not started | 3 |
+| 18 | Slidev presentation | 18 | Not started | 4 |
+| 19 | Jina URL cleaner | 19 | Not started | 1 |
+| 20 | Millionverifier | 20 | Not started | 1 |
+| 21 | DocuSeal webhooks | 21 | Not started | 3 |
+| 22 | Lago billing | 22 | Not started | 5 |
+| 23 | Sales objections | 23 | Not started | 2 |
+| 24 | 4 city LPs | 24 | 5% | 4 |
+| 25 | Outreach 100 | 25 | Not started | 5 |
+
+---
+
+## Week 3 - Scale Phase
+
+| ID | Task | Pri | Status | Est Hrs |
+|----|------|-----|--------|---------|
+| 26 | Territory assign | 26 | Not started | 3 |
+| 27 | Lead router | 27 | Not started | 2 |
+| 28 | City scoring | 28 | Not started | 6 |
+| 29 | Zip ranker | 29 | Not started | 3 |
+| 30 | Trade metadata | 30 | Not started | 2 |
+| 31 | Hidden keywords | 31 | Not started | 5 |
+| 32 | Retell voice AI | 32 | Not started | 5 |
+| 33 | Voice scripts | 33 | Not started | 3 |
+| 34 | Deepgram | 34 | Not started | 2 |
+| 35 | Twilio numbers | 35 | Not started | 1 |
+
+---
+
+## Week 4 - Enhancement
+
+| ID | Task | Pri | Status | Est Hrs |
+|----|------|-----|--------|---------|
+| 36 | Jitsi Meet | 36 | Not started | 2 |
+| 37 | Demo split-screen | 37 | Not started | 4 |
+| 38 | Planka deploy | 38 | ✅ Done | 2 |
+| 39 | Planka custom | 39 | Not started | 4 |
+| 40 | NocoDB | 40 | Not started | 1 |
+| 41 | Onboarding 7-day | 41 | Not started | 4 |
+| 42 | Assessment 72Q | 42 | Not started | 3 |
+| 43 | Auto-qualifier | 43 | Not started | 3 |
+
+---
+
+## High ROI Tasks (95-100)
+
+| ID | Task | ROI | Status |
+|----|------|-----|--------|
+| 1 | Infisical secrets | 100 | Abandoned |
+| 83 | Agent Team docs | 100 | Not started |
+| 84 | Claude agent teams | 100 | Not started |
+| 2 | roofrepairblog | 95 | 95% |
+| 7 | Assessment 25Q | 95 | Not started |
+| 13 | Bland mystery calls | 95 | Not started |
+| 16 | Competition analyzer | 95 | Not started |
+| 21 | DocuSeal webhooks | 95 | Not started |
+| 43 | Auto-qualifier | 95 | Not started |
+| 87 | Coolify | 95 | Not started |
+
+---
+
+## Infrastructure Tasks (Docker)
+
+| ID | Task | Status | Est Hrs |
+|----|------|--------|---------|
+| 12 | Trigger.dev | Not started | 4 |
+| 21 | DocuSeal | Not started | 3 |
+| 22 | Lago billing | Not started | 5 |
+| 36 | Jitsi Meet | Not started | 2 |
+| 38 | Planka | ✅ Done | 2 |
+| 44 | Mixpost | Not started | 3 |
+| 45 | Ghost blog | Not started | 3 |
+| 63 | Metabase | Not started | 2 |
+| 67 | Uptime Kuma | Not started | 2 |
+| 87 | Coolify | Not started | 3 |
+
+---
+
+## Today's Session Additions (Not in Sheet)
+
+| Task | Status |
+|------|--------|
+| Semgrep MCP | ✅ Done |
+| Brave Search API | ✅ Done |
+| Ntfy Docker | ✅ Done |
+| Business orchestrator agent | ✅ Done |
+| Session backup agent | ✅ Done |
+| Research coordinator agent | ✅ Done |
+| SystemGoat-Factory GitHub | ✅ Done |
+
+---
+
+## Recommended Next Priorities
+
+Based on ROI and dependencies:
+
+1. **Cal.com setup** (#6) - 15 min, enables scheduling
+2. **DocuSeal** (#21) - 10 min Docker, ROI 95
+3. **n8n workflows** (#11) - Continue 25% → 100%
+4. **Lago billing** (#22) - 20 min Docker, ROI 90
+5. **Assessment 25Q** (#7) - ROI 95, sales tool
+
+---
+
+*Imported: 2026-01-31 16:15 PST*

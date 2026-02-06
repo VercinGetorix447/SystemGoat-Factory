@@ -1,0 +1,9 @@
+{
+  "id": "13",
+  "subject": "Set up Apify account + API key",
+  "description": "Create Apify account, get API key, add to SystemGoat secrets + local .env. Free tier or $49/mo starter based on volume needs.",
+  "activeForm": "Setting up Apify",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

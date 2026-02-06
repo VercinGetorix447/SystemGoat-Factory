@@ -1,0 +1,9 @@
+{
+  "id": "10",
+  "subject": "Deploy Metabase for BI dashboards",
+  "description": "Deploy Metabase on port 3001 with PostgreSQL backend. Connect to Planka DB and NocoDB/PocketBase SQLite.",
+  "activeForm": "Deploying Metabase",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

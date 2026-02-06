@@ -1,0 +1,9 @@
+{
+  "id": "3",
+  "subject": "Configure Cal.com API integration",
+  "description": "Cal.com API key already stored (cal_live_a3c54a97b88f475f36f2b0e5511545d1). Create n8n workflows for scheduling automation and weekly review reminders.",
+  "activeForm": "Configuring Cal.com API",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

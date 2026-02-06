@@ -1,0 +1,59 @@
+Step 1 — Implement the Token-Minimal Claude Control Layer (Core System)
+
+Goal: Cut Claude token usage 50–90% while preserving full recoverability.
+
+Action: Enforce a “Summary + Delta Only” Rule
+Claude may ONLY receive:
+
+Daily System Summary (max 300 tokens)
+
+Task Delta (what changed since last step — max 200 tokens)
+
+Claude may NEVER receive:
+
+Full chat history
+
+Full repo snapshots
+
+Large files
+
+Old transcripts
+
+Redundant context
+
+Canonical Memory Locations (Claude = Stateless)
+System    Stores    Claude Reads?
+GitHub    Code truth, diffs    Only diffs
+Supabase    Task state JSON, logs    Only active task
+Google Sheets    Human-readable daily summary    Yes
+Claude    No long-term memory    ❌
+Required Data Format per Run
+SYSTEM SUMMARY (compressed)
+TASK DELTA (diff only)
+ERRORS (if any)
+
+Example Input Payload
+Summary v21: Lead pipeline stable, 3 automations live.
+Delta: Updated webhook handler + added retry logic.
+Errors: None.
+
+Hard Token Budget Rule
+Item    Max Tokens
+System Summary    300
+Task Delta    200
+Error Logs    150
+Total    ≤ 650 tokens
+
+If over limit → auto-summarize before sending
+
+Failure Recovery Guarantee
+
+If Claude crashes:
+
+Reload Google Sheet Summary
+
+Pull Supabase state
+
+Pull GitHub diffs
+
+Resume without replaying chat

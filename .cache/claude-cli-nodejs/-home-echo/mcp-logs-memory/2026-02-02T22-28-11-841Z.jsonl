@@ -1,0 +1,24 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-02T22:28:18.677Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-02T22:28:22.278Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 3612ms","timestamp":"2026-02-02T22:28:22.278Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-02T22:28:22.278Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-02-02T22:49:42.408Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 262ms","timestamp":"2026-02-02T22:49:42.670Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-02T22:50:37.294Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 28ms","timestamp":"2026-02-02T22:50:37.322Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-02-02T23:58:40.091Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 191ms","timestamp":"2026-02-02T23:58:40.282Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T00:10:14.641Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 102ms","timestamp":"2026-02-03T00:10:14.743Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-02-03T00:22:10.476Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 212ms","timestamp":"2026-02-03T00:22:10.688Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T00:27:37.190Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 86ms","timestamp":"2026-02-03T00:27:37.276Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-02-03T00:29:25.002Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 62ms","timestamp":"2026-02-03T00:29:25.064Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T00:31:30.035Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 73ms","timestamp":"2026-02-03T00:31:30.108Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-03T00:31:38.347Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 58ms","timestamp":"2026-02-03T00:31:38.405Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-03T00:31:44.347Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 65ms","timestamp":"2026-02-03T00:31:44.412Z","sessionId":"d8e7f2a6-f54a-41b3-8bc8-1cb2f5ef08f3","cwd":"/home/echo"}

@@ -1,0 +1,11 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-04T22:55:27.796Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-04T22:55:31.150Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 3360ms","timestamp":"2026-02-04T22:55:31.151Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-04T22:55:31.151Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-04T22:56:43.271Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 71ms","timestamp":"2026-02-04T22:56:43.342Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-04T22:59:25.397Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 46ms","timestamp":"2026-02-04T22:59:25.443Z","sessionId":"dad41fd5-ae44-4a0c-86ea-0af5b1e31270","cwd":"/home/echo"}
+{"debug":"Sending SIGINT to MCP server process","timestamp":"2026-02-05T16:37:20.032Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"SIGINT failed, sending SIGTERM to MCP server process","timestamp":"2026-02-05T16:37:20.426Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}
+{"debug":"MCP server process exited cleanly","timestamp":"2026-02-05T16:37:23.057Z","sessionId":"d2c45eae-399e-4f35-a517-20781eeaa718","cwd":"/home/echo"}

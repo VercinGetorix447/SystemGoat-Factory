@@ -1,0 +1,9 @@
+{
+  "id": "24",
+  "subject": "Install CKB MCP for config cleanup",
+  "description": "Add CKB (Code Knowledge Backend) MCP for bash/JSON config analysis - git history analysis, unused config detection, refactoring guidance. Install: pip install ckb-mcp",
+  "activeForm": "Installing CKB MCP",
+  "status": "pending",
+  "blocks": [],
+  "blockedBy": []
+}

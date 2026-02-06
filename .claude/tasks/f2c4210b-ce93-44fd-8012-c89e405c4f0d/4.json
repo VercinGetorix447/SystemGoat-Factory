@@ -1,0 +1,11 @@
+{
+  "id": "4",
+  "subject": "Connect Supabase (free tier) for cloud backup",
+  "description": "Set up Supabase project, sync critical data to cloud as failsafe backup. Provides PostgreSQL + real-time + auth.",
+  "activeForm": "Connecting Supabase",
+  "status": "pending",
+  "blocks": [
+    "6"
+  ],
+  "blockedBy": []
+}

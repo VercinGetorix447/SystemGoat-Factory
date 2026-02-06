@@ -1,0 +1,125 @@
+# CLAUDE RULES - MANDATORY - READ AT EVERY SESSION START
+
+## RULE 0: TOKEN ESTIMATION (HIGHEST PRIORITY)
+
+**BEFORE any search, task, or subagent call:**
+```
+Est. tokens: [number] | Task: [description] | Proceed? (Y/N)
+```
+
+- Wait for user approval on tasks >500 tokens
+- Summarize data - NEVER dump raw output
+- User pays for tokens - respect their money and time
+- NEVER ignore this rule
+
+## RULE 1: Subagent Delegation Score
+
+**BEFORE starting ANY task, calculate this score:**
+
+```
+DELEGATE_SCORE = (Type × 0.25) + (Context_Risk × 0.20) + (Token_Savings × 0.20) + (Complexity × 0.20) + (Time × 0.15)
+```
+
+| Factor | 1-3 (Low) | 4-6 (Medium) | 7-10 (High) |
+|--------|-----------|--------------|-------------|
+| **Type Match** | No matching agent | Partial match | Perfect agent match |
+| **Context Risk** | Needs full chat history | Some context needed | Standalone task |
+| **Token Savings** | <500 tokens saved | 500-2000 saved | >2000 tokens saved |
+| **Complexity** | Simple/quick fix | Medium logic | Complex/multi-step |
+| **Time Needed** | <10 min | 10-60 min | >60 min |
+
+**Decision:**
+- Score **7-10**: MUST delegate to subagent
+- Score **4-6**: Consider delegating, ask if unclear
+- Score **1-3**: Do directly
+
+---
+
+## RULE 2: Subagent Assignment
+
+| Task Type | Delegate To | When |
+|-----------|-------------|------|
+| Research/exploration | `researcher`, `Explore` | Finding info, docs, patterns |
+| DevOps/Docker/infra | `devops-engineer` | Containers, deployment, CI/CD |
+| Debug/errors | `debugger` | Test failures, bugs |
+| n8n workflows | `n8n-workflow` | Automation design |
+| Code review | `code-reviewer` | After writing code |
+| Documentation | `doc-writer` | README, comments |
+| Content creation | `content-generator` | Blog, copy, articles |
+| Security check | `security-auditor` | Auth, input validation |
+| Performance | `performance-optimizer` | Speed, bottlenecks |
+| Data/SQL | `data-analyst` | Queries, analysis |
+| Git operations | `git-specialist` | Complex git tasks |
+| Architecture | `architect` | System design |
+| API design | `api-designer` | Endpoints, schemas |
+| Testing | `test-runner` | Run tests |
+| Refactoring | `refactorer` | Code cleanup |
+
+---
+
+## RULE 3: Task Format (ALL tasks must have these columns)
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| Task_ID | Yes | Number |
+| Task_Name | Yes | Description |
+| Time_Hrs | Yes | Estimated hours |
+| Tokens | Yes | Estimated Claude tokens |
+| Success% | Yes | Probability of completion |
+| ROI | Yes | Return on investment 1-100 |
+| Ease | Yes | 1-10 (10=easiest) |
+| Delegate | Yes | Score from Rule 1 |
+| Status | Yes | Not started / % / Done / Blocked |
+| Dependencies | Optional | Blocked by task # |
+
+---
+
+## RULE 4: Session Start Checklist
+
+Claude MUST do these automatically:
+1. Read NocoDB tasks: `curl -s -H "xc-token: QEkBy3A48Fzn6CW4FCaQHfVGICmC4_kaYEPtMR7k" "http://localhost:8080/api/v2/tables/micl8z8rf5h7cpm/records?limit=100"`
+2. Read memory: `mcp__memory__read_graph`
+3. Check Docker: `docker ps`
+4. Report status to user (completed, in-progress, blockers, next priorities)
+
+---
+
+## RULE 5: Session End Checklist
+
+Claude MUST do these before user signs off:
+1. Update NocoDB with any task progress
+2. Update MCP memory with new facts
+3. Update STARTUP.md current status section
+4. Tell user: "Paste this next session: `Read /mnt/c/Users/password/Documents/.claude/STARTUP.md`"
+
+---
+
+## RULE 6: NocoDB Source of Truth
+
+- **URL**: http://localhost:8080
+- **Base**: popj9o25eiv8w3p
+- **Table**: micl8z8rf5h7cpm
+- **Token**: QEkBy3A48Fzn6CW4FCaQHfVGICmC4_kaYEPtMR7k
+- **Records**: 95 tasks
+
+**Read:** `curl -s -H "xc-token: TOKEN" "http://localhost:8080/api/v2/tables/micl8z8rf5h7cpm/records"`
+**Update:** `curl -X PATCH -H "xc-token: TOKEN" -H "Content-Type: application/json" "http://localhost:8080/api/v2/tables/micl8z8rf5h7cpm/records" -d '{"Id": X, "Status": "value"}'`
+
+---
+
+## RULE 7: Available Subagents (32 total)
+
+**Built-in:** Bash, general-purpose, Explore, Plan, claude-code-guide, debugger, task-tracker, code-reviewer, test-runner, agent-router, researcher, architect
+
+**Custom:** agent-router, api-designer, architect, code-reviewer, content-generator, content-repurposer, context-keeper, data-analyst, debugger, devops-engineer, doc-writer, git-specialist, n8n-workflow, performance-optimizer, project-manager, refactorer, researcher, security-auditor, social-media, task-tracker, test-runner
+
+---
+
+## CRITICAL REMINDER
+
+**Claude is stateless.** User MUST paste at session start:
+```
+Read /mnt/c/Users/password/Documents/.claude/STARTUP.md
+```
+
+This file loads RULES.md, checks NocoDB, reads memory, and reports status.

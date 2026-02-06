@@ -1,0 +1,267 @@
+# CRM Architecture: Airtable + Monday.com Style
+
+> Self-hosted CRM using NocoDB, Planka, Metabase, n8n, Ntfy
+> Research completed: 2026-01-31
+
+---
+
+## System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     USER INTERFACE LAYER                     │
+├─────────────────────────────────────────────────────────────┤
+│  NocoDB (8080)          Metabase (3001)       Planka (3000) │
+│  - CRM Data Entry       - Analytics           - Pipeline     │
+│  - Linked Records       - Dashboards          - Kanban       │
+│  - Views & Filters      - Reports             - Tasks        │
+└─────────────────────────────────────────────────────────────┘
+                              ▲
+                              │
+                    ┌─────────┴─────────┐
+                    │   n8n (5678)      │
+                    │   Automation Hub  │
+                    │   - Webhooks      │
+                    │   - Workflows     │
+                    │   - Sync Logic    │
+                    └─────────┬─────────┘
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        ▼                     ▼                     ▼
+┌──────────────┐    ┌──────────────┐      ┌──────────────┐
+│   NocoDB     │    │   Planka     │      │    Ntfy      │
+│   Database   │    │   Postgres   │      │ Notification │
+│              │    │              │      │   Service    │
+└──────────────┘    └──────────────┘      └──────────────┘
+```
+
+---
+
+## Database Schema (NocoDB)
+
+### Core Tables
+
+```
+Users (Internal Team)
+├── user_id (PK)
+├── username
+├── email
+└── role
+
+Companies/Accounts
+├── company_id (PK)
+├── company_name
+├── industry
+├── website
+├── owner_user_id (FK → Users)
+└── [Rollup] Total_Deal_Value
+└── [Rollup] Active_Deals_Count
+
+Contacts
+├── contact_id (PK)
+├── first_name, last_name
+├── email, phone
+├── company_id (FK → Companies)
+├── owner_user_id (FK → Users)
+└── [Rollup] Total_Tasks
+
+Deals/Opportunities
+├── deal_id (PK)
+├── deal_name
+├── amount (Currency)
+├── stage (Lead → Qualified → Proposal → Negotiation → Closed)
+├── expected_close_date
+├── probability
+├── company_id (FK → Companies)
+├── contact_id (FK → Contacts)
+├── owner_user_id (FK → Users)
+└── planka_card_id (for sync)
+
+Tasks/Activities
+├── task_id (PK)
+├── type (Call, Email, Meeting, To-Do)
+├── subject
+├── due_date
+├── status (Pending, In Progress, Completed)
+├── priority (Low, Medium, High)
+├── related_to_type (Company, Contact, Deal)
+├── related_to_id
+└── assigned_to (FK → Users)
+
+Interactions/History
+├── interaction_id (PK)
+├── type (Email, Call, Meeting, Note)
+├── date
+├── notes
+├── contact_id (FK → Contacts)
+├── deal_id (FK → Deals)
+└── user_id (FK → Users)
+```
+
+### Relationships
+
+| From | To | Type | Field |
+|------|-----|------|-------|
+| Companies | Contacts | Has-Many | Links field |
+| Companies | Deals | Has-Many | Links field |
+| Contacts | Company | Belongs-To | Links field |
+| Contacts | Deals | Many-to-Many | Links field |
+| Deals | Company | Belongs-To | Links field |
+| Deals | Tasks | Has-Many | Links field |
+| Tasks | User | Belongs-To | Links field |
+
+### Rollup Fields (Airtable-style)
+
+| Table | Field | Formula | Purpose |
+|-------|-------|---------|---------|
+| Companies | Total_Deal_Value | SUM(Deals.Amount) | Total pipeline value |
+| Companies | Active_Deals_Count | COUNT(Deals) WHERE Status != Closed Lost | Active opportunities |
+| Contacts | Total_Tasks | COUNT(Tasks) | Task load per contact |
+| Deals | Days_Open | TODAY() - Created_Date | Deal aging |
+
+---
+
+## n8n Automation Workflows
+
+### Workflow 1: Deal Stage Change
+
+```
+Trigger: NocoDB Webhook (Deal Updated)
+  ↓
+Filter: Stage field changed?
+  ↓
+Switch by Stage:
+  → Qualified: Create "Schedule demo" task + Notify rep
+  → Proposal: Create "Send proposal" task + Notify manager
+  → Closed Won: Create "Welcome email" task + Notify team + Refresh Metabase
+  → Closed Lost: Create "Follow-up 3 months" task
+```
+
+### Workflow 2: Daily Task Digest
+
+```
+Trigger: Schedule (8:00 AM daily)
+  ↓
+NocoDB: List Tasks WHERE Due_Date = Today AND Status != Completed
+  ↓
+Group by Assigned_To
+  ↓
+Loop: Send Ntfy notification per user
+  - Title: "You have X tasks due today"
+  - Priority: high
+  - Click: Link to NocoDB
+```
+
+### Workflow 3: NocoDB ↔ Planka Sync
+
+```
+Trigger: NocoDB Webhook (Deal created/updated)
+  ↓
+Check: Has Planka_Card_ID?
+  → YES: Planka API - Update Card (title, list by stage)
+  → NO: Planka API - Create Card → Save card_id to NocoDB
+```
+
+### Workflow 4: Overdue Task Alerts
+
+```
+Trigger: Schedule (9:00 AM daily)
+  ↓
+NocoDB: List Tasks WHERE Due_Date < Today AND Status != Completed
+  ↓
+Loop:
+  - Ntfy: Send urgent notification
+  - NocoDB: Add interaction note
+```
+
+---
+
+## Metabase Dashboards
+
+### Sales Overview Dashboard
+
+| Widget | Query Type | Purpose |
+|--------|------------|---------|
+| Total Pipeline Value | Number | SUM of open deals |
+| Deals by Stage | Funnel Chart | Pipeline visualization |
+| Win Rate | Number | Closed Won / Total Closed |
+| Top Performers | Table | Leaderboard by revenue |
+| Upcoming Tasks | Table | 7-day task calendar |
+| Revenue Trend | Line Chart | Monthly revenue over time |
+
+### Connection Strategy
+
+1. **Planka PostgreSQL**: Direct connection
+   - Host: `planka-db`
+   - Database: `planka`
+   - User: `planka`
+
+2. **NocoDB SQLite**: Read-only volume mount
+   - Path: `/nocodb-data/noco.db`
+
+---
+
+## Ntfy Notification Topics
+
+| Topic | Purpose | Priority |
+|-------|---------|----------|
+| `crm-sales-team` | General sales notifications | default |
+| `crm-high-priority` | Urgent deals/tasks | urgent |
+| `crm-user-{id}` | Individual user alerts | default |
+| `crm-daily-digest` | Daily summaries | low |
+
+---
+
+## Implementation Phases
+
+### Phase 1: Database Setup (Week 1)
+- [ ] Create NocoDB tables with schema above
+- [ ] Configure Links fields for relationships
+- [ ] Add Rollup fields for aggregations
+- [ ] Create views: Pipeline, My Deals, Overdue Tasks
+
+### Phase 2: Automation (Week 2)
+- [ ] Set up NocoDB webhooks
+- [ ] Create n8n workflows for stage changes
+- [ ] Implement daily task digest
+- [ ] Configure Ntfy notifications
+
+### Phase 3: Dashboards (Week 3)
+- [ ] Connect Metabase to Planka PostgreSQL
+- [ ] Connect Metabase to NocoDB SQLite
+- [ ] Create Sales Overview dashboard
+- [ ] Set up auto-refresh (5 min)
+
+### Phase 4: Sync & Polish (Week 4)
+- [ ] Implement NocoDB ↔ Planka sync
+- [ ] Test all automations end-to-end
+- [ ] Mobile notification setup
+- [ ] User training documentation
+
+---
+
+## Key Decisions
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Primary CRM | NocoDB | Airtable-like UI, relationships, views |
+| Kanban | Planka + NocoDB views | Both options available |
+| Dashboards | Metabase | Free, embeddable, SQL-based |
+| Automation | n8n | Visual builder, self-hosted |
+| Notifications | Ntfy | Free, self-hosted, mobile apps |
+| PocketBase | Skip for now | Not needed unless custom frontend |
+
+---
+
+## Sources
+
+- [NocoDB Links Documentation](https://docs.nocodb.com/0.109.7/setup-and-usages/links/)
+- [Airtable Rollup Field Overview](https://support.airtable.com/docs/rollup-field-overview)
+- [Monday.com Workflow Builder](https://support.monday.com/hc/en-us/articles/11065311570066)
+- [n8n NocoDB Integration](https://n8n.io/integrations/nocodb/)
+- [ntfy Integrations](https://docs.ntfy.sh/integrations/)
+- [CRM Database Schema Guide](https://www.dragonflydb.io/databases/schema/crm)
+
+---
+
+*Generated by Research Agent | 2026-01-31*

@@ -1,0 +1,4 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-01T21:19:47.526Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-01T21:19:51.686Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 4169ms","timestamp":"2026-02-01T21:19:51.686Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-01T21:19:51.687Z","sessionId":"a37d2457-aff7-4bae-a697-8235259a43eb","cwd":"/home/echo"}

@@ -1,0 +1,109 @@
+---
+name: session-backup-agent
+description: Tiered backup system. Real-time events, daily .md, weekly cloud.
+tools: [Write, Bash]
+triggers: ["/backup", "SessionEnd"]
+model: haiku
+max_tokens: 300
+---
+
+# Session Backup Agent v5
+
+## Architecture
+
+```
+HOT (Real-time)     WARM (Daily)       COLD (Weekly)
+events.yaml    →    YYYY-MM-DD.md  →   Supabase/GitHub
+50 tokens/event     100 tokens/day     0 tokens (external)
+```
+
+---
+
+## Token Budget
+
+| Tier | Frequency | Max Tokens |
+|------|-----------|------------|
+| Real-time | Per event | 50 |
+| Daily | 6PM | 100 |
+| Weekly | Sunday 8PM | 0 |
+| Emergency | Manual | 150 |
+| **Monthly** | | **~1000** |
+
+---
+
+## Schedule
+
+```yaml
+realtime: on_event → events.yaml
+daily: "0 18 * * *" → .md + SQLite
+weekly: "0 20 * * 0" → Supabase + GitHub
+emergency: "/backup now" → all
+```
+
+---
+
+## File Locations
+
+| File | Purpose |
+|------|---------|
+| `~/.claude/reports/events.yaml` | Real-time event stream |
+| `~/.claude/reports/YYYY-MM-DD.md` | Daily human summary |
+| `~/.claude/checkpoint.db` | SQLite state mirror |
+| `Supabase:backups` | Weekly archive |
+| `GitHub:SystemGoat-Factory` | Code + configs |
+
+---
+
+## Event Format (50 tokens max)
+
+```yaml
+- ts: 1738368000
+  t: file|decision|error|task
+  h: abc123
+  d: "short delta"
+```
+
+---
+
+## Daily .md Format (100 tokens max)
+
+```markdown
+# YYYY-MM-DD
+v[N]: [one-line summary]
+Done: [count]
+Pending: [count]
+Errors: [list or none]
+Next: [top 3 priorities]
+```
+
+---
+
+## Recovery Priority
+
+```
+1. SQLite checkpoint.db   → instant, offline
+2. events.yaml            → replay recent
+3. Supabase               → full state
+4. GitHub                 → code truth
+```
+
+---
+
+## Failure Alert
+
+On backup failure → POST to ntfy/backup-alerts:
+```bash
+curl -d "Backup failed: $ERROR" ntfy:8095/backup-alerts
+```
+
+---
+
+## Commands
+
+| Command | Action |
+|---------|--------|
+| `/backup` | Log current delta (50 tokens) |
+| `/backup daily` | Generate .md + SQLite (100 tokens) |
+| `/backup weekly` | Full cloud sync (0 tokens) |
+| `/backup recover` | Reload from SQLite (50 tokens) |
+| `/backup status` | Show schedule + health (20 tokens) |

@@ -1,0 +1,27 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-01-31T19:14:41.938Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-01-31T19:14:44.437Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 2506ms","timestamp":"2026-01-31T19:14:44.437Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-01-31T19:14:44.437Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-01-31T19:15:14.086Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 32ms","timestamp":"2026-01-31T19:15:14.118Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T20:01:46.144Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 102ms","timestamp":"2026-01-31T20:01:46.246Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-01-31T20:01:52.182Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 149ms","timestamp":"2026-01-31T20:01:52.331Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T20:42:00.280Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 161ms","timestamp":"2026-01-31T20:42:00.441Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-01-31T21:01:59.422Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 102ms","timestamp":"2026-01-31T21:01:59.524Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-01T00:04:51.237Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 146ms","timestamp":"2026-02-01T00:04:51.382Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T05:10:07.186Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"error":"Entity with name Session-2026-01-31 not found","timestamp":"2026-02-01T05:10:07.726Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' failed after 0s: Entity with name Session-2026-01-31 not found","timestamp":"2026-02-01T05:10:07.726Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: create_entities","timestamp":"2026-02-01T05:10:49.326Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'create_entities' completed successfully in 72ms","timestamp":"2026-02-01T05:10:49.398Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T05:20:43.166Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 64ms","timestamp":"2026-02-01T05:20:43.230Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-01T05:56:35.531Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 255ms","timestamp":"2026-02-01T05:56:35.787Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-01T16:48:03.500Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 133ms","timestamp":"2026-02-01T16:48:03.633Z","sessionId":"af80ea88-bccc-47cc-9296-197dccbbc7fc","cwd":"/home/echo"}

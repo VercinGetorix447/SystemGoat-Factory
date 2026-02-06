@@ -1,0 +1,144 @@
+{
+  "name": "Cal.com Booking Manager",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.cal.com/v1/bookings",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apiKey",
+              "value": "cal_live_a3c54a97b88f475f36f2b0e5511545d1"
+            },
+            {
+              "name": "status",
+              "value": "upcoming"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-bookings",
+      "name": "Get Upcoming Bookings",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "const bookings = $input.first().json.bookings || [];\nconst now = new Date();\nconst upcoming = bookings.filter(b => new Date(b.startTime) > now);\n\nreturn [{\n  json: {\n    total_upcoming: upcoming.length,\n    bookings: upcoming.slice(0, 5).map(b => ({\n      title: b.title,\n      start: b.startTime,\n      attendees: b.attendees?.map(a => a.email).join(', ') || 'N/A'\n    })),\n    checked_at: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "process-bookings",
+      "name": "Process Bookings",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "https://api.cal.com/v1/availability",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "apiKey",
+              "value": "cal_live_a3c54a97b88f475f36f2b0e5511545d1"
+            },
+            {
+              "name": "dateFrom",
+              "value": "={{ $now.format('yyyy-MM-dd') }}"
+            },
+            {
+              "name": "dateTo",
+              "value": "={{ $now.plus(7, 'days').format('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "get-availability",
+      "name": "Get Weekly Availability",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 200]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": []
+        },
+        "options": {}
+      },
+      "id": "merge",
+      "name": "Merge Data",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [660, 100]
+    },
+    {
+      "parameters": {
+        "jsCode": "const bookings = $('Process Bookings').first().json;\nconst availability = $('Get Weekly Availability').first().json;\n\nconst summary = {\n  timestamp: new Date().toISOString(),\n  upcoming_bookings: bookings.total_upcoming,\n  next_bookings: bookings.bookings,\n  availability_slots: availability.slots?.length || 0\n};\n\n// Log to file\nreturn [{ json: summary }];"
+      },
+      "id": "create-summary",
+      "name": "Create Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 100]
+    }
+  ],
+  "connections": {
+    "Every 15 Minutes": {
+      "main": [
+        [
+          { "node": "Get Upcoming Bookings", "type": "main", "index": 0 },
+          { "node": "Get Weekly Availability", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Get Upcoming Bookings": {
+      "main": [
+        [{ "node": "Process Bookings", "type": "main", "index": 0 }]
+      ]
+    },
+    "Process Bookings": {
+      "main": [
+        [{ "node": "Merge Data", "type": "main", "index": 0 }]
+      ]
+    },
+    "Get Weekly Availability": {
+      "main": [
+        [{ "node": "Merge Data", "type": "main", "index": 1 }]
+      ]
+    },
+    "Merge Data": {
+      "main": [
+        [{ "node": "Create Summary", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": ["calcom", "scheduling", "bookings"]
+}

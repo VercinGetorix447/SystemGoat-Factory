@@ -1,0 +1,32 @@
+@echo off
+title Set Windows Password
+color 1F
+cls
+echo.
+echo ========================================
+echo    SET WINDOWS PASSWORD
+echo ========================================
+echo.
+echo Setting password for: Lenovo User
+echo.
+echo Type your NEW password and press Enter.
+echo Then type it AGAIN to confirm.
+echo (Password will NOT show as you type)
+echo.
+echo ----------------------------------------
+net user "Lenovo User" *
+echo ----------------------------------------
+echo.
+if %errorlevel%==0 (
+    color 2F
+    echo.
+    echo SUCCESS! Password set for Lenovo User
+    echo.
+) else (
+    color 4F
+    echo.
+    echo FAILED - Error code: %errorlevel%
+    echo.
+)
+echo Press any key to close...
+pause >nul

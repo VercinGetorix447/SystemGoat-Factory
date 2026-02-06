@@ -1,0 +1,83 @@
+# Claude Code Session Notes
+
+> **IMPORTANT**: This file tracks work progress. Claude should update this every ~5 minutes or after major milestones.
+
+---
+
+## Current Session: 2026-01-29 (Session 2)
+
+### Status: Active
+**Started**: ~4:20 PM EST
+
+### Context Recovered from Previous Session
+- Set up SQLite-based persistent memory system
+- Created `data/workspace.db` with tables: conversations, entities, insights, user_preferences
+- Created `data/init-db.mjs` and `data/query-db.mjs` for database operations
+- Key decision: Use SQLite MCP for conversation memory
+
+### This Session Goals
+- [ ] Verify semgrep installation (NOT INSTALLED)
+- [ ] Set up "ref.tools" API (need clarification on what this is)
+- [ ] Configure session auto-save system
+
+### Work Completed This Session
+1. Discovered semgrep is NOT installed
+2. Recovered previous session data from workspace.db
+3. Created this SESSION-NOTES.md file for progress tracking
+4. Created CLAUDE.md with mandatory session-start instructions
+5. Initialized git repo, first commit made
+6. Updated CLAUDE.md: "START OF EVERY SESSION: Review SESSION-NOTES + DB"
+7. **INSTALLED ref.tools MCP** - API key configured
+
+### Pending/Blocked
+- **semgrep**: Still needs to be installed (`pip install semgrep` or `brew install semgrep`)
+
+### Next Session TODO
+- Verify ref.tools MCP is working (restart Claude Code first)
+- Install semgrep if needed
+- Continue with persistent memory MCP setup
+
+### Key Decisions Made
+- (none yet this session)
+
+---
+
+## Previous Session: 2026-01-29 (Session 1)
+
+### Summary
+Initial setup session. Diagnosed Claude Code installation (NPM v2.1.23, working fine). Set up SQLite-based persistent memory system for cross-conversation context.
+
+### Topics
+installation, mcp, memory, sqlite, persistence
+
+### Key Decisions
+- Use SQLite MCP for conversation memory instead of ephemeral memory MCP
+
+### Files Created/Modified
+- `data/init-db.mjs` - Database initialization script
+- `data/query-db.mjs` - Database query utility
+- `data/workspace.db` - SQLite database for memory
+- `data/package.json` - Dependencies (sql.js)
+
+---
+
+## Quick Reference
+
+### How to Update This File
+Claude should update this file:
+1. Every ~5 minutes during active work
+2. After completing any significant task
+3. Before ending a session
+4. When making key decisions
+
+### Database Commands
+```bash
+cd /mnt/c/Users/Password/Documents/ClaudeCodeProjects/data
+node query-db.mjs tables                    # List tables
+node query-db.mjs query "SELECT * FROM conversations"
+node query-db.mjs run "INSERT INTO ..."     # Modify data
+```
+
+### To Restore Context in New Session
+1. Read this file first: `SESSION-NOTES.md`
+2. Check database: `node data/query-db.mjs query "SELECT * FROM conversations ORDER BY id DESC LIMIT 1"`
