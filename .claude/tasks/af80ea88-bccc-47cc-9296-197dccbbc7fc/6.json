@@ -1,9 +1,0 @@
-{
-  "id": "6",
-  "subject": "Set up DocuSeal for document signing",
-  "description": "Deploy DocuSeal for contract creation and e-signatures. Integrate with n8n for automated document workflows.",
-  "activeForm": "Setting up DocuSeal",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

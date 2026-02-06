@@ -1,7 +1,0 @@
----
-const { logo = 'BuildRightPros', links = ['Home','Services','About','Contact'] } = Astro.props;
----
-<nav class="sticky top-0 bg-white shadow p-4 flex justify-between">
-  <span class="font-header text-xl">{logo}</span>
-  <div class="space-x-4">{links.map(l => <a href={`/${l.toLowerCase()}`} class="hover:text-brand-accent">{l}</a>)}</div>
-</nav>

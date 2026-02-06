@@ -1,9 +1,0 @@
-{
-  "id": "21",
-  "subject": "Voice AI outreach script (MVP)",
-  "description": "Create outbound call script for Gemini Flash 2.5. Goal: book audit call. Handle objections. Log outcomes to NocoDB. Target: trade company owners.",
-  "activeForm": "Creating voice AI script",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

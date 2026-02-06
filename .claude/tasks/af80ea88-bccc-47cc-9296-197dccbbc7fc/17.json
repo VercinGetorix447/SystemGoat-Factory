@@ -1,9 +1,0 @@
-{
-  "id": "17",
-  "subject": "Mystery shopper call workflow",
-  "description": "Workflow: Call target business → record → transcribe (Google STT) → analyze response quality → generate report for presentation deck. Shows current state vs our solution.",
-  "activeForm": "Building mystery shopper workflow",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

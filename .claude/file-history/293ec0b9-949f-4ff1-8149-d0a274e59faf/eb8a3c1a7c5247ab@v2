@@ -1,9 +1,0 @@
-# Claude Workspace Launcher
-# Right-click > Run with PowerShell
-
-$workspacePath = "C:\Users\Password\Documents\ClaudeCodeProjects"
-$wslPath = "/mnt/c/Users/Password/Documents/ClaudeCodeProjects"
-
-Write-Host "Launching Claude Code in workspace..." -ForegroundColor Cyan
-Set-Location $workspacePath
-wsl -e bash -c "cd $wslPath && claude"

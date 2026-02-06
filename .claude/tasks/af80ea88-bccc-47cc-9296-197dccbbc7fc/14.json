@@ -1,9 +1,0 @@
-{
-  "id": "14",
-  "subject": "Create Google Maps lead scraper (Apify)",
-  "description": "Configure Apify Google Maps scraper for trade companies. Parameters: business type, city/region, extract: name, phone, email, address, reviews, website.",
-  "activeForm": "Creating lead scraper",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

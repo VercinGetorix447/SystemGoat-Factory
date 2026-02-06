@@ -1,9 +1,0 @@
-{
-  "id": "22",
-  "subject": "Add Perplexity API for AI summaries",
-  "description": "Set up Perplexity API for AI-powered summaries in n8n workflows. Use for: lead research summaries, competitor analysis, content briefs. Complements Brave (raw search) with AI synthesis.",
-  "activeForm": "Setting up Perplexity API",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

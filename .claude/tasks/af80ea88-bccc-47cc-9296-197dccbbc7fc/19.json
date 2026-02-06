@@ -1,9 +1,0 @@
-{
-  "id": "19",
-  "subject": "100-question business audit form (NocoDB)",
-  "description": "Create NocoDB form for \"Business Potential Audit\". 100 questions covering: current marketing, lead sources, phone handling, CRM usage, pain points, goals. Feeds into ROI calculator.",
-  "activeForm": "Creating audit form",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,9 +1,0 @@
-{
-  "id": "15",
-  "subject": "Build n8n Apify → NocoDB workflow",
-  "description": "n8n workflow: Apify webhook trigger → clean/dedupe data → store in NocoDB leads table → set stage COLD → notify via Ntfy.",
-  "activeForm": "Building Apify workflow",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

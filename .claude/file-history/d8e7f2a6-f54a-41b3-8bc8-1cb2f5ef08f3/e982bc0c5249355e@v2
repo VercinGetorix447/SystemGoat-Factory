@@ -1,6 +1,0 @@
----
-const { services = ['Plumbing','Electrical','HVAC','Roofing'] } = Astro.props;
----
-<section class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-  {services.map(s => <div class="bg-white p-6 shadow rounded text-center"><h3 class="font-header">{s}</h3></div>)}
-</section>

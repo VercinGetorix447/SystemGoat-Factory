@@ -1,8 +1,0 @@
-FROM n8nio/n8n:latest
-
-USER root
-
-# Install sqlite3 - using full path since hardened images may have limited PATH
-RUN /sbin/apk add --no-cache sqlite
-
-USER node

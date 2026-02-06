@@ -1,9 +1,0 @@
-{
-  "id": "5",
-  "subject": "Deploy Planka for project management",
-  "description": "Add Planka to Docker stack for kanban boards and task management. Alternative/complement to NocoDB kanban views.",
-  "activeForm": "Deploying Planka",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

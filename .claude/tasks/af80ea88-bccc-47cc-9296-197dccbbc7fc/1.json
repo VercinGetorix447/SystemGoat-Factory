@@ -1,9 +1,0 @@
-{
-  "id": "1",
-  "subject": "Install Semgrep MCP server",
-  "description": "Install and configure @anthropic/semgrep-mcp for code security scanning. Add to ~/.claude/settings.json mcpServers.",
-  "activeForm": "Installing Semgrep MCP",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

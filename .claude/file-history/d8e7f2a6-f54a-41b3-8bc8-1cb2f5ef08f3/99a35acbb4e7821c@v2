@@ -1,7 +1,0 @@
----
-import Base from '../layouts/Base.astro';
-import Hero from '../components/core/Hero.astro';
----
-<Base title="Home | BuildRightPros">
-  <Hero />
-</Base>

@@ -1,9 +1,0 @@
-{
-  "id": "2",
-  "subject": "Set up Brave Search API",
-  "description": "Get Brave Search API key from https://brave.com/search/api/, add as MCP server for web search capabilities.",
-  "activeForm": "Setting up Brave Search API",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

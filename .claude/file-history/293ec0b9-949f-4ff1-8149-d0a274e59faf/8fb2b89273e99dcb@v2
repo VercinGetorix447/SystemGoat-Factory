@@ -1,4 +1,0 @@
-@echo off
-title Claude Workspace
-cd /d "C:\Users\Password\Documents\ClaudeCodeProjects"
-wsl -e bash -c "cd /mnt/c/Users/Password/Documents/ClaudeCodeProjects && claude"
