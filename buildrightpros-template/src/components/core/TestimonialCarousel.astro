@@ -40,14 +40,14 @@ const testimonials: Testimonial[] = [
 <style>
   .testimonial-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, #F9F7F4 0%, #EDE9E3 100%);
     overflow: hidden;
   }
 
   .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 3rem;
     font-weight: 700;
   }
@@ -69,32 +69,34 @@ const testimonials: Testimonial[] = [
   .testimonial-card {
     flex: 0 0 calc((100% - 6rem) / 5);
     min-width: 280px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF;
+    border: 1px solid #E8E4DF;
     border-radius: 16px;
     padding: 2rem;
-    transition: all 0.4s ease;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     transform: scale(0.9);
-    opacity: 0.7;
+    opacity: 0.6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   }
 
   .testimonial-card.active {
-    transform: scale(1.1);
+    transform: scale(1.15) translateZ(50px);
     opacity: 1;
-    border: 2px solid #f59e0b;
-    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+    border: 3px solid #FF6B35;
+    box-shadow:
+      0 0 40px rgba(255, 107, 53, 0.4),
+      0 20px 40px rgba(0, 0, 0, 0.15);
     z-index: 10;
   }
 
   .stars {
-    color: #f59e0b;
+    color: #FF6B35;
     font-size: 1.25rem;
     margin-bottom: 1rem;
   }
 
   .testimonial-text {
-    color: #e5e7eb;
+    color: #4a4a4a;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -108,12 +110,12 @@ const testimonials: Testimonial[] = [
   }
 
   .testimonial-author strong {
-    color: #fff;
+    color: #1a1a1a;
     font-size: 1.1rem;
   }
 
   .testimonial-author span {
-    color: #9ca3af;
+    color: #666;
     font-size: 0.9rem;
   }
 
