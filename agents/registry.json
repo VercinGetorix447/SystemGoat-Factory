@@ -4,6 +4,51 @@
   "description": "Available agents for automated tasks - load at session start",
 
   "agents": {
+    "animation-modifier": {
+      "path": "/home/echo/agents/animation-modifier.md",
+      "type": "specialist",
+      "subagent_type": "general-purpose",
+      "delegation_score": 6,
+      "description": "Modify CSS/JS animations, transitions, motion effects",
+      "use_for": ["animation changes", "timing adjustments", "transition effects"],
+      "run_after": null,
+      "run_before": ["code-qa"]
+    },
+
+    "code-qa": {
+      "path": "/home/echo/agents/code-qa.md",
+      "type": "validator",
+      "subagent_type": "code-reviewer",
+      "delegation_score": 7,
+      "description": "Verify code quality, accessibility, performance before deployment",
+      "use_for": ["code review", "accessibility audit", "theme compliance"],
+      "run_after": ["animation-modifier", "landing-page-builder"],
+      "run_before": ["backup-deploy"]
+    },
+
+    "backup-deploy": {
+      "path": "/home/echo/agents/backup-deploy.md",
+      "type": "operations",
+      "subagent_type": "devops-engineer",
+      "delegation_score": 8,
+      "description": "Git commits, session logs, build verification, deployment prep",
+      "use_for": ["git operations", "backup", "deployment preparation"],
+      "run_after": ["code-qa"],
+      "run_before": null
+    },
+
+    "landing-page-builder": {
+      "path": "/home/echo/agents/landing-page-builder.md",
+      "type": "creator",
+      "subagent_type": "architect",
+      "delegation_score": 7,
+      "description": "Create client website builder with form ↔ preview interface",
+      "use_for": ["landing pages", "client builder tool", "template generation"],
+      "decision_categories": ["industry", "color", "hero", "services", "cta"],
+      "run_after": null,
+      "run_before": ["code-qa"]
+    },
+
     "image-agent": {
       "path": "/home/echo/agents/images/agent.sh",
       "type": "bash",
