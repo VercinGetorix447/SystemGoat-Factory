@@ -2,6 +2,9 @@
 .local/
 .claude/
 backups/
+.git-credentials
+.config/gh/
+*.env
 
 # Large binary files
 .local/
