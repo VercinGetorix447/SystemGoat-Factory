@@ -31,7 +31,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 45,
+  "promptQueueUseCount": 49,
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_1p_event_batch_config": {
@@ -387,7 +387,7 @@
   "officialMarketplaceAutoInstalled": true,
   "lastPlanModeUse": 1770249607094,
   "feedbackSurveyState": {
-    "lastShownTime": 1770002201409
+    "lastShownTime": 1770488408004
   },
   "skillUsage": {
     "load-session": {
