@@ -1,0 +1,459 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Sample blog data - will be replaced with CMS/API data
+const categories = ['All', 'Kitchen', 'Bathroom', 'Outdoor', 'Roofing', 'HVAC', 'Plumbing'];
+
+const articles = [
+  {
+    slug: 'kitchen-remodel-dallas',
+    title: 'Complete Kitchen Transformation in Dallas',
+    excerpt: 'How we turned a dated 1990s kitchen into a modern culinary space.',
+    image: '/images/blog/kitchen-1.jpg',
+    category: 'Kitchen',
+    tags: ['kitchen', 'remodel', 'dallas', 'modern'],
+    date: '2026-02-01',
+    readTime: '5 min'
+  },
+  {
+    slug: 'bathroom-renovation-guide',
+    title: 'Bathroom Renovation: What to Expect',
+    excerpt: 'Your complete guide to planning a stress-free bathroom remodel.',
+    image: '/images/blog/bathroom-1.jpg',
+    category: 'Bathroom',
+    tags: ['bathroom', 'renovation', 'guide', 'planning'],
+    date: '2026-01-28',
+    readTime: '7 min'
+  },
+  {
+    slug: 'deck-building-tips',
+    title: 'Building the Perfect Outdoor Deck',
+    excerpt: 'Material choices, design tips, and maintenance advice for lasting decks.',
+    image: '/images/blog/deck-1.jpg',
+    category: 'Outdoor',
+    tags: ['deck', 'outdoor', 'construction', 'wood'],
+    date: '2026-01-25',
+    readTime: '6 min'
+  },
+  {
+    slug: 'roof-inspection-checklist',
+    title: 'Spring Roof Inspection Checklist',
+    excerpt: 'Essential checks to protect your home before storm season.',
+    image: '/images/blog/roof-1.jpg',
+    category: 'Roofing',
+    tags: ['roofing', 'inspection', 'maintenance', 'spring'],
+    date: '2026-01-20',
+    readTime: '4 min'
+  },
+  {
+    slug: 'hvac-efficiency-tips',
+    title: 'Maximize Your HVAC Efficiency',
+    excerpt: 'Simple upgrades that cut energy bills by up to 30%.',
+    image: '/images/blog/hvac-1.jpg',
+    category: 'HVAC',
+    tags: ['hvac', 'energy', 'efficiency', 'savings'],
+    date: '2026-01-15',
+    readTime: '5 min'
+  },
+  {
+    slug: 'plumbing-emergency-guide',
+    title: 'Plumbing Emergencies: Act Fast',
+    excerpt: 'What to do before the plumber arrives to minimize damage.',
+    image: '/images/blog/plumbing-1.jpg',
+    category: 'Plumbing',
+    tags: ['plumbing', 'emergency', 'tips', 'water-damage'],
+    date: '2026-01-10',
+    readTime: '3 min'
+  }
+];
+---
+
+<Base title="Customer Stories | BuildRightPros">
+  <section class="blog-page">
+    <div class="blog-header">
+      <h1>Customer Stories</h1>
+      <p>Real projects. Real results. See how we've helped homeowners transform their spaces.</p>
+    </div>
+
+    <div class="blog-container">
+      <!-- Left Sidebar TOC -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-section">
+          <h3>Search</h3>
+          <div class="search-box">
+            <input type="text" id="blogSearch" placeholder="Search articles..." />
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Categories</h3>
+          <ul class="category-list">
+            {categories.map((cat, i) => (
+              <li>
+                <button class={`category-btn ${i === 0 ? 'active' : ''}`} data-category={cat.toLowerCase()}>
+                  {cat}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Latest</h3>
+          <ul class="latest-list">
+            {articles.slice(0, 3).map(article => (
+              <li>
+                <a href={`/blog/${article.slug}`}>
+                  <span class="latest-title">{article.title}</span>
+                  <span class="latest-date">{article.date}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Article Grid -->
+      <div class="article-grid" id="articleGrid">
+        {articles.map(article => (
+          <article class="article-card" data-category={article.category.toLowerCase()} data-tags={article.tags.join(',')}>
+            <div class="article-image">
+              <img src={article.image} alt={article.title} loading="lazy" />
+              <span class="article-category">{article.category}</span>
+            </div>
+            <div class="article-content">
+              <h2><a href={`/blog/${article.slug}`}>{article.title}</a></h2>
+              <p>{article.excerpt}</p>
+              <div class="article-meta">
+                <span class="read-time">{article.readTime} read</span>
+                <span class="date">{article.date}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .blog-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #1a0a2e 0%, #0f0518 100%);
+    padding: 2rem;
+  }
+
+  .blog-header {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .blog-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .blog-header p {
+    font-size: 1.25rem;
+    color: #a78bfa;
+  }
+
+  .blog-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .blog-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+  }
+
+  .sidebar-section {
+    background: rgba(45, 27, 78, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-section h3 {
+    color: #c4b5fd;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+  }
+
+  .search-box {
+    position: relative;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    background: rgba(15, 5, 24, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  .search-box input::placeholder {
+    color: #6b7280;
+  }
+
+  .search-box input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: #6b7280;
+  }
+
+  .category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .category-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #d1d5db;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .category-btn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    color: #fff;
+  }
+
+  .category-btn.active {
+    background: #8b5cf6;
+    color: #fff;
+  }
+
+  .latest-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .latest-list li {
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+    padding: 0.75rem 0;
+  }
+
+  .latest-list li:last-child {
+    border-bottom: none;
+  }
+
+  .latest-list a {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+  }
+
+  .latest-title {
+    color: #e5e7eb;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .latest-list a:hover .latest-title {
+    color: #a78bfa;
+  }
+
+  .latest-date {
+    color: #6b7280;
+    font-size: 0.75rem;
+  }
+
+  /* Article Grid */
+  .article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .article-card {
+    background: rgba(45, 27, 78, 0.4);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .article-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .article-card.hidden {
+    display: none;
+  }
+
+  .article-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .article-card:hover .article-image img {
+    transform: scale(1.05);
+  }
+
+  .article-category {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #8b5cf6;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .article-content {
+    padding: 1.5rem;
+  }
+
+  .article-content h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .article-content h2 a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .article-content h2 a:hover {
+    color: #a78bfa;
+  }
+
+  .article-content p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .article-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-container {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-sidebar {
+      position: relative;
+      top: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .sidebar-section {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .blog-sidebar {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-header h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('blogSearch');
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const articles = document.querySelectorAll('.article-card');
+
+  let activeCategory = 'all';
+
+  function filterArticles() {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    articles.forEach(article => {
+      const category = article.dataset.category;
+      const tags = article.dataset.tags;
+      const title = article.querySelector('h2').textContent.toLowerCase();
+
+      const matchesCategory = activeCategory === 'all' || category === activeCategory;
+      const matchesSearch = !searchTerm ||
+        title.includes(searchTerm) ||
+        tags.includes(searchTerm);
+
+      if (matchesCategory && matchesSearch) {
+        article.classList.remove('hidden');
+      } else {
+        article.classList.add('hidden');
+      }
+    });
+  }
+
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      categoryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.dataset.category;
+      filterArticles();
+    });
+  });
+
+  searchInput.addEventListener('input', filterArticles);
+</script>

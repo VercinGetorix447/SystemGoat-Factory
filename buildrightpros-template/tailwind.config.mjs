@@ -7,7 +7,14 @@ export default {
         body: ['Trebuchet', 'Montserrat', 'Arial', 'sans-serif']
       },
       colors: {
-        brand: { light: '#f5f5f5', dark: '#1a1a1a', accent: '#3b82f6' }
+        brand: {
+          light: '#1a0a2e',      /* deep purple bg */
+          dark: '#0f0518',       /* darker purple */
+          accent: '#8b5cf6',     /* violet accent */
+          secondary: '#6366f1',  /* indigo */
+          surface: '#2d1b4e',    /* card bg */
+          muted: '#4c3a6e'       /* borders/muted */
+        }
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
