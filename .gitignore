@@ -2,3 +2,11 @@
 .local/
 .claude/
 backups/
+
+# Large binary files
+.local/
+.vscode-server/
+*.bin
+node_modules/
+.npm/
+.cache/
