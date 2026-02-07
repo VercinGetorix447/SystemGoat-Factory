@@ -17,9 +17,9 @@
     "install-github-app": 22,
     "install-slack-app": 22,
     "drag-and-drop-images": 22,
-    "double-esc-code-restore": 11,
-    "continue": 11,
-    "shift-tab": 11,
+    "double-esc-code-restore": 22,
+    "continue": 22,
+    "shift-tab": 22,
     "image-paste": 21,
     "desktop-app": 16,
     "web-app": 17,
@@ -31,7 +31,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 42,
+  "promptQueueUseCount": 46,
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_1p_event_batch_config": {

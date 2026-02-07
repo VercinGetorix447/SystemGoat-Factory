@@ -3,3 +3,46 @@
 {"debug":"Successfully connected to stdio server in 24174ms","timestamp":"2026-02-07T05:52:15.325Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
 {"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":true,\"serverVersion\":{\"name\":\"google-drive-mcp\",\"version\":\"1.1.2\"}}","timestamp":"2026-02-07T05:52:15.325Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
 {"error":"Failed to fetch resources: MCP error -32001: Request timed out","timestamp":"2026-02-07T05:53:15.346Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: listFolder","timestamp":"2026-02-07T06:11:11.979Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (29s elapsed)","timestamp":"2026-02-07T06:11:41.971Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (60s elapsed)","timestamp":"2026-02-07T06:12:12.028Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (101s elapsed)","timestamp":"2026-02-07T06:12:53.607Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (120s elapsed)","timestamp":"2026-02-07T06:13:12.002Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (150s elapsed)","timestamp":"2026-02-07T06:13:42.039Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (179s elapsed)","timestamp":"2026-02-07T06:14:11.977Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (210s elapsed)","timestamp":"2026-02-07T06:14:42.068Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (240s elapsed)","timestamp":"2026-02-07T06:15:12.011Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (270s elapsed)","timestamp":"2026-02-07T06:15:42.021Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' still running (300s elapsed)","timestamp":"2026-02-07T06:16:12.007Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'listFolder' failed after 310s: MCP error -32001: AbortError: This operation was aborted","timestamp":"2026-02-07T06:16:22.143Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search","timestamp":"2026-02-07T06:16:32.663Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (29s elapsed)","timestamp":"2026-02-07T06:17:02.584Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (60s elapsed)","timestamp":"2026-02-07T06:17:32.674Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (89s elapsed)","timestamp":"2026-02-07T06:18:02.614Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (119s elapsed)","timestamp":"2026-02-07T06:18:32.660Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (150s elapsed)","timestamp":"2026-02-07T06:19:02.699Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (180s elapsed)","timestamp":"2026-02-07T06:19:32.724Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (209s elapsed)","timestamp":"2026-02-07T06:20:02.479Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (239s elapsed)","timestamp":"2026-02-07T06:20:32.441Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (269s elapsed)","timestamp":"2026-02-07T06:21:02.493Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (299s elapsed)","timestamp":"2026-02-07T06:21:32.472Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (329s elapsed)","timestamp":"2026-02-07T06:22:02.449Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (359s elapsed)","timestamp":"2026-02-07T06:22:32.424Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (389s elapsed)","timestamp":"2026-02-07T06:23:02.499Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (419s elapsed)","timestamp":"2026-02-07T06:23:32.441Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (449s elapsed)","timestamp":"2026-02-07T06:24:02.477Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (479s elapsed)","timestamp":"2026-02-07T06:24:32.536Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (509s elapsed)","timestamp":"2026-02-07T06:25:02.375Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (539s elapsed)","timestamp":"2026-02-07T06:25:32.374Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (569s elapsed)","timestamp":"2026-02-07T06:26:02.373Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (599s elapsed)","timestamp":"2026-02-07T06:26:32.296Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (629s elapsed)","timestamp":"2026-02-07T06:27:02.311Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (659s elapsed)","timestamp":"2026-02-07T06:27:32.393Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (689s elapsed)","timestamp":"2026-02-07T06:28:02.371Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (719s elapsed)","timestamp":"2026-02-07T06:28:32.353Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (749s elapsed)","timestamp":"2026-02-07T06:29:02.317Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (779s elapsed)","timestamp":"2026-02-07T06:29:32.319Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (809s elapsed)","timestamp":"2026-02-07T06:30:02.381Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (839s elapsed)","timestamp":"2026-02-07T06:30:32.381Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' still running (869s elapsed)","timestamp":"2026-02-07T06:31:02.388Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Tool 'search' failed after 880s: MCP error -32001: AbortError: This operation was aborted","timestamp":"2026-02-07T06:31:12.816Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}

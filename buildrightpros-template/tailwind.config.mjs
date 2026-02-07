@@ -8,12 +8,12 @@ export default {
       },
       colors: {
         brand: {
-          light: '#1a0a2e',      /* deep purple bg */
-          dark: '#0f0518',       /* darker purple */
-          accent: '#8b5cf6',     /* violet accent */
-          secondary: '#6366f1',  /* indigo */
-          surface: '#2d1b4e',    /* card bg */
-          muted: '#4c3a6e'       /* borders/muted */
+          light: '#F9F7F4',      /* warm cream bg (Clerk.io style) */
+          dark: '#1a1a1a',       /* dark text */
+          accent: '#FF6B35',     /* orange accent (from Clerk.io) */
+          secondary: '#2D3748',  /* dark gray */
+          surface: '#FFFFFF',    /* card bg */
+          muted: '#E8E4DF'       /* borders/muted warm gray */
         }
       },
       animation: {
