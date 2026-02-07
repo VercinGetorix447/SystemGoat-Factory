@@ -27,11 +27,23 @@ affiliate program page, become a partner page styles, socrative.com - clean layo
 ├── premium/     (upgrade: PricingTable, BlogLayout, Testimonials, FAQ)
 ```
 
-### Demo Flow
+### Client Theme Options (5 Choices)
+**Reference:** mailbakery.com (clean card layouts, whitespace, sidebar with categories, large featured images, trust signals)
+
+| Theme | Style | Colors | Best For |
+|-------|-------|--------|----------|
+| Clean Pro | Minimal whitespace, card-based sections | White/gray + accent | Plumbers, Electricians |
+| Bold Trade | High-contrast, dark headers, strong CTAs | Dark navy + orange | Roofers, Construction |
+| Earth Tone | Warm neutrals, natural textures | Tan/brown + green | Landscapers, Fencing |
+| Modern Edge | Sharp lines, gradient accents, tech feel | Charcoal + blue | HVAC, Solar |
+| Classic Trust | Traditional, badge-heavy, testimonial focus | Navy + gold | General Contractors |
+
+**Demo Flow:**
 1. Client picks trade type
-2. Brand colors auto-apply
-3. Toggle components by plan tier
-4. Deploy via Coolify
+2. Client selects theme (5 options above)
+3. Brand colors auto-apply from theme
+4. Toggle components by plan tier
+5. Deploy via Coolify
 ### Typography
 | Type | Options |
 |------|---------|
