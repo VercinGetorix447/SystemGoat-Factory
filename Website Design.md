@@ -27,8 +27,24 @@ affiliate program page, become a partner page styles, socrative.com - clean layo
 ├── premium/     (upgrade: PricingTable, BlogLayout, Testimonials, FAQ)
 ```
 
-### Client Theme Options (5 Choices)
-**Reference:** mailbakery.com (clean card layouts, whitespace, sidebar with categories, large featured images, trust signals)
+### Client Website Example Layouts (Choose 1)
+
+**Option 1 — "Contractor Showcase"** (current BuildRightPros.com)
+- Alternating left/right sections (white box + black border, image opposite)
+- Hero gallery with rotating project photos
+- Sticky nav with section anchors
+- Blog: Clerk.io style (card grid, sticky category filter bar, featured post)
+- Best for: visual trades, portfolio-heavy businesses
+
+**Option 2 — "Clean & Fast"** (mailbakery.com reference)
+- Card-based layout with generous whitespace
+- Large featured images, trust badges, clean typography
+- Blog: sidebar with category search, TOC, newsletter signup, large image cards
+- Easy to read, fast loading, simple to deploy via Coolify
+- Best for: service-focused trades, content-heavy businesses
+- **Queue:** mailbakery blog category search style as alternate blog layout
+
+### Client Color Themes (5 Choices — applies to either layout)
 
 | Theme | Style | Colors | Best For |
 |-------|-------|--------|----------|
@@ -40,9 +56,10 @@ affiliate program page, become a partner page styles, socrative.com - clean layo
 
 **Demo Flow:**
 1. Client picks trade type
-2. Client selects theme (5 options above)
-3. Brand colors auto-apply from theme
-4. Toggle components by plan tier
+2. Client selects layout (Option 1 or 2)
+3. Client selects color theme (5 options above)
+4. Brand colors auto-apply from theme
+5. Toggle components by plan tier
 5. Deploy via Coolify
 ### Typography
 | Type | Options |
