@@ -10,10 +10,10 @@ affiliate program page, become a partner page styles, socrative.com - clean layo
 
 | Slogan | Subtitle | Price | Features |
 |--------|----------|-------|----------|
-| IN THE GAME | Digital Starter | $396 | 3 Page Website, Mobile Responsive, Contact Form, Basic SEO, - AI Receptionist (optional), - Lead Generation (optional) |
-| EFFICIENT CONTRACTOR | Contractor Pro | $693 | 6 Page Website, CRM Integration, 25 Leads/month, Basic Analytics, - AI Receptionist (optional), - Lead Generation (optional) |
-| GROWING FUNNELS | Branding Suite | $963 | 10 Page Website, AI Caller Setup, 50 Leads/month, Full Analytics, Social Media Kit |
-| REGION DOMINATION | Scale Package | $3,699 | Up to 50 Page Website, Full Business Audit, Full-time AI Receptionist, Dedicated AI Callers, CRM Full Integration, Integrated Lead Gen, Multiple Users, Email & SMS Marketing, White-label Options, Priority Support |
+| IN THE GAME | Digital Starter | $396 | 3 Page Website, Mobile Responsive, Contact Form, Basic SEO, - AI Receptionist (optional), - Lead Generation (optional), - Email Marketing (optional) |
+| EFFICIENT CONTRACTOR | Contractor Pro | $693 | 6 Page Website, CRM Integration, SEO Content, Analytics, - AI Receptionist (optional), - Lead Generation (optional), - Email Marketing (optional) |
+| GROWING FUNNELS | Branding Suite | $963 | 10 Page Website, AI Receptionist, CRM Lead Funnels, Email Marketing, Results Dashboard, Social Media Kit |
+| REGION DOMINATION | Scale Package | $3,699 | Up to 50 Page Website, Up to 20 Landing Pages, Keyword Research, Full Business Audit, Full-time AI Receptionist, Dedicated AI Callers, CRM Full Integration, Integrated Lead Gen, Multiple Users, Email & SMS Marketing, Workflow Automations, White-label Options, Priority Support |
 
 **Layout:** Slogan as bold heading, subtitle below in italic, price prominent, feature checklist, optional add-ons marked with dash (-)
 **Featured tier:** GROWING FUNNELS (orange border, "Most Popular" badge)
