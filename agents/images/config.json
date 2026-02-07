@@ -1,0 +1,45 @@
+{
+  "name": "ImageAgent",
+  "version": "1.0.0",
+  "description": "Image compression, vectorization, and backup management",
+
+  "storage": {
+    "local": {
+      "short_term": "/home/echo/backups/images/staging",
+      "processed": "/home/echo/backups/images/processed",
+      "vectors": "/home/echo/backups/images/vectors"
+    },
+    "remote": {
+      "hetzner": {
+        "host": "5.75.146.160",
+        "path": "/opt/coolify/uploads/media",
+        "url": "https://media.systemgoat.com"
+      }
+    }
+  },
+
+  "compression": {
+    "quality": 85,
+    "max_width": 1920,
+    "max_height": 1080,
+    "formats": ["webp", "jpg"],
+    "tool": "sharp"
+  },
+
+  "vectors": {
+    "model": "clip-vit-base-patch32",
+    "dimensions": 512,
+    "storage": "local_json"
+  },
+
+  "tags": {
+    "auto_generate": true,
+    "categories": ["trades", "projects", "testimonials", "blog", "hero"]
+  },
+
+  "backup_policy": {
+    "local_retention_days": 7,
+    "sync_to_hetzner": true,
+    "organize_by": "category/date"
+  }
+}
