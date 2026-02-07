@@ -1,0 +1,127 @@
+{
+  "name": "BuildRightPros Agent Registry",
+  "version": "1.0.0",
+  "description": "Available agents for automated tasks - load at session start",
+
+  "agents": {
+    "image-agent": {
+      "path": "/home/echo/agents/images/agent.sh",
+      "type": "bash",
+      "description": "Image compression, sync to Hetzner, and search",
+      "commands": ["ingest", "compress", "sync", "search", "status", "pipeline"],
+      "example": "./agent.sh pipeline /path/to/images trades"
+    },
+
+    "researcher": {
+      "type": "subagent",
+      "subagent_type": "researcher",
+      "description": "Research specialist for exploring tools, documentation, and gathering information",
+      "use_for": ["tool comparison", "library research", "best practices", "cost analysis"],
+      "example_prompt": "Research the best tools for [X] with requirements: [Y]. Return comparison table and recommendation."
+    },
+
+    "backup-agent": {
+      "type": "subagent",
+      "subagent_type": "devops-engineer",
+      "description": "Handles incremental and EOD backups to GitHub and Hetzner",
+      "delegation_score": 8,
+      "use_for": ["git commits", "file sync", "backup verification"]
+    },
+
+    "code-reviewer": {
+      "type": "subagent",
+      "subagent_type": "code-reviewer",
+      "description": "Expert code review after writing or modifying code",
+      "use_for": ["PR review", "security audit", "best practices check"]
+    },
+
+    "test-runner": {
+      "type": "subagent",
+      "subagent_type": "test-runner",
+      "description": "Runs and analyzes test suites",
+      "use_for": ["npm test", "pytest", "coverage analysis"]
+    },
+
+    "explorer": {
+      "type": "subagent",
+      "subagent_type": "Explore",
+      "description": "Fast codebase exploration - find files, search code, understand structure",
+      "thoroughness": ["quick", "medium", "very thorough"],
+      "use_for": ["find files", "search patterns", "codebase questions"]
+    },
+
+    "debugger": {
+      "type": "subagent",
+      "subagent_type": "debugger",
+      "description": "Debugging specialist for errors, test failures, unexpected behavior",
+      "use_for": ["error investigation", "stack traces", "test failures"]
+    },
+
+    "architect": {
+      "type": "subagent",
+      "subagent_type": "architect",
+      "description": "Software architecture for system design and structural decisions",
+      "use_for": ["new features", "major refactors", "system design"]
+    },
+
+    "doc-writer": {
+      "type": "subagent",
+      "subagent_type": "doc-writer",
+      "description": "Documentation specialist for README, API docs, comments",
+      "use_for": ["documentation", "README updates", "API docs"]
+    },
+
+    "security-auditor": {
+      "type": "subagent",
+      "subagent_type": "security-auditor",
+      "description": "Security vulnerability expert for auditing code",
+      "use_for": ["auth code", "user input handling", "sensitive data"]
+    },
+
+    "n8n-workflow": {
+      "type": "subagent",
+      "subagent_type": "n8n-workflow",
+      "description": "n8n automation workflow designer",
+      "use_for": ["create workflows", "debug workflows", "optimize automation"]
+    },
+
+    "content-generator": {
+      "type": "subagent",
+      "subagent_type": "content-generator",
+      "description": "Content creation for blog posts, articles, marketing copy",
+      "use_for": ["blog posts", "landing page copy", "newsletters"]
+    }
+  },
+
+  "custom_scripts": {
+    "upload-to-hetzner": {
+      "windows": "C:\\Users\\password\\Desktop\\Upload-to-Hetzner.bat",
+      "linux": "/home/echo/scripts/upload-to-hetzner.sh",
+      "description": "Upload media files to Hetzner server"
+    },
+    "workflow-sod": {
+      "path": "/home/echo/scripts/workflow.sh sod",
+      "description": "Start of day context injection"
+    }
+  },
+
+  "infrastructure": {
+    "hetzner": {
+      "ip": "5.75.146.160",
+      "ssh": "root@5.75.146.160",
+      "media_path": "/opt/coolify/uploads/media",
+      "media_url": "https://media.systemgoat.com"
+    },
+    "coolify": {
+      "url": "https://coolify.systemgoat.com",
+      "services": ["n8n", "NocoDB", "PocketBase", "Planka", "Metabase", "Ntfy"]
+    }
+  },
+
+  "session_startup": [
+    "Read /home/echo/agents/registry.json",
+    "Read latest /home/echo/sessions/*.md",
+    "Check git status",
+    "Load CLAUDE.md context"
+  ]
+}
