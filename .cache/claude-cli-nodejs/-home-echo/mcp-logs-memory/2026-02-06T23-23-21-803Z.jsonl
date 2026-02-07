@@ -1,0 +1,8 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-06T23:23:27.423Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-06T23:23:41.998Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 14580ms","timestamp":"2026-02-06T23:23:41.998Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-06T23:23:41.998Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-06T23:24:17.178Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 57ms","timestamp":"2026-02-06T23:24:17.235Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: add_observations","timestamp":"2026-02-06T23:28:52.002Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}
+{"debug":"Tool 'add_observations' completed successfully in 50ms","timestamp":"2026-02-06T23:28:52.053Z","sessionId":"aeb65427-0890-47b2-8ec0-5cbfb0decb48","cwd":"/home/echo"}

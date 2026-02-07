@@ -1,36 +1,37 @@
 {
-  "numStartups": 18,
+  "numStartups": 22,
+  "installMethod": "global",
   "theme": "dark-daltonized",
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 7,
     "plan-mode-for-complex-tasks": 1,
-    "terminal-setup": 11,
+    "terminal-setup": 22,
     "memory-command": 16,
-    "theme-command": 1,
+    "theme-command": 21,
     "colorterm-truecolor": 1,
     "status-line": 1,
     "prompt-queue": 6,
-    "enter-to-steer-in-relatime": 1,
-    "todo-list": 1,
-    "install-github-app": 11,
-    "install-slack-app": 11,
-    "drag-and-drop-images": 11,
-    "double-esc-code-restore": 11,
+    "enter-to-steer-in-relatime": 21,
+    "todo-list": 21,
+    "install-github-app": 22,
+    "install-slack-app": 22,
+    "drag-and-drop-images": 22,
+    "double-esc-code-restore": 22,
     "continue": 11,
     "shift-tab": 11,
-    "image-paste": 1,
+    "image-paste": 21,
     "desktop-app": 16,
     "web-app": 17,
     "mobile-app": 17,
-    "default-permission-mode-config": 11,
-    "custom-agents": 6,
-    "agent-flag": 6,
-    "permissions": 11,
+    "default-permission-mode-config": 21,
+    "custom-agents": 21,
+    "agent-flag": 21,
+    "permissions": 22,
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 39,
+  "promptQueueUseCount": 42,
   "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_1p_event_batch_config": {
@@ -97,7 +98,7 @@
     "accountUuid": "7e994b10-0df8-4ead-8203-6bf95a03c766",
     "emailAddress": "troy.allison@gmail.com",
     "organizationUuid": "408fa69a-efda-41fd-9781-580cdd5b59f9",
-    "hasExtraUsageEnabled": false,
+    "hasExtraUsageEnabled": true,
     "displayName": "Troy",
     "organizationRole": "admin",
     "workspaceRole": null,
@@ -154,6 +155,17 @@
             "@upstash/context7-mcp@latest"
           ],
           "env": {}
+        },
+        "google-drive": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@piotr-agier/google-drive-mcp"
+          ],
+          "env": {
+            "GOOGLE_DRIVE_OAUTH_CREDENTIALS": "/mnt/c/Users/password/Documents/.claude/MCP_API_SDK_files/credentials/Google OAuth Client - cal + email to claude/client_secret_29733447782-t7r5h9j0h3qbn2p0jjrqvobvu67te232.apps.googleusercontent.com.json"
+          }
         }
       },
       "enabledMcpjsonServers": [],
@@ -170,39 +182,47 @@
         "version": null,
         "packageManager": null
       },
-      "lastCost": 7.252179999999999,
-      "lastAPIDuration": 1276245,
-      "lastAPIDurationWithoutRetries": 1275451,
-      "lastToolDuration": 253377,
-      "lastDuration": 63746037,
-      "lastLinesAdded": 1507,
-      "lastLinesRemoved": 589,
-      "lastTotalInputTokens": 182501,
-      "lastTotalOutputTokens": 75140,
-      "lastTotalCacheCreationInputTokens": 262772,
-      "lastTotalCacheReadInputTokens": 7158100,
-      "lastTotalWebSearchRequests": 1,
-      "lastFpsAverage": 2.54,
-      "lastFpsLow1Pct": 11.73,
+      "lastCost": 2.2938626499999994,
+      "lastAPIDuration": 565014,
+      "lastAPIDurationWithoutRetries": 563562,
+      "lastToolDuration": 1064007,
+      "lastDuration": 19568885,
+      "lastLinesAdded": 708,
+      "lastLinesRemoved": 14,
+      "lastTotalInputTokens": 26287,
+      "lastTotalOutputTokens": 27094,
+      "lastTotalCacheCreationInputTokens": 154757,
+      "lastTotalCacheReadInputTokens": 2028532,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 4.95,
+      "lastFpsLow1Pct": 36.22,
       "lastModelUsage": {
         "claude-haiku-4-5-20251001": {
-          "inputTokens": 174875,
-          "outputTokens": 3535,
+          "inputTokens": 25846,
+          "outputTokens": 1301,
           "cacheReadInputTokens": 0,
           "cacheCreationInputTokens": 0,
           "webSearchRequests": 0,
-          "costUSD": 0.19254999999999997
+          "costUSD": 0.032351
         },
         "claude-opus-4-5-20251101": {
-          "inputTokens": 7626,
-          "outputTokens": 71605,
-          "cacheReadInputTokens": 7158100,
-          "cacheCreationInputTokens": 262772,
-          "webSearchRequests": 1,
-          "costUSD": 7.059629999999999
+          "inputTokens": 302,
+          "outputTokens": 13047,
+          "cacheReadInputTokens": 1359544,
+          "cacheCreationInputTokens": 112565,
+          "webSearchRequests": 0,
+          "costUSD": 1.71098825
+        },
+        "claude-sonnet-4-5-20250929": {
+          "inputTokens": 139,
+          "outputTokens": 12746,
+          "cacheReadInputTokens": 668988,
+          "cacheCreationInputTokens": 42192,
+          "webSearchRequests": 0,
+          "costUSD": 0.5505234000000001
         }
       },
-      "lastSessionId": "d2c45eae-399e-4f35-a517-20781eeaa718"
+      "lastSessionId": "34498ccf-dcf0-4d96-8991-18653138e52c"
     },
     "/mnt/c/Users/Password/Documents/ClaudeCodeProjects": {
       "allowedTools": [],
@@ -354,13 +374,13 @@
     "408fa69a-efda-41fd-9781-580cdd5b59f9": {
       "hasAccess": false,
       "hasAccessNotAsDefault": false,
-      "timestamp": 1770245732520
+      "timestamp": 1770441185984
     }
   },
   "groveConfigCache": {
     "7e994b10-0df8-4ead-8203-6bf95a03c766": {
       "grove_enabled": true,
-      "timestamp": 1770245727644
+      "timestamp": 1770420206615
     }
   },
   "officialMarketplaceAutoInstallAttempted": true,
@@ -374,5 +394,10 @@
       "usageCount": 1,
       "lastUsedAt": 1770245951235
     }
+  },
+  "githubRepoPaths": {
+    "vercingetorix447/systemgoat-factory": [
+      "/home/echo"
+    ]
   }
 }

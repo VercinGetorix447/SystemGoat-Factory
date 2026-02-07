@@ -1,6 +1,13 @@
 ---
 const { services = ['Plumbing','Electrical','HVAC','Roofing'] } = Astro.props;
 ---
-<section class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-  {services.map(s => <div class="bg-white p-6 shadow rounded text-center"><h3 class="font-header">{s}</h3></div>)}
+<section class="grid grid-cols-2 md:grid-cols-4 gap-6 p-8">
+  {services.map((s, i) => (
+    <div
+      class="bg-white p-6 shadow-md rounded-lg text-center opacity-0 animate-scale-in hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+      style={`animation-delay: ${i * 0.1}s`}
+    >
+      <h3 class="font-header text-lg">{s}</h3>
+    </div>
+  ))}
 </section>

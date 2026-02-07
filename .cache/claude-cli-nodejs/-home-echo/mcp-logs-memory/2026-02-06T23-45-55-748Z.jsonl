@@ -1,0 +1,13 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-06T23:45:59.984Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-06T23:46:03.001Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 3022ms","timestamp":"2026-02-06T23:46:03.002Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-06T23:46:03.002Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: read_graph","timestamp":"2026-02-06T23:46:29.928Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Tool 'read_graph' completed successfully in 30ms","timestamp":"2026-02-06T23:46:29.958Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-06T23:47:04.960Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 19ms","timestamp":"2026-02-06T23:47:04.979Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: open_nodes","timestamp":"2026-02-06T23:47:11.018Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Tool 'open_nodes' completed successfully in 40ms","timestamp":"2026-02-06T23:47:11.059Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Sending SIGINT to MCP server process","timestamp":"2026-02-07T05:12:01.643Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"SIGINT failed, sending SIGTERM to MCP server process","timestamp":"2026-02-07T05:12:02.300Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}
+{"debug":"Cleanup timeout reached, stopping process monitoring","timestamp":"2026-02-07T05:12:02.303Z","sessionId":"34498ccf-dcf0-4d96-8991-18653138e52c","cwd":"/home/echo"}

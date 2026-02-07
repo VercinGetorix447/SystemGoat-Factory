@@ -1,0 +1,6 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-07T05:13:03.435Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"error":"Server stderr: Knowledge Graph MCP Server running on stdio\n","timestamp":"2026-02-07T05:13:05.882Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 2455ms","timestamp":"2026-02-07T05:13:05.882Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-07T05:13:05.883Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"debug":"Calling MCP tool: search_nodes","timestamp":"2026-02-07T05:16:27.153Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"debug":"Tool 'search_nodes' completed successfully in 27ms","timestamp":"2026-02-07T05:16:27.180Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}

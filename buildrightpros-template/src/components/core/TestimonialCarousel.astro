@@ -1,0 +1,171 @@
+---
+interface Testimonial {
+  name: string;
+  location: string;
+  text: string;
+  rating: number;
+}
+
+const testimonials: Testimonial[] = [
+  { name: "Mike R.", location: "Dallas, TX", text: "Best contractor experience I've ever had. On time, on budget, perfect work.", rating: 5 },
+  { name: "Sarah L.", location: "Fort Worth, TX", text: "They transformed our backyard completely. Neighbors are jealous!", rating: 5 },
+  { name: "James T.", location: "Arlington, TX", text: "Professional crew, clean worksite, exceeded expectations.", rating: 5 },
+  { name: "Linda M.", location: "Plano, TX", text: "Finally found a contractor I can trust. Will use again.", rating: 5 },
+  { name: "Robert K.", location: "Irving, TX", text: "Quick response, fair pricing, quality craftsmanship.", rating: 5 },
+  { name: "Jennifer H.", location: "Frisco, TX", text: "Our kitchen remodel is stunning. Highly recommend!", rating: 5 },
+  { name: "David W.", location: "McKinney, TX", text: "Fixed issues other contractors couldn't. True professionals.", rating: 5 },
+  { name: "Karen B.", location: "Denton, TX", text: "Excellent communication throughout the entire project.", rating: 5 },
+];
+---
+
+<section class="testimonial-section">
+  <h2 class="section-title">What Our Customers Say</h2>
+
+  <div class="carousel-container">
+    <div class="carousel-track" id="testimonialTrack">
+      {testimonials.concat(testimonials).map((t, i) => (
+        <div class="testimonial-card" data-index={i}>
+          <div class="stars">{'★'.repeat(t.rating)}</div>
+          <p class="testimonial-text">"{t.text}"</p>
+          <div class="testimonial-author">
+            <strong>{t.name}</strong>
+            <span>{t.location}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    overflow: hidden;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+
+  .carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .testimonial-card {
+    flex: 0 0 calc((100% - 6rem) / 5);
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+
+  .testimonial-card.active {
+    transform: scale(1.1);
+    opacity: 1;
+    border: 2px solid #f59e0b;
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+    z-index: 10;
+  }
+
+  .stars {
+    color: #f59e0b;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-text {
+    color: #e5e7eb;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .testimonial-author strong {
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  .testimonial-author span {
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 1200px) {
+    .testimonial-card {
+      flex: 0 0 calc((100% - 3rem) / 3);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-card {
+      flex: 0 0 calc(100% - 2rem);
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('testimonialTrack');
+  const cards = document.querySelectorAll('.testimonial-card');
+  const totalOriginal = cards.length / 2;
+  let currentIndex = 2;
+
+  function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth + 24;
+    const offset = currentIndex * cardWidth;
+    const containerCenter = track.parentElement.offsetWidth / 2;
+    const cardCenter = cardWidth / 2;
+
+    track.style.transform = `translateX(${containerCenter - offset - cardCenter}px)`;
+
+    cards.forEach((card, i) => {
+      card.classList.remove('active');
+      if (i === currentIndex) {
+        card.classList.add('active');
+      }
+    });
+  }
+
+  function advance() {
+    currentIndex++;
+    if (currentIndex >= totalOriginal + 2) {
+      currentIndex = 2;
+      track.style.transition = 'none';
+      updateCarousel();
+      setTimeout(() => {
+        track.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      }, 50);
+    } else {
+      updateCarousel();
+    }
+  }
+
+  updateCarousel();
+  setInterval(advance, 3000);
+</script>

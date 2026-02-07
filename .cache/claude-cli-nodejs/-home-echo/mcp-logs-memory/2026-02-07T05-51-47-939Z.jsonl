@@ -1,0 +1,3 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-07T05:51:50.944Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in -208ms","timestamp":"2026-02-07T05:51:50.726Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"memory-server\",\"version\":\"0.6.3\"}}","timestamp":"2026-02-07T05:51:50.726Z","sessionId":"e8705deb-56cd-475d-bc21-14b43c9fa9de","cwd":"/home/echo"}

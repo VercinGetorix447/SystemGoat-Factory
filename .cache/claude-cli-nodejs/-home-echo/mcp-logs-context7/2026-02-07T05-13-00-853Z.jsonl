@@ -1,0 +1,4 @@
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-02-07T05:13:05.997Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"error":"Server stderr: WARNING: Using default CLIENT_IP_ENCRYPTION_KEY.\nContext7 Documentation MCP Server v2.1.1 running on stdio\n","timestamp":"2026-02-07T05:13:07.635Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"debug":"Successfully connected to stdio server in 1639ms","timestamp":"2026-02-07T05:13:07.635Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"serverVersion\":{\"name\":\"Context7\",\"version\":\"2.1.1\"}}","timestamp":"2026-02-07T05:13:07.635Z","sessionId":"75d95b71-b656-428b-9694-c5cac4a00a8b","cwd":"/home/echo"}
