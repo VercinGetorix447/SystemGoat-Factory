@@ -61,20 +61,20 @@ const articles = [
 <style>
   .blog-section {
     padding: 5rem 2rem;
-    background: #FFFFFF;
+    background: var(--bg-main);
     text-align: center;
   }
 
   .section-title {
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: var(--dark);
     font-weight: 700;
     margin-bottom: 0.75rem;
   }
 
   .section-subtitle {
     font-size: 1.15rem;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 3.5rem;
   }
 
@@ -87,8 +87,8 @@ const articles = [
   }
 
   .blog-card {
-    background: #F9F7F4;
-    border: 1px solid #E8E4DF;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
@@ -99,8 +99,8 @@ const articles = [
 
   .blog-card:hover {
     transform: translateY(-6px);
-    border-color: #FF6B35;
-    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.12);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(var(--accent-rgb), 0.12);
   }
 
   .blog-image {
@@ -124,7 +124,7 @@ const articles = [
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: #FF6B35;
+    background: var(--accent);
     color: #fff;
     font-size: 0.75rem;
     font-weight: 600;
@@ -140,7 +140,7 @@ const articles = [
 
   .blog-content h3 {
     font-size: 1.2rem;
-    color: #1a1a1a;
+    color: var(--dark);
     font-weight: 700;
     margin-bottom: 0.5rem;
     line-height: 1.4;
@@ -148,7 +148,7 @@ const articles = [
 
   .blog-content p {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--text);
     line-height: 1.6;
     margin-bottom: 1rem;
   }
@@ -166,18 +166,18 @@ const articles = [
 
   .view-all {
     display: inline-block;
-    color: #FF6B35;
+    color: var(--accent);
     font-weight: 600;
     font-size: 1.1rem;
     text-decoration: none;
     padding: 0.75rem 2rem;
-    border: 2px solid #FF6B35;
+    border: 2px solid var(--accent);
     border-radius: 50px;
     transition: all 0.3s ease;
   }
 
   .view-all:hover {
-    background: #FF6B35;
+    background: var(--accent);
     color: #fff;
   }
 

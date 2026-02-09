@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
 ---
 
 <section class="testimonial-section" id="testimonials">
-  <h2 class="section-title">What Our Customers Say</h2>
+  <h2 class="section-title">GET 5 STAR REVIEWS</h2>
 
   <div class="carousel-container">
     <div class="carousel-track" id="testimonialTrack">
@@ -40,16 +40,17 @@ const testimonials: Testimonial[] = [
 <style>
   .testimonial-section {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #F9F7F4 0%, #EDE9E3 100%);
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-alt) 100%);
     overflow: hidden;
   }
 
   .section-title {
     text-align: center;
+    font-family: 'Titan One', cursive;
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: var(--dark);
     margin-bottom: 3rem;
-    font-weight: 700;
+    text-transform: uppercase;
   }
 
   .carousel-container {
@@ -70,7 +71,7 @@ const testimonials: Testimonial[] = [
     flex: 0 0 calc((100% - 6rem) / 5);
     min-width: 280px;
     background: #FFFFFF;
-    border: 1px solid #E8E4DF;
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2rem;
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -82,21 +83,21 @@ const testimonials: Testimonial[] = [
   .testimonial-card.active {
     transform: scale(1.15) translateZ(50px);
     opacity: 1;
-    border: 3px solid #FF6B35;
+    border: 3px solid var(--accent);
     box-shadow:
-      0 0 40px rgba(255, 107, 53, 0.4),
+      0 0 40px rgba(var(--accent-rgb), 0.4),
       0 20px 40px rgba(0, 0, 0, 0.15);
     z-index: 10;
   }
 
   .stars {
-    color: #FF6B35;
+    color: var(--accent);
     font-size: 1.25rem;
     margin-bottom: 1rem;
   }
 
   .testimonial-text {
-    color: #4a4a4a;
+    color: var(--text);
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -110,12 +111,12 @@ const testimonials: Testimonial[] = [
   }
 
   .testimonial-author strong {
-    color: #1a1a1a;
+    color: var(--dark);
     font-size: 1.1rem;
   }
 
   .testimonial-author span {
-    color: #666;
+    color: var(--text-light);
     font-size: 0.9rem;
   }
 

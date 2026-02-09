@@ -55,7 +55,7 @@ const { phone = '(555) 123-4567' } = Astro.props;
 <style>
   .contact-section {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2D3748 100%);
+    background: linear-gradient(135deg, var(--dark) 0%, var(--section-head) 100%);
   }
 
   .contact-container {
@@ -97,7 +97,7 @@ const { phone = '(555) 123-4567' } = Astro.props;
   .info-item svg {
     width: 24px;
     height: 24px;
-    color: #FF6B35;
+    color: var(--accent);
     flex-shrink: 0;
   }
 
@@ -127,11 +127,11 @@ const { phone = '(555) 123-4567' } = Astro.props;
   .contact-form textarea {
     width: 100%;
     padding: 0.85rem 1rem;
-    background: #F9F7F4;
-    border: 1px solid #E8E4DF;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
     border-radius: 10px;
     font-size: 0.95rem;
-    color: #1a1a1a;
+    color: var(--dark);
     font-family: inherit;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
@@ -146,8 +146,8 @@ const { phone = '(555) 123-4567' } = Astro.props;
   .contact-form input:focus,
   .contact-form select:focus,
   .contact-form textarea:focus {
-    border-color: #FF6B35;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.15);
   }
 
   .contact-form textarea {
@@ -155,7 +155,7 @@ const { phone = '(555) 123-4567' } = Astro.props;
   }
 
   .contact-form button {
-    background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
     color: #fff;
     font-size: 1.05rem;
     font-weight: 600;
@@ -164,12 +164,12 @@ const { phone = '(555) 123-4567' } = Astro.props;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.3);
   }
 
   .contact-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+    box-shadow: 0 6px 25px rgba(var(--accent-rgb), 0.5);
   }
 
   @media (max-width: 768px) {

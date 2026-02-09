@@ -17,3 +17,31 @@ const { title = 'BuildRightPros' } = Astro.props;
   <Footer />
 </body>
 </html>
+
+<style is:global>
+  :root {
+    /* ===== 5-BAR COLOR SYSTEM ===== */
+    /* Bar 1: Background */
+    --bg-main: #F9F7F4;
+    /* Bar 2: Header/Footer (dark) */
+    --dark: #1a1a1a;
+    /* Bar 3: Section Headings */
+    --section-head: #1a1a1a;
+    /* Bar 4: Font Color */
+    --text: #444444;
+    /* Bar 5: Accent */
+    --accent: #FF6B35;
+
+    /* ===== AUTO-DERIVED ===== */
+    --bg-alt: #EDE9E3;
+    --accent-hover: #e55a2b;
+    --text-light: #666666;
+    --border: #E8E4DF;
+
+    /* RGB triplet for rgba() usage */
+    --accent-rgb: 255, 107, 53;
+
+    /* Nav auto-contrast (dark brand = white text, light brand = dark text) */
+    --nav-text: #ffffff;
+  }
+</style>

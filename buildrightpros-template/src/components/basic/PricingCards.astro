@@ -62,20 +62,20 @@ const plans = [
 <style>
   .pricing-section {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #F9F7F4 0%, #EDE9E3 100%);
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-alt) 100%);
     text-align: center;
   }
 
   .section-title {
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: var(--dark);
     font-weight: 700;
     margin-bottom: 0.75rem;
   }
 
   .section-subtitle {
     font-size: 1.15rem;
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 3.5rem;
   }
 
@@ -90,7 +90,7 @@ const plans = [
 
   .pricing-card {
     background: #FFFFFF;
-    border: 1px solid #E8E4DF;
+    border: 1px solid var(--border);
     border-radius: 16px;
     padding: 2.5rem 2rem;
     text-align: center;
@@ -106,14 +106,14 @@ const plans = [
   }
 
   .pricing-card.featured {
-    border: 2px solid #FF6B35;
-    box-shadow: 0 10px 40px rgba(255, 107, 53, 0.15);
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.15);
     transform: scale(1.05);
   }
 
   .pricing-card.featured:hover {
     transform: scale(1.05) translateY(-6px);
-    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.2);
+    box-shadow: 0 20px 50px rgba(var(--accent-rgb), 0.2);
   }
 
   .badge {
@@ -121,7 +121,7 @@ const plans = [
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: #FF6B35;
+    background: var(--accent);
     color: #fff;
     font-size: 0.75rem;
     font-weight: 700;
@@ -133,7 +133,7 @@ const plans = [
 
   .pricing-card h3 {
     font-size: 1.2rem;
-    color: #1a1a1a;
+    color: var(--dark);
     font-weight: 700;
     margin-bottom: 1rem;
     text-transform: uppercase;
@@ -151,7 +151,7 @@ const plans = [
   .dollar {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--dark);
     line-height: 1.2;
     margin-top: 0.3rem;
   }
@@ -159,13 +159,13 @@ const plans = [
   .amount {
     font-size: 3.5rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: var(--dark);
     line-height: 1;
   }
 
   .featured .dollar,
   .featured .amount {
-    color: #FF6B35;
+    color: var(--accent);
   }
 
   .period {
@@ -188,8 +188,8 @@ const plans = [
     gap: 0.75rem;
     padding: 0.6rem 0;
     font-size: 0.95rem;
-    color: #444;
-    border-bottom: 1px solid #f0ede8;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
   }
 
   li:last-child {
@@ -211,29 +211,29 @@ const plans = [
     font-size: 0.95rem;
     text-decoration: none;
     transition: all 0.3s ease;
-    background: #F9F7F4;
-    color: #1a1a1a;
-    border: 1px solid #E8E4DF;
+    background: var(--bg-main);
+    color: var(--dark);
+    border: 1px solid var(--border);
   }
 
   .pricing-cta:hover {
-    background: #1a1a1a;
+    background: var(--dark);
     color: #fff;
-    border-color: #1a1a1a;
+    border-color: var(--dark);
   }
 
   .cta-primary {
-    background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
     color: #fff;
     border: none;
-    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 4px 15px rgba(var(--accent-rgb), 0.3);
   }
 
   .cta-primary:hover {
-    background: linear-gradient(135deg, #e55a2b 0%, #d04a1b 100%);
+    background: var(--accent-hover);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 6px 20px rgba(var(--accent-rgb), 0.4);
   }
 
   @keyframes fadeUp {

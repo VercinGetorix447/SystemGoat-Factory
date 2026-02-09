@@ -11,6 +11,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
        ============================================ -->
   <section id="services" class="section-block bg-cream">
     <div class="section-inner">
+      <h2 class="section-heading">PROFESSIONAL LANDING PAGES</h2>
       <div class="grid-two">
         <!-- Text LEFT (white box, black border) -->
         <div class="text-box">
@@ -37,6 +38,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
        ============================================ -->
   <section id="leads" class="section-block bg-warm">
     <div class="section-inner">
+      <h2 class="section-heading">LEAD GENERATION & NURTURING SYSTEMS</h2>
       <div class="grid-two flipped">
         <!-- Image LEFT (no border) -->
         <div class="image-box">
@@ -85,6 +87,35 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   </section>
 
   <!-- ============================================
+       SECTION: CRM (Image LEFT, Text RIGHT) — FLIPPED
+       ============================================ -->
+  <section id="crm" class="section-block bg-warm">
+    <div class="section-inner">
+      <h2 class="section-heading">YOUR BUSINESS COMMAND CENTER</h2>
+      <div class="grid-two flipped">
+        <!-- Image LEFT (no border) -->
+        <div class="image-box">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop" alt="CRM dashboard" loading="lazy" />
+        </div>
+        <!-- Text RIGHT (white box, black border) -->
+        <div class="text-box">
+          <span class="label accent-secondary">CRM</span>
+          <h2>MANAGE EVERY JOB FROM ONE PLACE</h2>
+          <p>Track leads, manage customers, schedule jobs, and close deals — all from a single dashboard built for contractors.</p>
+          <ul class="check-list">
+            <li><span class="check">&#10003;</span> Lead tracking &amp; pipeline management</li>
+            <li><span class="check">&#10003;</span> Automated follow-up sequences</li>
+            <li><span class="check">&#10003;</span> Job scheduling &amp; dispatch</li>
+            <li><span class="check">&#10003;</span> Customer history &amp; notes</li>
+            <li><span class="check">&#10003;</span> Invoicing &amp; payment tracking</li>
+            <li><span class="check">&#10003;</span> Mobile app for the field</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        SECTION: PRICING (4 Vertical Boxes)
        ============================================ -->
   <section id="pricing" class="section-block bg-warm">
@@ -95,28 +126,35 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
         <!-- STARTER -->
         <div class="pricing-card">
           <div class="pricing-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=200&fit=crop" alt="Starter" loading="lazy" /></div>
-          <h3>STARTER</h3>
-          <p class="pricing-tagline">in the game</p>
+          <h3>IN THE GAME</h3>
+          <p class="pricing-tagline">Digital Starter</p>
           <p class="pricing-price">$396</p>
           <ul>
             <li>&#10003; 3 Page Website</li>
             <li>&#10003; Mobile Responsive</li>
             <li>&#10003; Contact Form</li>
             <li>&#10003; Basic SEO</li>
+            <li>- AI Receptionist (optional)</li>
+            <li>- Lead Generation (optional)</li>
+            <li>- Email Marketing (optional)</li>
           </ul>
           <a href="#contact" class="pricing-btn">Get Started</a>
         </div>
         <!-- CONTRACTOR -->
         <div class="pricing-card">
           <div class="pricing-img"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=200&fit=crop" alt="Contractor" loading="lazy" /></div>
-          <h3>CONTRACTOR</h3>
-          <p class="pricing-tagline">efficient contractor</p>
+          <h3>EFFICIENT CONTRACTOR</h3>
+          <p class="pricing-tagline">Contractor Pro</p>
           <p class="pricing-price">$693</p>
           <ul>
-            <li>&#10003; 6 Page Website</li>
+            <li>&#10003; All in Digital Starter+</li>
+            <li>&#10003; 3 Added Service Pages</li>
             <li>&#10003; CRM Integration</li>
-            <li>&#10003; 25 Leads/month</li>
-            <li>&#10003; Basic Analytics</li>
+            <li>&#10003; SEO Content</li>
+            <li>&#10003; Analytics</li>
+            <li>- AI Receptionist (optional)</li>
+            <li>- Lead Generation (optional)</li>
+            <li>- Email Marketing (optional)</li>
           </ul>
           <a href="#contact" class="pricing-btn">Get Started</a>
         </div>
@@ -124,28 +162,39 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
         <div class="pricing-card featured">
           <span class="popular-badge">Most Popular</span>
           <div class="pricing-img"><img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=200&fit=crop" alt="Branding" loading="lazy" /></div>
-          <h3>BRANDING</h3>
-          <p class="pricing-tagline">growing funnels</p>
+          <h3>GROWING FUNNELS</h3>
+          <p class="pricing-tagline">Branding Suite</p>
           <p class="pricing-price accent">$963</p>
           <ul>
             <li>&#10003; 10 Page Website</li>
-            <li>&#10003; AI Caller Setup</li>
-            <li>&#10003; 50 Leads/month</li>
-            <li>&#10003; Full Analytics</li>
+            <li>&#10003; AI Receptionist</li>
+            <li>&#10003; CRM Lead Funnels</li>
+            <li>&#10003; Email Marketing</li>
+            <li>&#10003; Results Dashboard</li>
             <li>&#10003; Social Media Kit</li>
+            <li>- Landing Pages (optional)</li>
+            <li>- Dedicated AI Caller (optional)</li>
           </ul>
           <a href="#contact" class="pricing-btn primary">Get Started</a>
         </div>
         <!-- SCALE -->
         <div class="pricing-card">
           <div class="pricing-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop" alt="Scale" loading="lazy" /></div>
-          <h3>SCALE</h3>
-          <p class="pricing-tagline">funnel domination</p>
+          <h3>REGION DOMINATION</h3>
+          <p class="pricing-tagline">Scale Package</p>
           <p class="pricing-price">$3,699</p>
           <ul>
-            <li>&#10003; Unlimited Pages</li>
+            <li>&#10003; Up to 50 Page Website</li>
+            <li>&#10003; Up to 20 Landing Pages</li>
+            <li>&#10003; Keyword Research</li>
+            <li>&#10003; Full Business Audit</li>
+            <li>&#10003; Full-time AI Receptionist</li>
             <li>&#10003; Dedicated AI Callers</li>
-            <li>&#10003; 200+ Leads/month</li>
+            <li>&#10003; CRM Full Integration</li>
+            <li>&#10003; Integrated Lead Gen</li>
+            <li>&#10003; Multiple Users</li>
+            <li>&#10003; Email &amp; SMS Marketing</li>
+            <li>&#10003; Workflow Automations</li>
             <li>&#10003; White-label Options</li>
             <li>&#10003; Priority Support</li>
           </ul>
@@ -255,9 +304,9 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .section-block { padding: 5rem 2rem; }
   .section-inner { max-width: 1200px; margin: 0 auto; }
 
-  .bg-cream { background: #F9F7F4; }
-  .bg-warm { background: #EDE9E3; }
-  .bg-dark { background: linear-gradient(135deg, #1a1a1a 0%, #2D3748 100%); }
+  .bg-cream { background: var(--bg-main); }
+  .bg-warm { background: var(--bg-alt); }
+  .bg-dark { background: linear-gradient(135deg, var(--dark) 0%, var(--section-head) 100%); }
 
   /* ===== TWO-COLUMN GRID (Alternating) ===== */
   .grid-two {
@@ -272,7 +321,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   /* Text box: white bg, black border */
   .text-box {
     background: #FFFFFF;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--dark);
     border-radius: 12px;
     padding: 2.5rem;
   }
@@ -280,26 +329,26 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .text-box .label {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #FF6B35;
+    color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
 
   .text-box .label.accent-secondary {
-    color: #2D3748;
+    color: var(--section-head);
   }
 
   .text-box h2 {
     font-family: 'Titan One', cursive;
     font-size: 1.75rem;
-    color: #1a1a1a;
+    color: var(--dark);
     margin: 0.5rem 0 1rem;
     line-height: 1.2;
     text-transform: uppercase;
   }
 
   .text-box p {
-    color: #555;
+    color: var(--text);
     line-height: 1.7;
     margin-bottom: 1.5rem;
   }
@@ -331,12 +380,12 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
-    color: #444;
+    color: var(--text);
     font-size: 0.95rem;
   }
 
   .check {
-    color: #FF6B35;
+    color: var(--accent);
     font-weight: 700;
     flex-shrink: 0;
   }
@@ -351,20 +400,20 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .stat {
     text-align: center;
     padding: 0.75rem;
-    background: #F9F7F4;
+    background: var(--bg-main);
     border-radius: 8px;
   }
 
   .stat-num {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #FF6B35;
+    color: var(--accent);
     margin: 0;
   }
 
   .stat-label {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--text-light);
     margin: 0;
   }
 
@@ -372,7 +421,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .section-heading {
     font-family: 'Titan One', cursive;
     font-size: 2.25rem;
-    color: #1a1a1a;
+    color: var(--dark);
     text-align: center;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
@@ -380,7 +429,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
 
   .section-sub {
     text-align: center;
-    color: #666;
+    color: var(--text-light);
     font-size: 1.1rem;
     margin-bottom: 3rem;
   }
@@ -394,11 +443,13 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
 
   .pricing-card {
     background: #FFFFFF;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--dark);
     border-radius: 12px;
     padding: 1.5rem;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .pricing-card:hover {
@@ -407,8 +458,8 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   }
 
   .pricing-card.featured {
-    border: 2px solid #FF6B35;
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.15);
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.15);
   }
 
   .popular-badge {
@@ -416,7 +467,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: #2D3748;
+    background: var(--section-head);
     color: #fff;
     font-size: 0.7rem;
     font-weight: 700;
@@ -442,7 +493,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .pricing-card h3 {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: var(--dark);
     margin-bottom: 0.25rem;
   }
 
@@ -456,11 +507,11 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .pricing-price {
     font-size: 2rem;
     font-weight: 800;
-    color: #1a1a1a;
+    color: var(--dark);
     margin-bottom: 1rem;
   }
 
-  .pricing-price.accent { color: #FF6B35; }
+  .pricing-price.accent { color: var(--accent); }
 
   .pricing-card ul {
     list-style: none;
@@ -470,29 +521,31 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
     flex-direction: column;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: #444;
+    color: var(--text);
+    flex-grow: 1;
   }
 
   .pricing-btn {
     display: block;
     text-align: center;
+    margin-top: auto;
     padding: 0.65rem;
     border-radius: 8px;
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
     transition: all 0.2s;
-    background: #1a1a1a;
+    background: var(--dark);
     color: #fff;
   }
 
   .pricing-btn:hover { background: #333; }
 
   .pricing-btn.primary {
-    background: #FF6B35;
+    background: var(--accent);
   }
 
-  .pricing-btn.primary:hover { background: #e55a2b; }
+  .pricing-btn.primary:hover { background: var(--accent-hover); }
 
   .pricing-note {
     text-align: center;
@@ -510,7 +563,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
 
   .blog-card {
     background: #FFFFFF;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--dark);
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -535,36 +588,36 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .blog-tag {
     font-size: 0.7rem;
     font-weight: 600;
-    color: #FF6B35;
+    color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
 
-  .blog-tag.secondary { color: #2D3748; }
+  .blog-tag.secondary { color: var(--section-head); }
 
   .blog-body h3 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--dark);
     margin: 0.5rem 0;
     line-height: 1.4;
   }
 
   .blog-body p {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text);
     line-height: 1.6;
     margin-bottom: 1rem;
   }
 
   .blog-body a {
-    color: #FF6B35;
+    color: var(--accent);
     font-weight: 600;
     font-size: 0.9rem;
     text-decoration: none;
   }
 
-  .blog-body a:hover { color: #e55a2b; }
+  .blog-body a:hover { color: var(--accent-hover); }
 
   .blog-cta {
     text-align: center;
@@ -573,18 +626,18 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
 
   .view-all-btn {
     display: inline-block;
-    color: #FF6B35;
+    color: var(--accent);
     font-weight: 600;
     font-size: 1rem;
     text-decoration: none;
     padding: 0.75rem 2rem;
-    border: 2px solid #FF6B35;
+    border: 2px solid var(--accent);
     border-radius: 50px;
     transition: all 0.3s ease;
   }
 
   .view-all-btn:hover {
-    background: #FF6B35;
+    background: var(--accent);
     color: #fff;
   }
 
@@ -621,7 +674,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .contact-item svg {
     width: 22px;
     height: 22px;
-    color: #FF6B35;
+    color: var(--accent);
     flex-shrink: 0;
   }
 
@@ -638,7 +691,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
 
   .contact-form {
     background: #FFFFFF;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--dark);
     border-radius: 12px;
     padding: 2rem;
     display: flex;
@@ -651,11 +704,11 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .contact-form textarea {
     width: 100%;
     padding: 0.8rem 1rem;
-    background: #F9F7F4;
-    border: 1px solid #E8E4DF;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
     border-radius: 8px;
     font-size: 0.9rem;
-    color: #1a1a1a;
+    color: var(--dark);
     font-family: inherit;
     outline: none;
     box-sizing: border-box;
@@ -665,8 +718,8 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .contact-form input:focus,
   .contact-form select:focus,
   .contact-form textarea:focus {
-    border-color: #FF6B35;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
   }
 
   .contact-form input::placeholder,
@@ -675,7 +728,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
   .contact-form textarea { resize: none; }
 
   .contact-form button {
-    background: #FF6B35;
+    background: var(--accent);
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
@@ -686,7 +739,7 @@ import TestimonialCarousel from '../components/core/TestimonialCarousel.astro';
     transition: background 0.2s;
   }
 
-  .contact-form button:hover { background: #e55a2b; }
+  .contact-form button:hover { background: var(--accent-hover); }
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 1024px) {

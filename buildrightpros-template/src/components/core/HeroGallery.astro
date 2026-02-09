@@ -1,16 +1,17 @@
 ---
 const {
   headline = 'Your Trusted Trade Partner',
-  subheadline = 'Quality craftsmanship for every project',
+  subheadline = 'Stop working for your business. Make your business work for you.',
   cta = 'Get Free Quote'
 } = Astro.props;
 
+const v = Date.now();
 const images = [
-  { src: '/images/hero/project-1.jpg', alt: 'Kitchen Remodel' },
-  { src: '/images/hero/project-2.jpg', alt: 'Bathroom Renovation' },
-  { src: '/images/hero/project-3.jpg', alt: 'Deck Construction' },
-  { src: '/images/hero/project-4.jpg', alt: 'Home Addition' },
-  { src: '/images/hero/project-5.jpg', alt: 'Exterior Work' },
+  { src: `/images/hero/project-1.jpg?v=${v}`, alt: 'Roofing' },
+  { src: `/images/hero/project-2.jpg?v=${v}`, alt: 'Pool Cleaning' },
+  { src: `/images/hero/project-3.jpg?v=${v}`, alt: 'HVAC' },
+  { src: `/images/hero/project-4.jpg?v=${v}`, alt: 'Deck Building' },
+  { src: `/images/hero/project-5.jpg?v=${v}`, alt: 'Electrical' },
 ];
 
 // Images shifted left as a group
@@ -47,7 +48,7 @@ const positions = [
   .hero-gallery {
     position: relative;
     min-height: 90vh;
-    background: linear-gradient(135deg, #F9F7F4 0%, #EDE9E3 50%, #F9F7F4 100%);
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-alt) 50%, var(--bg-main) 100%);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -88,9 +89,9 @@ const positions = [
     filter: brightness(1);
     transform: scale(1.15) rotate(0deg) !important;
     box-shadow:
-      0 0 60px rgba(255, 107, 53, 0.5),
+      0 0 60px rgba(var(--accent-rgb), 0.5),
       0 20px 60px rgba(0, 0, 0, 0.3);
-    border: 3px solid rgba(255, 107, 53, 0.8);
+    border: 3px solid rgba(var(--accent-rgb), 0.8);
   }
 
   .gallery-card::after {
@@ -125,7 +126,7 @@ const positions = [
     font-family: 'Titan One', cursive;
     font-size: 2.8rem;
     font-weight: 400;
-    color: #1a1a1a;
+    color: var(--dark);
     margin-bottom: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -133,13 +134,13 @@ const positions = [
 
   .hero-content p {
     font-size: 1.4rem;
-    color: #4a4a4a;
+    color: var(--text-light);
     margin-bottom: 2rem;
   }
 
   .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
@@ -147,12 +148,12 @@ const positions = [
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+    box-shadow: 0 4px 20px rgba(var(--accent-rgb), 0.4);
   }
 
   .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255, 107, 53, 0.6);
+    box-shadow: 0 8px 30px rgba(var(--accent-rgb), 0.6);
   }
 
   @media (max-width: 1024px) {
