@@ -93,7 +93,7 @@ import Base from '../layouts/Base.astro';
         </label>
         <label>
           <span>Brand Color</span>
-          <div class="color-right"><input type="color" id="colorDark" value="#1a1a1a" /><small class="bar-hint" id="contrastHint">Nav text: light</small></div>
+          <div class="color-right"><input type="color" id="colorDark" value="#1a1a1a" /></div>
         </label>
         <label>
           <span>Accent</span>
@@ -573,7 +573,7 @@ import Base from '../layouts/Base.astro';
   const colorDark = document.getElementById('colorDark');
   const colorText = document.getElementById('colorText');
   const colorAccent = document.getElementById('colorAccent');
-  const contrastHint = document.getElementById('contrastHint');
+  // contrastHint removed — auto-contrast still works internally
 
   // ===== HELPERS =====
   function hexToRgb(hex) {
@@ -642,7 +642,7 @@ import Base from '../layouts/Base.astro';
         const brandIsDark = isDark(currentColors.dark);
         const navTextColor = brandIsDark ? '#ffffff' : '#1a1a1a';
         doc.style.setProperty('--nav-text', navTextColor);
-        contrastHint.textContent = `Nav text: ${brandIsDark ? 'light' : 'dark'}`;
+        // auto-contrast applied silently
       } catch (e) {
         // Cross-origin issues in production
       }
