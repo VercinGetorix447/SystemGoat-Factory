@@ -115,15 +115,6 @@ import Base from '../layouts/Base.astro';
       </button>
     </div>
 
-  <!-- Trade flyout panel (outside wizard, right edge) -->
-  <div class="trade-flyout" id="tradeFlyout">
-    <div class="flyout-header">
-      <h3>Choose Your Trade</h3>
-      <button class="flyout-close" id="flyoutClose">&times;</button>
-    </div>
-    <div class="flyout-list" id="tradeGrid"></div>
-  </div>
-
     <!-- STEP 4: Business Info -->
     <div class="wizard-step">
       <h3>4. Business Info</h3>
@@ -144,6 +135,15 @@ import Base from '../layouts/Base.astro';
 
     <textarea class="config-output" id="configOutput" readonly placeholder="Config JSON will appear here..."></textarea>
   </aside>
+
+  <!-- Trade flyout panel (OUTSIDE aside, fixed position) -->
+  <div class="trade-flyout" id="tradeFlyout">
+    <div class="flyout-header">
+      <h3>Choose Your Trade</h3>
+      <button class="flyout-close" id="flyoutClose">&times;</button>
+    </div>
+    <div class="flyout-list" id="tradeGrid"></div>
+  </div>
 
   <!-- RIGHT: Preview iframe -->
   <div class="preview-area">
