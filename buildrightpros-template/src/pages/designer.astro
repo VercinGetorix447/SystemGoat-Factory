@@ -647,6 +647,11 @@ import Base from '../layouts/Base.astro';
     { name: 'Solar', tagline: 'Power your savings', services: ['Panel Install', 'System Design', 'Battery Storage', 'Maintenance'] },
   ];
 
+  // ===== TRADE SLUG HELPER =====
+  function tradeSlug(name) {
+    return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  }
+
   // ===== STATE =====
   let currentLayout = '/';
   let currentPreset = 'contractor';
@@ -786,6 +791,30 @@ import Base from '../layouts/Base.astro';
           if (serviceCards[i]) serviceCards[i].textContent = s;
         });
       }
+
+      // ===== SWAP IMAGES BY TRADE =====
+      const slug = tradeSlug(trade.name);
+      const basePath = `/images/trades/${slug}/`;
+
+      // Hero image (Layout 1: .gallery-card img, Layout 2: .hero-full img)
+      const heroImg = doc.querySelector('.hero-full img');
+      if (heroImg) {
+        heroImg.src = basePath + '1.jpg';
+      }
+
+      // Gallery cards (Layout 1) — distribute images across cards
+      const galleryImgs = doc.querySelectorAll('.gallery-card img');
+      galleryImgs.forEach((img, i) => {
+        img.src = basePath + (i + 1) + '.jpg';
+      });
+
+      // Section images — swap first few .image-box img and .work-card img
+      const sectionImgs = doc.querySelectorAll('.image-box img, .work-card img');
+      sectionImgs.forEach((img, i) => {
+        const imgNum = (i % 2) + 1; // alternate between 1.jpg and 2.jpg
+        img.src = basePath + imgNum + '.jpg';
+      });
+
     } catch (e) {
       // Cross-origin
     }
