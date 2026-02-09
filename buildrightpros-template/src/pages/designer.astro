@@ -743,6 +743,18 @@ import Base from '../layouts/Base.astro';
     }, 30);
   }
 
+  // ===== UPDATE NAV LOGO IN IFRAME =====
+  function updateNavLogo() {
+    try {
+      const doc = iframe.contentWindow.document;
+      const navLogo = doc.querySelector('.nav-logo');
+      const bizName = document.getElementById('bizName').value;
+      if (navLogo) {
+        navLogo.textContent = bizName || 'BuildRightPros';
+      }
+    } catch (e) {}
+  }
+
   // ===== APPLY TRADE CONTENT =====
   function applyTradeToIframe(trade) {
     try {
@@ -757,6 +769,9 @@ import Base from '../layouts/Base.astro';
       if (h1) {
         h1.textContent = displayName.toUpperCase();
       }
+
+      // Update nav logo to match
+      updateNavLogo();
 
       // Update subtitle (custom slogan or trade tagline)
       const bizSlogan = document.getElementById('bizSlogan').value;
@@ -776,8 +791,9 @@ import Base from '../layouts/Base.astro';
     }
   }
 
-  // Live-update hero when business name or slogan changes
+  // Live-update hero + nav logo when business name changes
   document.getElementById('bizName').addEventListener('input', () => {
+    updateNavLogo();
     if (currentTrade) applyTradeToIframe(currentTrade);
   });
   document.getElementById('bizSlogan').addEventListener('input', () => {
