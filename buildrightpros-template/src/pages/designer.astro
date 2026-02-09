@@ -389,71 +389,7 @@ import Base from '../layouts/Base.astro';
   .trade-trigger:hover { border-color: #aaa; }
   .trade-trigger.has-selection { color: #FF6B35; font-weight: 600; border-color: #FF6B35; }
 
-  /* Trade flyout panel — hidden until .open */
-  .trade-flyout {
-    display: none !important;
-    position: fixed;
-    top: 0;
-    left: 340px;
-    width: 200px;
-    height: 100vh;
-    background: #fff;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    box-shadow: 4px 0 16px rgba(0,0,0,0.08);
-    z-index: 200;
-    flex-direction: column;
-  }
-  .trade-flyout.open { display: flex !important; }
-
-  .flyout-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #eee;
-  }
-  .flyout-header h3 {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin: 0;
-  }
-  .flyout-close {
-    background: none;
-    border: none;
-    font-size: 1.3rem;
-    color: #999;
-    cursor: pointer;
-    line-height: 1;
-  }
-  .flyout-close:hover { color: #333; }
-
-  .flyout-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .trade-btn {
-    padding: 0.45rem 0.6rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    border: 1px solid #e8e8e8;
-    border-radius: 6px;
-    background: #fff;
-    cursor: pointer;
-    transition: all 0.15s;
-    font-family: inherit;
-    text-align: left;
-  }
-  .trade-btn:hover { background: #f5f5f5; border-color: #bbb; }
-  .trade-btn.active { border-color: #FF6B35; background: #FFF5F0; color: #FF6B35; font-weight: 600; }
+  /* Trade flyout + buttons styled in global block below (JS-created elements) */
 
   /* Business Inputs */
   .wiz-input {
@@ -582,6 +518,78 @@ import Base from '../layouts/Base.astro';
       height: 50vh;
     }
   }
+</style>
+
+<style is:global>
+  /* Global styles for trade flyout (JS-created elements need unscoped CSS) */
+  .trade-flyout {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 340px;
+    width: 200px;
+    height: 100vh;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.08);
+    z-index: 200;
+    flex-direction: column;
+  }
+  .trade-flyout.open { display: flex !important; }
+
+  .flyout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0;
+  }
+  .flyout-header h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0;
+  }
+  .flyout-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .flyout-close:hover { color: #333; }
+
+  .flyout-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .trade-btn {
+    display: block;
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Montserrat', Arial, sans-serif;
+    text-align: left;
+    flex-shrink: 0;
+  }
+  .trade-btn:hover { background: #f5f5f5; border-color: #bbb; }
+  .trade-btn.active { border-color: #FF6B35; background: #FFF5F0; color: #FF6B35; font-weight: 600; }
 </style>
 
 <script>
