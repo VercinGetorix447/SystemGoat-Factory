@@ -1,5 +1,5 @@
 ---
-const links = [
+const defaultLinks = [
   { label: 'Sites', href: '#services' },
   { label: 'Leads', href: '#leads' },
   { label: 'AI Callers', href: '#callers' },
@@ -9,6 +9,7 @@ const links = [
   { label: 'Blog', href: '#blog' },
   { label: 'Contact Us', href: '#contact' },
 ];
+const links = Astro.props.links || defaultLinks;
 ---
 
 <nav class="site-nav">

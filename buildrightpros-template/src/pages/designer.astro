@@ -791,14 +791,39 @@ import Base from '../layouts/Base.astro';
     }
   }
 
-  // Live-update hero + nav logo when business name changes
-  document.getElementById('bizName').addEventListener('input', () => {
-    updateNavLogo();
-    if (currentTrade) applyTradeToIframe(currentTrade);
-  });
-  document.getElementById('bizSlogan').addEventListener('input', () => {
-    if (currentTrade) applyTradeToIframe(currentTrade);
-  });
+  // ===== LIVE UPDATE BIZ NAME + SLOGAN (no trade required) =====
+  function updateBizText() {
+    try {
+      const doc = iframe.contentWindow.document;
+      const bizName = document.getElementById('bizName').value;
+      const bizSlogan = document.getElementById('bizSlogan').value;
+
+      // Update nav logo
+      const navLogo = doc.querySelector('.nav-logo');
+      if (navLogo) navLogo.textContent = bizName || 'BuildRightPros';
+
+      // Update hero headline
+      const h1 = doc.querySelector('.hero-content h1.slogan, .hero-overlay h1');
+      if (h1) h1.textContent = (bizName || h1.dataset.original || h1.textContent).toUpperCase();
+
+      // Update hero subtitle
+      const heroP = doc.querySelector('.hero-content p, .hero-overlay p');
+      if (heroP && bizSlogan) heroP.textContent = bizSlogan;
+
+      // If trade is selected, also update services
+      if (currentTrade) {
+        const serviceCards = doc.querySelectorAll('.service-card h3, .service-item h3');
+        if (serviceCards.length >= 4) {
+          currentTrade.services.forEach((s, i) => {
+            if (serviceCards[i]) serviceCards[i].textContent = s;
+          });
+        }
+      }
+    } catch (e) {}
+  }
+
+  document.getElementById('bizName').addEventListener('input', updateBizText);
+  document.getElementById('bizSlogan').addEventListener('input', updateBizText);
 
   // ===== SYNC COLOR INPUTS =====
   function syncColorInputs() {
