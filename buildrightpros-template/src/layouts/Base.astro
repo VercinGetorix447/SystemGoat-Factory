@@ -20,6 +20,8 @@ const { title = 'BuildRightPros' } = Astro.props;
 
 <style is:global>
   html { scroll-behavior: smooth; }
+  /* Offset anchors so fixed nav doesn't cover them */
+  [id] { scroll-margin-top: 72px; }
   :root {
     /* ===== 5-BAR COLOR SYSTEM ===== */
     /* Bar 1: Background */

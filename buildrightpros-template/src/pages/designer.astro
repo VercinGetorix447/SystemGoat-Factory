@@ -14,11 +14,35 @@ import Base from '../layouts/Base.astro';
   <!-- LEFT: Wizard Panel -->
   <aside class="wizard-panel" id="wizardPanel">
     <h1 class="wizard-title">Site Designer</h1>
-    <p class="wizard-sub">Pick your layout, colors, and trade.</p>
+    <p class="wizard-sub">Personalize your site in minutes.</p>
 
-    <!-- STEP 1: Layout Picker -->
+    <!-- STEP 1: Business Info (top for personalization) -->
     <div class="wizard-step">
-      <h3>1. Choose Layout</h3>
+      <h3>1. Your Business</h3>
+      <div class="input-group">
+        <input type="text" id="bizName" placeholder="Business Name" class="wiz-input" maxlength="28" />
+        <small class="char-hint">Max 28 characters</small>
+      </div>
+      <div class="input-group">
+        <input type="text" id="bizSlogan" placeholder="Slogan / Tagline" class="wiz-input" maxlength="60" />
+        <small class="char-hint">Max 60 characters</small>
+      </div>
+      <input type="text" id="bizLocation" placeholder="City, State" class="wiz-input" />
+      <input type="text" id="bizPhone" placeholder="Phone Number" class="wiz-input" />
+    </div>
+
+    <!-- STEP 2: Industry Picker -->
+    <div class="wizard-step">
+      <h3>2. Choose Your Trade</h3>
+      <button class="trade-trigger" id="tradeTrigger">
+        <span id="tradeTriggerLabel">Select a trade...</span>
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+
+    <!-- STEP 3: Layout Picker -->
+    <div class="wizard-step">
+      <h3>3. Choose Layout</h3>
       <div class="layout-grid" id="layoutGrid">
         <button class="layout-card active" data-layout="/">
           <div class="layout-thumb">
@@ -59,9 +83,9 @@ import Base from '../layouts/Base.astro';
       </div>
     </div>
 
-    <!-- STEP 2: Color Picker -->
+    <!-- STEP 4: Color Picker -->
     <div class="wizard-step">
-      <h3>2. Choose Colors</h3>
+      <h3>4. Choose Colors</h3>
 
       <div class="preset-grid" id="presetGrid">
         <button class="preset-card active" data-preset="contractor">
@@ -104,30 +128,6 @@ import Base from '../layouts/Base.astro';
           <div class="color-right"><input type="color" id="colorText" value="#444444" /></div>
         </label>
       </div>
-    </div>
-
-    <!-- STEP 3: Industry Picker -->
-    <div class="wizard-step">
-      <h3>3. Choose Your Trade</h3>
-      <button class="trade-trigger" id="tradeTrigger">
-        <span id="tradeTriggerLabel">Select a trade...</span>
-        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-      </button>
-    </div>
-
-    <!-- STEP 4: Business Info -->
-    <div class="wizard-step">
-      <h3>4. Business Info</h3>
-      <div class="input-group">
-        <input type="text" id="bizName" placeholder="Business Name" class="wiz-input" maxlength="28" />
-        <small class="char-hint">Max 28 characters</small>
-      </div>
-      <div class="input-group">
-        <input type="text" id="bizSlogan" placeholder="Slogan / Tagline" class="wiz-input" maxlength="60" />
-        <small class="char-hint">Max 60 characters</small>
-      </div>
-      <input type="text" id="bizLocation" placeholder="City, State" class="wiz-input" />
-      <input type="text" id="bizPhone" placeholder="Phone Number" class="wiz-input" />
     </div>
 
     <!-- Generate Button -->
