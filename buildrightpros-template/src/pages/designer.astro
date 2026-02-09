@@ -89,20 +89,19 @@ import Base from '../layouts/Base.astro';
       <div class="color-bars">
         <label>
           <span>Background</span>
-          <input type="color" id="colorBg" value="#F9F7F4" />
+          <div class="color-right"><input type="color" id="colorBg" value="#F9F7F4" /></div>
         </label>
         <label>
           <span>Brand Color</span>
-          <input type="color" id="colorDark" value="#1a1a1a" />
-          <small class="bar-hint" id="contrastHint">Nav text: light</small>
+          <div class="color-right"><input type="color" id="colorDark" value="#1a1a1a" /><small class="bar-hint" id="contrastHint">Nav text: light</small></div>
         </label>
         <label>
           <span>Accent</span>
-          <input type="color" id="colorAccent" value="#FF6B35" />
+          <div class="color-right"><input type="color" id="colorAccent" value="#FF6B35" /></div>
         </label>
         <label>
           <span>Font Color</span>
-          <input type="color" id="colorText" value="#444444" />
+          <div class="color-right"><input type="color" id="colorText" value="#444444" /></div>
         </label>
       </div>
     </div>
@@ -335,6 +334,13 @@ import Base from '../layouts/Base.astro';
     font-weight: 500;
   }
 
+  .color-right {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
   .color-bars input[type="color"] {
     width: 36px;
     height: 28px;
@@ -343,6 +349,7 @@ import Base from '../layouts/Base.astro';
     cursor: pointer;
     padding: 0;
     background: none;
+    flex-shrink: 0;
   }
 
   .bar-hint {
@@ -753,7 +760,12 @@ import Base from '../layouts/Base.astro';
     presetGrid.querySelectorAll('.preset-card').forEach(c => c.classList.remove('active'));
     applyColorsToIframe();
   });
-  handleColorInput(colorText, 'text');
+  // Font color also updates text-light
+  colorText.addEventListener('input', () => {
+    currentColors.text = colorText.value;
+    presetGrid.querySelectorAll('.preset-card').forEach(c => c.classList.remove('active'));
+    applyColorsToIframe();
+  });
   handleColorInput(colorAccent, 'accent');
 
   // ===== GENERATE CONFIG =====
