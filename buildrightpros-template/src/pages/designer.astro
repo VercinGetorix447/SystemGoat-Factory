@@ -109,9 +109,20 @@ import Base from '../layouts/Base.astro';
     <!-- STEP 3: Industry Picker -->
     <div class="wizard-step">
       <h3>3. Choose Your Trade</h3>
-      <div class="trade-grid" id="tradeGrid">
-      </div>
+      <button class="trade-trigger" id="tradeTrigger">
+        <span id="tradeTriggerLabel">Select a trade...</span>
+        <svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
     </div>
+
+  <!-- Trade flyout panel (outside wizard, right edge) -->
+  <div class="trade-flyout" id="tradeFlyout">
+    <div class="flyout-header">
+      <h3>Choose Your Trade</h3>
+      <button class="flyout-close" id="flyoutClose">&times;</button>
+    </div>
+    <div class="flyout-list" id="tradeGrid"></div>
+  </div>
 
     <!-- STEP 4: Business Info -->
     <div class="wizard-step">
@@ -359,20 +370,80 @@ import Base from '../layouts/Base.astro';
     white-space: nowrap;
   }
 
-  /* Trade Grid */
-  .trade-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.4rem;
-    max-height: 260px;
+  /* Trade trigger button */
+  .trade-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 0.85rem;
+    font-family: inherit;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .trade-trigger:hover { border-color: #aaa; }
+  .trade-trigger.has-selection { color: #FF6B35; font-weight: 600; border-color: #FF6B35; }
+
+  /* Trade flyout panel */
+  .trade-flyout {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 340px;
+    width: 200px;
+    height: 100vh;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.08);
+    z-index: 200;
+    flex-direction: column;
+  }
+  .trade-flyout.open { display: flex; }
+
+  .flyout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  .flyout-header h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0;
+  }
+  .flyout-close {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .flyout-close:hover { color: #333; }
+
+  .flyout-list {
+    flex: 1;
     overflow-y: auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
   }
 
   .trade-btn {
-    padding: 0.4rem 0.5rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    border: 1px solid #e0e0e0;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #e8e8e8;
     border-radius: 6px;
     background: #fff;
     cursor: pointer;
@@ -380,9 +451,8 @@ import Base from '../layouts/Base.astro';
     font-family: inherit;
     text-align: left;
   }
-
   .trade-btn:hover { background: #f5f5f5; border-color: #bbb; }
-  .trade-btn.active { border-color: #FF6B35; background: #FFF5F0; color: #FF6B35; }
+  .trade-btn.active { border-color: #FF6B35; background: #FFF5F0; color: #FF6B35; font-weight: 600; }
 
   /* Business Inputs */
   .wiz-input {
@@ -523,34 +593,49 @@ import Base from '../layouts/Base.astro';
     dark:          { bg: '#F7F7F7', dark: '#111111', section: '#333333', text: '#333333', accent: '#E11D48' },
   };
 
-  // ===== TRADES =====
+  // ===== TRADES (41) =====
   const TRADES = [
-    { name: 'Plumber', tagline: 'Reliable plumbing you can trust', services: ['Pipe Repair', 'Drain Cleaning', 'Water Heater Install', 'Leak Detection'] },
-    { name: 'Electrician', tagline: 'Safe, certified electrical work', services: ['Panel Upgrades', 'Rewiring', 'Lighting', 'Code Compliance'] },
-    { name: 'HVAC', tagline: 'Comfort in every season', services: ['AC Repair', 'Furnace Install', 'Duct Cleaning', 'Maintenance Plans'] },
-    { name: 'Roofer', tagline: 'Protection from the top down', services: ['Roof Repair', 'Full Replacement', 'Storm Damage', 'Inspections'] },
-    { name: 'General Contractor', tagline: 'Building your vision', services: ['Remodeling', 'Additions', 'New Construction', 'Project Management'] },
-    { name: 'Painter', tagline: 'Color that transforms spaces', services: ['Interior Painting', 'Exterior Painting', 'Cabinet Refinishing', 'Drywall Repair'] },
-    { name: 'Landscaper', tagline: 'Outdoor spaces that impress', services: ['Lawn Care', 'Hardscaping', 'Tree Service', 'Irrigation'] },
-    { name: 'Pool Cleaner', tagline: 'Crystal clear, every time', services: ['Weekly Cleaning', 'Equipment Repair', 'Acid Wash', 'Filter Service'] },
-    { name: 'Fence Builder', tagline: 'Security and curb appeal', services: ['Wood Fencing', 'Metal Fencing', 'Gate Install', 'Fence Repair'] },
+    { name: 'Carpentry', tagline: 'Craftsmanship you can see', services: ['Framing', 'Trim Work', 'Custom Cabinets', 'Deck Building'] },
     { name: 'Concrete', tagline: 'Strong foundations, clean finishes', services: ['Driveways', 'Patios', 'Foundation Repair', 'Stamped Concrete'] },
-    { name: 'Flooring', tagline: 'Beautiful floors, built to last', services: ['Hardwood', 'Tile', 'LVP Install', 'Floor Refinishing'] },
-    { name: 'Pest Control', tagline: 'Your home, pest-free', services: ['Termite Treatment', 'Rodent Control', 'Mosquito Spray', 'Inspections'] },
-    { name: 'Garage Door', tagline: 'Smooth operation guaranteed', services: ['Spring Repair', 'Opener Install', 'New Doors', 'Maintenance'] },
-    { name: 'Pressure Washing', tagline: 'Restore your property\'s shine', services: ['House Wash', 'Driveway Clean', 'Deck Restore', 'Commercial'] },
-    { name: 'Junk Removal', tagline: 'Clear space, clear mind', services: ['Residential Haul', 'Construction Debris', 'Estate Cleanout', 'Appliance Removal'] },
-    { name: 'Handyman', tagline: 'Fix it right the first time', services: ['Repairs', 'Assembly', 'Drywall', 'Odd Jobs'] },
-    { name: 'Locksmith', tagline: 'Security you can count on', services: ['Lockouts', 'Rekeying', 'Lock Install', 'Smart Locks'] },
-    { name: 'Septic', tagline: 'Underground expertise', services: ['Pumping', 'Inspections', 'Repairs', 'New Install'] },
-    { name: 'Window Cleaning', tagline: 'See the world clearly', services: ['Residential', 'Commercial', 'Screen Cleaning', 'Hard Water Removal'] },
-    { name: 'Solar', tagline: 'Power your savings', services: ['Panel Install', 'System Design', 'Battery Storage', 'Maintenance'] },
-    { name: 'Insulation', tagline: 'Comfort and efficiency', services: ['Spray Foam', 'Blown-In', 'Batt Install', 'Energy Audits'] },
-    { name: 'Demolition', tagline: 'Out with the old', services: ['Interior Demo', 'Structural Demo', 'Site Clearing', 'Debris Removal'] },
-    { name: 'Welding', tagline: 'Precision metal work', services: ['Structural Welding', 'Custom Fabrication', 'Repairs', 'Ornamental Iron'] },
-    { name: 'Tree Service', tagline: 'Expert arborists on call', services: ['Tree Removal', 'Trimming', 'Stump Grinding', 'Emergency Service'] },
-    { name: 'Appliance Repair', tagline: 'Get it running again', services: ['Washer/Dryer', 'Refrigerator', 'Dishwasher', 'Oven Repair'] },
+    { name: 'Painting', tagline: 'Color that transforms spaces', services: ['Interior Painting', 'Exterior Painting', 'Cabinet Refinishing', 'Drywall Repair'] },
+    { name: 'Pool Cleaning', tagline: 'Crystal clear, every time', services: ['Weekly Cleaning', 'Equipment Repair', 'Acid Wash', 'Filter Service'] },
+    { name: 'HVAC', tagline: 'Comfort in every season', services: ['AC Repair', 'Furnace Install', 'Duct Cleaning', 'Maintenance Plans'] },
     { name: 'Cleaning', tagline: 'Spotless spaces guaranteed', services: ['Deep Clean', 'Move In/Out', 'Office Cleaning', 'Regular Service'] },
+    { name: 'Personal Training', tagline: 'Your goals, our expertise', services: ['One-on-One Training', 'Group Sessions', 'Nutrition Plans', 'Online Coaching'] },
+    { name: 'Appliance Repair', tagline: 'Get it running again', services: ['Washer/Dryer', 'Refrigerator', 'Dishwasher', 'Oven Repair'] },
+    { name: 'Masonry', tagline: 'Built to last generations', services: ['Brick Work', 'Stone Walls', 'Retaining Walls', 'Chimney Repair'] },
+    { name: 'Insulation', tagline: 'Comfort and efficiency', services: ['Spray Foam', 'Blown-In', 'Batt Install', 'Energy Audits'] },
+    { name: 'Roofing', tagline: 'Protection from the top down', services: ['Roof Repair', 'Full Replacement', 'Storm Damage', 'Inspections'] },
+    { name: 'Plumbing', tagline: 'Reliable plumbing you can trust', services: ['Pipe Repair', 'Drain Cleaning', 'Water Heater Install', 'Leak Detection'] },
+    { name: 'Garage Door', tagline: 'Smooth operation guaranteed', services: ['Spring Repair', 'Opener Install', 'New Doors', 'Maintenance'] },
+    { name: 'Fencing', tagline: 'Security and curb appeal', services: ['Wood Fencing', 'Metal Fencing', 'Gate Install', 'Fence Repair'] },
+    { name: 'Remodeling', tagline: 'Transform your living space', services: ['Kitchen Remodel', 'Bathroom Remodel', 'Basement Finish', 'Additions'] },
+    { name: 'Carpet Cleaning', tagline: 'Deep clean, fresh results', services: ['Steam Cleaning', 'Stain Removal', 'Pet Odor Treatment', 'Commercial'] },
+    { name: 'Landscaping', tagline: 'Outdoor spaces that impress', services: ['Lawn Care', 'Hardscaping', 'Tree Service', 'Irrigation'] },
+    { name: 'Electrical', tagline: 'Safe, certified electrical work', services: ['Panel Upgrades', 'Rewiring', 'Lighting', 'Code Compliance'] },
+    { name: 'Flooring', tagline: 'Beautiful floors, built to last', services: ['Hardwood', 'Tile', 'LVP Install', 'Floor Refinishing'] },
+    { name: 'Tree Trimming', tagline: 'Expert arborists on call', services: ['Tree Removal', 'Trimming', 'Stump Grinding', 'Emergency Service'] },
+    { name: 'Pressure Washing', tagline: 'Restore your property\'s shine', services: ['House Wash', 'Driveway Clean', 'Deck Restore', 'Commercial'] },
+    { name: 'Gutter Cleaning', tagline: 'Keep water flowing right', services: ['Gutter Clean', 'Guard Install', 'Downspout Repair', 'Seasonal Service'] },
+    { name: 'Junk Removal', tagline: 'Clear space, clear mind', services: ['Residential Haul', 'Construction Debris', 'Estate Cleanout', 'Appliance Removal'] },
+    { name: 'Sunroom', tagline: 'Bring the outdoors in', services: ['Sunroom Build', 'Screen Enclosure', 'Patio Cover', 'Glass Walls'] },
+    { name: 'Deck Building', tagline: 'Outdoor living elevated', services: ['Custom Decks', 'Composite Decking', 'Pergolas', 'Deck Repair'] },
+    { name: 'Window Washing', tagline: 'See the world clearly', services: ['Residential', 'Commercial', 'Screen Cleaning', 'Hard Water Removal'] },
+    { name: 'Garage Shelf', tagline: 'Organized garage, organized life', services: ['Custom Shelving', 'Overhead Storage', 'Workbenches', 'Garage Systems'] },
+    { name: 'Real Estate', tagline: 'Your property partner', services: ['Buying', 'Selling', 'Property Management', 'Market Analysis'] },
+    { name: 'Hair Salon', tagline: 'Style that speaks for you', services: ['Cuts & Color', 'Styling', 'Treatments', 'Bridal Packages'] },
+    { name: 'Triathlete Coaching', tagline: 'Train smarter, race faster', services: ['Swim Coaching', 'Bike Fitting', 'Run Training', 'Race Strategy'] },
+    { name: 'Christmas Light Install', tagline: 'Light up the holidays', services: ['Residential Install', 'Commercial Display', 'Takedown Service', 'Custom Design'] },
+    { name: 'Tennis Coach', tagline: 'Improve your game', services: ['Private Lessons', 'Group Clinics', 'Junior Programs', 'Match Strategy'] },
+    { name: 'Pet Grooming', tagline: 'Pampered pets, happy owners', services: ['Full Groom', 'Bath & Brush', 'Nail Trim', 'De-shedding'] },
+    { name: 'Pet Sitting', tagline: 'Your pet\'s home away from home', services: ['In-Home Sitting', 'Dog Walking', 'Overnight Care', 'Drop-In Visits'] },
+    { name: 'Storage', tagline: 'Safe space for your stuff', services: ['Self Storage', 'Climate Control', 'Vehicle Storage', 'Business Storage'] },
+    { name: 'Stump Removal', tagline: 'Gone without a trace', services: ['Stump Grinding', 'Root Removal', 'Site Grading', 'Debris Cleanup'] },
+    { name: 'Curb Cutting', tagline: 'Precision concrete cutting', services: ['Curb Cuts', 'ADA Compliance', 'Driveway Access', 'Sidewalk Repair'] },
+    { name: 'Niche Rentals', tagline: 'Specialty equipment on demand', services: ['Tool Rental', 'Equipment Lease', 'Event Rental', 'Delivery'] },
+    { name: 'Steel Distribution', tagline: 'Quality steel, on time', services: ['Structural Steel', 'Sheet Metal', 'Custom Cuts', 'Delivery'] },
+    { name: 'Delivery', tagline: 'Fast, reliable delivery', services: ['Same Day', 'Scheduled Delivery', 'White Glove', 'Commercial Routes'] },
+    { name: 'Solar', tagline: 'Power your savings', services: ['Panel Install', 'System Design', 'Battery Storage', 'Maintenance'] },
   ];
 
   // ===== STATE =====
@@ -698,6 +783,15 @@ import Base from '../layouts/Base.astro';
     colorAccent.value = currentColors.accent;
   }
 
+  // ===== TRADE FLYOUT =====
+  const tradeTrigger = document.getElementById('tradeTrigger');
+  const tradeTriggerLabel = document.getElementById('tradeTriggerLabel');
+  const tradeFlyout = document.getElementById('tradeFlyout');
+  const flyoutClose = document.getElementById('flyoutClose');
+
+  tradeTrigger.addEventListener('click', () => tradeFlyout.classList.toggle('open'));
+  flyoutClose.addEventListener('click', () => tradeFlyout.classList.remove('open'));
+
   // ===== POPULATE TRADES =====
   TRADES.forEach(t => {
     const btn = document.createElement('button');
@@ -707,6 +801,9 @@ import Base from '../layouts/Base.astro';
       tradeGrid.querySelectorAll('.trade-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentTrade = t;
+      tradeTriggerLabel.textContent = t.name;
+      tradeTrigger.classList.add('has-selection');
+      tradeFlyout.classList.remove('open');
       applyTradeToIframe(t);
     });
     tradeGrid.appendChild(btn);
