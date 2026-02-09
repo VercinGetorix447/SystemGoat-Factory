@@ -136,15 +136,6 @@ import Base from '../layouts/Base.astro';
     <textarea class="config-output" id="configOutput" readonly placeholder="Config JSON will appear here..."></textarea>
   </aside>
 
-  <!-- Trade flyout panel (OUTSIDE aside, fixed position) -->
-  <div class="trade-flyout" id="tradeFlyout">
-    <div class="flyout-header">
-      <h3>Choose Your Trade</h3>
-      <button class="flyout-close" id="flyoutClose">&times;</button>
-    </div>
-    <div class="flyout-list" id="tradeGrid"></div>
-  </div>
-
   <!-- RIGHT: Preview iframe -->
   <div class="preview-area">
     <div class="preview-bar">
@@ -153,6 +144,15 @@ import Base from '../layouts/Base.astro';
     </div>
     <iframe id="previewFrame" src="/"></iframe>
   </div>
+</div>
+
+<!-- Trade flyout panel (OUTSIDE the grid entirely) -->
+<div class="trade-flyout" id="tradeFlyout">
+  <div class="flyout-header">
+    <h3>Choose Your Trade</h3>
+    <button class="flyout-close" id="flyoutClose">&times;</button>
+  </div>
+  <div class="flyout-list" id="tradeGrid"></div>
 </div>
 
 <style>
@@ -389,21 +389,22 @@ import Base from '../layouts/Base.astro';
   .trade-trigger:hover { border-color: #aaa; }
   .trade-trigger.has-selection { color: #FF6B35; font-weight: 600; border-color: #FF6B35; }
 
-  /* Trade flyout panel */
+  /* Trade flyout panel — hidden until .open */
   .trade-flyout {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 0;
     left: 340px;
     width: 200px;
     height: 100vh;
     background: #fff;
+    border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     box-shadow: 4px 0 16px rgba(0,0,0,0.08);
     z-index: 200;
     flex-direction: column;
   }
-  .trade-flyout.open { display: flex; }
+  .trade-flyout.open { display: flex !important; }
 
   .flyout-header {
     display: flex;
