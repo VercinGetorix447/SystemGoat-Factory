@@ -5,11 +5,10 @@ const {
   cta = 'Get Free Quote'
 } = Astro.props;
 
-const v = Date.now();
 const images = [
-  { src: `/images/hero/project-1.jpg?v=${v}`, alt: 'Roofing' },
-  { src: `/images/hero/project-2.jpg?v=${v}`, alt: 'Pool Cleaning' },
-  { src: `/images/hero/project-3.jpg?v=${v}`, alt: 'HVAC' },
+  { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=420&fit=crop', alt: 'Construction' },
+  { src: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=420&fit=crop', alt: 'Contractor Work' },
+  { src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=420&fit=crop', alt: 'Building Project' },
 ];
 
 // 3 overlapping: stacked, each lower, middle shifted right, group pushed right
