@@ -19,3 +19,4 @@ node_modules/
 .claude.json.corrupted.*
 buildrightpros-site/
 .github_token.txt
+.config/antigravity-proxy/accounts.json

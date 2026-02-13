@@ -129,3 +129,5 @@ export PATH="$PATH:/home/echo/.local/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export SUPABASE_URL="https://hxhnnjudirnnegnejxwu.supabase.co"
+export SUPABASE_ANON_KEY="sb_publishable_rpLZFKWZEvMCv1mlYq87Fg_T495cTpb"
