@@ -11,15 +11,26 @@ DELTA_FILE="${SESSION_DIR}/delta-${TIME}.md"
 
 mkdir -p "${SESSION_DIR}"
 
+CHANGED=$(git diff --name-only 2>/dev/null | head -10)
+NEW=$(git ls-files --others --exclude-standard 2>/dev/null | grep -v '.cache' | head -10)
+STATUS=$(git status --short 2>/dev/null | grep -v '.cache' | head -20)
+
 cat > "${DELTA_FILE}" << EOF
-# Session Delta — ${DATE} @ ${TIME}
+# Delta — ${DATE} @ ${TIME}
+
+## SUMMARY
+(Claude: replace this line with 1-2 sentence summary of what changed this block)
+
+---
 
 ## Files Changed
-$(git diff --name-only 2>/dev/null)
-$(git ls-files --others --exclude-standard 2>/dev/null | grep -v '.cache' | head -20)
+${CHANGED}
+
+## New Files
+${NEW}
 
 ## Git Status
-$(git status --short 2>/dev/null | grep -v '.cache' | head -20)
+${STATUS}
 EOF
 
 git add backups/sessions/ 2>/dev/null

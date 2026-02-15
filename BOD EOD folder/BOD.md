@@ -7,12 +7,13 @@
 
 ## Auto-Execute (Claude runs these without prompting)
 
-- [ ] Read CLAUDE.md (auto-loaded)
-- [ ] Read RULES.md
-- [ ] Check NocoDB tasks: `curl -s -H "xc-token: $NOCODB_TOKEN" "http://localhost:8080/api/v2/tables/micl8z8rf5h7cpm/records?limit=100"`
-- [ ] Check Docker: `docker ps --format "table {{.Names}}\t{{.Status}}"`
-- [ ] Read yesterday's EOD (if exists): `Backups/eod/EOD-YYYY-MM-DD.md`
-- [ ] Read MCP memory graph
+- [ ] Read INDEX.md — loads all key file links
+- [ ] Read Claude Code Rules.md
+- [ ] Create today's session folder: `mkdir -p ~/backups/sessions/$(date +%Y%m%d)`
+- [ ] Read yesterday's delta: `ls ~/backups/sessions/$(date -d yesterday +%Y%m%d)/ 2>/dev/null | tail -1`
+- [ ] Check n8n status: `curl -s https://n8n.systemgoat.com/healthz`
+- [ ] Check Docker on Hetzner: `ssh root@5.75.146.160 "docker ps --format 'table {{.Names}}\t{{.Status}}'"`
+- [ ] Set 30-min delta reminder — run `bash ~/scripts/session-delta.sh` every 30 min
 
 ## Report to User
 
