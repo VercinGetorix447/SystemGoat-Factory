@@ -2,7 +2,16 @@
 
 # CLAUDE CODE RULES
 
-Never use ‘any’ type for type declarations , create type interfaces  
+## RESPONSE FORMAT — EVERY MESSAGE
+Each response must include at the top:
+- Tokens used / remaining
+- Time to implement current step
+- Step # of # toward current milestone
+- Odds of success %
+
+---
+
+Never use 'any' type for type declarations , create type interfaces  
 Use playwright MCP for testing environment  
 Run ‘npx tsc’ and fix all typescript errors around the codebase 
 
