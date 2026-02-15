@@ -20,3 +20,7 @@ node_modules/
 buildrightpros-site/
 .github_token.txt
 .config/antigravity-proxy/accounts.json
+.antigravity-server/
+.gemini/
+.claude-backup/
+.ssh/
