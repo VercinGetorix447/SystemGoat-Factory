@@ -21,6 +21,22 @@ Each response must include at the top:
 All key files are linked in /home/echo/INDEX.md
 Read INDEX.md at session start after CLAUDE.md
 
+## SUBAGENT RULE — 80/20
+- Claude does: planning, review, orchestration, quick fixes (20%)
+- Subagents do: installs, builds, research, doc gathering, testing (80%)
+- Max 3 subagents at once unless explicitly approved
+- CREATE a new agent spec in agents/ when you identify repeatable work
+- Trigger subagent when: installing a new tool, gathering API docs, building a workflow, running tests, writing content for 8+ pages
+- All subagent output reviewed by Claude before finalizing
+
+## DOCS-GATHERER AGENT
+When any new app/tool/MCP is added:
+- Subagent gathers: API docs, CLI commands, MCP config, install steps, feature set
+- Saves to: agents/docs/[tool-name].md
+- Saves MCP config to: MCP/[tool-name].json
+- Updates INDEX.md with new tool link
+- Agent spec: agents/docs-gatherer.md
+
 ---
 
 Never use 'any' type for type declarations , create type interfaces  
