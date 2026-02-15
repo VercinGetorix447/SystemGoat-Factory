@@ -1,39 +1,26 @@
 # Session Delta — 20260215 @ 1100
 
-## Files Changed
-.claude.json
-.ssh/known_hosts
-STARTUP.md
-backups/backups/--help
-backups/backups/STARTUP.md
-backups/backups/backups/--help
-backups/backups/backups/STARTUP.md
-backups/backups/backups/full_mirrors/systemgoat_full_2026-02-02_1901.tar.gz
-backups/backups/full_mirrors/systemgoat_full_2026-02-02_1901.tar.gz
-backups/systemgoat-factory
-sessions/2026-02-06-summary.md
-sessions/2026-02-07-summary.md
-.claude.json.backup
-MCP/mcps/MCP-INVENTORY.md
-backups/2026-02-07-summary.md
-backups/config/.gitkeep
-backups/sessions/20260215/delta-1100.md
+## Completed This Block
+- Fixed .gitignore — backups/sessions/ now tracked
+- Created scripts/auto-backup.sh and scripts/session-delta.sh
+- Added Stop hook to .claude/settings.json
+- Created n8n/workflows/ folder structure (01-lead-scraping, 02-ai-receptionist, 03-reputation-management)
+- Pushed workflow folders + READMEs to GitHub
+- Reset n8n user-management — login now works
+- Confirmed login: admin@buildrightpros.com owner account active
+- Credentials stored at /root/.n8n-credentials on Hetzner (600 perms)
+- Updated Claude Code Rules — token tracking format, delta rules, INDEX.md reference
+- Created INDEX.md — single session-start reference file
 
-## Git Status
- M .claude.json
- M .ssh/known_hosts
- D STARTUP.md
- D backups/backups/--help
- D backups/backups/STARTUP.md
- D backups/backups/backups/--help
- D backups/backups/backups/STARTUP.md
- D backups/backups/backups/full_mirrors/systemgoat_full_2026-02-02_1901.tar.gz
- D backups/backups/full_mirrors/systemgoat_full_2026-02-02_1901.tar.gz
- D backups/systemgoat-factory
- D sessions/2026-02-06-summary.md
- D sessions/2026-02-07-summary.md
-?? .claude.json.backup
-?? MCP/
-?? backups/2026-02-07-summary.md
-?? backups/config/
-?? backups/sessions/20260215/delta-1100.md
+## In Progress
+- Switch n8n from SQLite to PostgreSQL
+
+## Pending
+- Import Apify workflow + test
+- 8 service landing pages
+- Client onboarding trigger
+- Outreach scripts
+
+## Token Usage
+- Session: ~80k used / 120k remaining
+- Next block estimate: ~33k

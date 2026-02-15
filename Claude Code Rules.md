@@ -4,10 +4,22 @@
 
 ## RESPONSE FORMAT — EVERY MESSAGE
 Each response must include at the top:
-- Tokens used / remaining
+- Tokens used / remaining this session
+- Week cumulative token usage
+- Estimated tokens for next block of work
 - Time to implement current step
 - Step # of # toward current milestone
 - Odds of success %
+
+## SESSION DELTA — MANDATORY
+- Write delta to backups/sessions/YYYYMMDD/delta-HHMM.md every 30 minutes
+- Push to GitHub immediately after writing
+- Do NOT wait until EOD — push every checkpoint
+- Hook in .claude/settings.json Stop event runs session-delta.sh automatically
+
+## KEY FILE INDEX
+All key files are linked in /home/echo/INDEX.md
+Read INDEX.md at session start after CLAUDE.md
 
 ---
 
