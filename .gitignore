@@ -1,26 +1,33 @@
+# Secrets & credentials
+.git-credentials
+.github_token.txt
+.ssh/
+*.env
+.config/gh/
+.config/antigravity-proxy/accounts.json
+
+# Large/binary/cache
 .vscode-server/
 .local/
 .claude/
-backups/
-.git-credentials
-.config/gh/
-*.env
-
-# Large binary files
-.local/
-.vscode-server/
-*.bin
-node_modules/
+.claude-backup/
+.antigravity-server/
+.gemini/
 .npm/
-.cache/
 .nvm/
+.cache/
+*.bin
 .bash_history
 .claude.json.backup.*
 .claude.json.corrupted.*
+
+# Node
+node_modules/
 buildrightpros-site/
-.github_token.txt
-.config/antigravity-proxy/accounts.json
-.antigravity-server/
-.gemini/
-.claude-backup/
-.ssh/
+
+# Backups — allow sessions & config, block full mirrors and large archives
+backups/full_mirrors/
+backups/buildrightpros-site/
+backups/pre-force-push-*/
+backups/*.tar.gz
+backups/backups/
